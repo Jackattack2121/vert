@@ -1,0 +1,56 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+import AnimatedSection from '@/components/ui/AnimatedSection'
+import EmptyState from '@/components/ui/EmptyState'
+import { HiOutlineDocumentReport } from 'react-icons/hi'
+
+export default function FinancialReportsPage() {
+  const t = useTranslations('investors.financialReports')
+  
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
+        {/* Background Image with fade */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: 'url(/images/mineral-resource-estimate-report-2023-05-28-08-30-13-utc.jpg)' }}
+        />
+        
+        {/* Blue Overlay */}
+        <div className="absolute inset-0 bg-primary-600/60"></div>
+        
+        <div className="container relative z-10">
+          <AnimatedSection>
+            <div className="max-w-4xl">
+              <h1 className="text-heading-lg text-white mb-4">
+                {t('heroTitle')}
+              </h1>
+              <p className="text-sm font-semibold uppercase tracking-wider text-white/90">
+                {t('heroSubtitle')}
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Empty State */}
+      <section className="section-padding bg-white">
+        <div className="container max-w-4xl">
+          <AnimatedSection>
+            <EmptyState
+              icon={HiOutlineDocumentReport}
+              title={t('comingSoon')}
+              description={t('comingSoonDescription')}
+              action={{
+                label: t('viewAnnouncementsAction'),
+                href: '/investors/asx-announcements'
+              }}
+            />
+          </AnimatedSection>
+        </div>
+      </section>
+    </>
+  )
+}

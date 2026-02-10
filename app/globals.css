@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-josefin: 'Josefin Sans', sans-serif;
+    --font-merriweather: 'Merriweather', serif;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-montserrat;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-48;
+  }
+
+  .section-padding-small {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .split-section {
+    @apply grid md:grid-cols-2 min-h-screen;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-3 px-8 py-4 bg-primary-600 text-white font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-primary-700 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary-600 text-primary-600 font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-primary-600 hover:text-white;
+  }
+
+  .btn-text {
+    @apply inline-flex items-center gap-2 text-primary-600 font-semibold uppercase tracking-wider transition-all duration-300 hover:gap-4;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
+
+  .text-boxed {
+    @apply inline-block border-4 border-current px-6 py-3 font-black uppercase;
+  }
+
+  .text-separated {
+    @apply inline-block border-r-4 border-current pr-6 mr-6 last:border-r-0 last:pr-0 last:mr-0;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 2px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-hero {
+    @apply font-black leading-none tracking-tight;
+  }
+
+  .heading-line {
+    @apply relative inline-block;
+  }
+
+  .heading-line::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-16 h-1 bg-primary-600;
+  }
+
+  .hover-arrow {
+    @apply transition-transform duration-300 group-hover:translate-x-2;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+}
+
+/* TradingView Widget Styles */
+.tradingview-widget-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tradingview-widget-container__widget {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.tradingview-widget-copyright {
+  margin-top: 8px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.tradingview-widget-copyright .blue-text {
+  color: #2962ff;
+  text-decoration: none;
+}
+
+.tradingview-widget-copyright .blue-text:hover {
+  color: #1e53e5;
+}
+
+.tradingview-widget-copyright .trademark {
+  color: #787b86;
+}

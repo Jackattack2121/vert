@@ -1,0 +1,251 @@
+{
+  "collection": "portal_users",
+  "meta": {
+    "collection": "portal_users",
+    "icon": "account_circle",
+    "note": "Portal user accounts (shareholders and institutional clients)",
+    "display_template": "{{first_name}} {{last_name}} ({{email}})",
+    "hidden": false,
+    "singleton": false,
+    "translations": null,
+    "archive_field": "status",
+    "archive_app_filter": true,
+    "archive_value": "archived",
+    "unarchive_value": "active",
+    "sort_field": "created_at",
+    "accountability": "all",
+    "color": "#2563EB",
+    "item_duplication_fields": null,
+    "sort": 1,
+    "group": null,
+    "collapse": "open"
+  },
+  "schema": {
+    "name": "portal_users",
+    "comment": "Portal user accounts for client authentication and access"
+  },
+  "fields": [
+    {
+      "field": "id",
+      "type": "uuid",
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": false,
+        "is_nullable": false
+      },
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "special": ["uuid"]
+      }
+    },
+    {
+      "field": "status",
+      "type": "string",
+      "schema": {
+        "default_value": "active",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "options": {
+          "choices": [
+            {"text": "Active", "value": "active"},
+            {"text": "Pending", "value": "pending"},
+            {"text": "Suspended", "value": "suspended"},
+            {"text": "Archived", "value": "archived"}
+          ]
+        },
+        "interface": "select-dropdown",
+        "display": "labels",
+        "display_options": {
+          "showAsDot": true,
+          "choices": [
+            {"text": "Active", "value": "active", "foreground": "#FFFFFF", "background": "#00C897"},
+            {"text": "Pending", "value": "pending", "foreground": "#FFFFFF", "background": "#FFA500"},
+            {"text": "Suspended", "value": "suspended", "foreground": "#FFFFFF", "background": "#E35169"},
+            {"text": "Archived", "value": "archived", "foreground": "#FFFFFF", "background": "#D3DAE4"}
+          ]
+        }
+      }
+    },
+    {
+      "field": "role",
+      "type": "string",
+      "schema": {
+        "default_value": "shareholder",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "select-dropdown",
+        "required": true,
+        "options": {
+          "choices": [
+            {"text": "Shareholder", "value": "shareholder"},
+            {"text": "Institutional Client", "value": "institutional"}
+          ]
+        }
+      }
+    },
+    {
+      "field": "email",
+      "type": "string",
+      "schema": {
+        "is_nullable": false,
+        "is_unique": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "user@example.com",
+          "iconLeft": "email"
+        },
+        "validation": {
+          "_and": [
+            {
+              "email": {
+                "_nnull": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "field": "first_name",
+      "type": "string",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "First name"
+        }
+      }
+    },
+    {
+      "field": "last_name",
+      "type": "string",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "Last name"
+        }
+      }
+    },
+    {
+      "field": "company",
+      "type": "string",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input",
+        "options": {
+          "placeholder": "Company name (for institutional clients)"
+        }
+      }
+    },
+    {
+      "field": "phone",
+      "type": "string",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "options": {
+          "placeholder": "+61 xxx xxx xxx",
+          "iconLeft": "phone"
+        }
+      }
+    },
+    {
+      "field": "account_manager",
+      "type": "string",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "note": "Assigned account manager (for institutional clients)"
+      }
+    },
+    {
+      "field": "preferences",
+      "type": "json",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input-code",
+        "options": {
+          "language": "json"
+        },
+        "note": "User preferences and settings"
+      }
+    },
+    {
+      "field": "last_login",
+      "type": "timestamp",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        }
+      }
+    },
+    {
+      "field": "created_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-created"]
+      }
+    },
+    {
+      "field": "updated_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-updated"]
+      }
+    }
+  ]
+}

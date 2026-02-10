@@ -1,0 +1,40 @@
+# Fly.io deployment configuration for Listmonk
+# Documentation: https://fly.io/docs/reference/configuration/
+
+app = "vert-listmonk"
+primary_region = "syd" # Sydney, Australia - closest to you
+
+[build]
+  dockerfile = "listmonk/Dockerfile.production"
+
+[env]
+  PORT = "9000"
+
+[http_service]
+  internal_port = 9000
+  force_https = true
+  auto_stop_machines = false  # Keep always-on
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 250
+    soft_limit = 200
+
+[[http_service.checks]]
+  interval = "30s"
+  timeout = "5s"
+  grace_period = "10s"
+  method = "GET"
+  path = "/api/health"
+
+[mounts]
+  source = "listmonk_data"
+  destination = "/listmonk/uploads"
+
+[[vm]]
+  memory = '256mb'  # Free tier: 256MB
+  cpu_kind = 'shared'
+  cpus = 1
+

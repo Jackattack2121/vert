@@ -1,0 +1,300 @@
+{
+  "collection": "news_posts",
+  "meta": {
+    "collection": "news_posts",
+    "icon": "article",
+    "note": "Blog posts and news articles",
+    "display_template": "{{title}}",
+    "hidden": false,
+    "singleton": false,
+    "translations": null,
+    "archive_field": "status",
+    "archive_app_filter": true,
+    "archive_value": "archived",
+    "unarchive_value": "published",
+    "sort_field": "publish_date",
+    "accountability": "all",
+    "color": "#0EA5E9",
+    "item_duplication_fields": null,
+    "sort": 6,
+    "group": null,
+    "collapse": "open"
+  },
+  "schema": {
+    "name": "news_posts",
+    "comment": "Blog posts and news articles for public website"
+  },
+  "fields": [
+    {
+      "field": "id",
+      "type": "uuid",
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": false,
+        "is_nullable": false
+      },
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "special": ["uuid"]
+      }
+    },
+    {
+      "field": "status",
+      "type": "string",
+      "schema": {
+        "default_value": "draft",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "options": {
+          "choices": [
+            {"text": "Published", "value": "published"},
+            {"text": "Draft", "value": "draft"},
+            {"text": "Scheduled", "value": "scheduled"},
+            {"text": "Archived", "value": "archived"}
+          ]
+        },
+        "interface": "select-dropdown",
+        "display": "labels",
+        "display_options": {
+          "showAsDot": true,
+          "choices": [
+            {"text": "Published", "value": "published", "foreground": "#FFFFFF", "background": "#00C897"},
+            {"text": "Draft", "value": "draft", "foreground": "#FFFFFF", "background": "#D3DAE4"},
+            {"text": "Scheduled", "value": "scheduled", "foreground": "#FFFFFF", "background": "#8B5CF6"},
+            {"text": "Archived", "value": "archived", "foreground": "#FFFFFF", "background": "#95A5C6"}
+          ]
+        }
+      }
+    },
+    {
+      "field": "title",
+      "type": "string",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "Article title"
+        }
+      }
+    },
+    {
+      "field": "slug",
+      "type": "string",
+      "schema": {
+        "is_nullable": false,
+        "is_unique": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "url-friendly-slug",
+          "slug": true
+        },
+        "note": "URL-friendly version of the title"
+      }
+    },
+    {
+      "field": "category",
+      "type": "string",
+      "schema": {
+        "is_nullable": false,
+        "default_value": "Company News"
+      },
+      "meta": {
+        "width": "half",
+        "interface": "select-dropdown",
+        "required": true,
+        "options": {
+          "choices": [
+            {"text": "Company News", "value": "Company News"},
+            {"text": "Project Updates", "value": "Project Updates"},
+            {"text": "Industry Insights", "value": "Industry Insights"},
+            {"text": "Media Coverage", "value": "Media Coverage"}
+          ]
+        }
+      }
+    },
+    {
+      "field": "excerpt",
+      "type": "text",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input-multiline",
+        "options": {
+          "placeholder": "Brief summary (used in previews and SEO)"
+        }
+      }
+    },
+    {
+      "field": "content",
+      "type": "text",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input-rich-text-html",
+        "required": true,
+        "options": {
+          "placeholder": "Article content"
+        }
+      }
+    },
+    {
+      "field": "featured_image",
+      "type": "uuid",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "file-image",
+        "display": "image",
+        "note": "Main article image"
+      }
+    },
+    {
+      "field": "author",
+      "type": "string",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "options": {
+          "placeholder": "Author name"
+        }
+      }
+    },
+    {
+      "field": "publish_date",
+      "type": "timestamp",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "required": true,
+        "display": "datetime",
+        "display_options": {
+          "relative": false
+        }
+      }
+    },
+    {
+      "field": "featured",
+      "type": "boolean",
+      "schema": {
+        "default_value": false,
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "boolean",
+        "display": "boolean",
+        "note": "Show on homepage"
+      }
+    },
+    {
+      "field": "meta_title",
+      "type": "string",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "options": {
+          "placeholder": "SEO title (defaults to article title)"
+        },
+        "note": "SEO meta title"
+      }
+    },
+    {
+      "field": "meta_description",
+      "type": "text",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input-multiline",
+        "options": {
+          "placeholder": "SEO description (defaults to excerpt)"
+        },
+        "note": "SEO meta description"
+      }
+    },
+    {
+      "field": "og_image",
+      "type": "uuid",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "file-image",
+        "display": "image",
+        "note": "Social media share image (defaults to featured_image)"
+      }
+    },
+    {
+      "field": "view_count",
+      "type": "integer",
+      "schema": {
+        "default_value": 0,
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "readonly": true
+      }
+    },
+    {
+      "field": "created_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-created"]
+      }
+    },
+    {
+      "field": "updated_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-updated"]
+      }
+    }
+  ]
+}

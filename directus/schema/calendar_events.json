@@ -1,0 +1,236 @@
+{
+  "collection": "calendar_events",
+  "meta": {
+    "collection": "calendar_events",
+    "icon": "event",
+    "note": "Calendar events for portal users (AGMs, meetings, deadlines)",
+    "display_template": "{{title}} - {{event_date}}",
+    "hidden": false,
+    "singleton": false,
+    "translations": null,
+    "archive_field": null,
+    "archive_app_filter": true,
+    "archive_value": null,
+    "unarchive_value": null,
+    "sort_field": "event_date",
+    "accountability": "all",
+    "color": "#EC4899",
+    "item_duplication_fields": null,
+    "sort": 5,
+    "group": null,
+    "collapse": "open"
+  },
+  "schema": {
+    "name": "calendar_events",
+    "comment": "Events and meetings for portal users"
+  },
+  "fields": [
+    {
+      "field": "id",
+      "type": "uuid",
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": false,
+        "is_nullable": false
+      },
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "special": ["uuid"]
+      }
+    },
+    {
+      "field": "status",
+      "type": "string",
+      "schema": {
+        "default_value": "published",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "options": {
+          "choices": [
+            {"text": "Published", "value": "published"},
+            {"text": "Draft", "value": "draft"},
+            {"text": "Cancelled", "value": "cancelled"}
+          ]
+        },
+        "interface": "select-dropdown",
+        "display": "labels",
+        "display_options": {
+          "showAsDot": true,
+          "choices": [
+            {"text": "Published", "value": "published", "foreground": "#FFFFFF", "background": "#00C897"},
+            {"text": "Draft", "value": "draft", "foreground": "#FFFFFF", "background": "#D3DAE4"},
+            {"text": "Cancelled", "value": "cancelled", "foreground": "#FFFFFF", "background": "#E35169"}
+          ]
+        }
+      }
+    },
+    {
+      "field": "title",
+      "type": "string",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "Event title"
+        }
+      }
+    },
+    {
+      "field": "description",
+      "type": "text",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input-rich-text-html",
+        "options": {
+          "placeholder": "Event description"
+        }
+      }
+    },
+    {
+      "field": "event_type",
+      "type": "string",
+      "schema": {
+        "is_nullable": false,
+        "default_value": "Meeting"
+      },
+      "meta": {
+        "width": "half",
+        "interface": "select-dropdown",
+        "required": true,
+        "options": {
+          "choices": [
+            {"text": "AGM", "value": "AGM"},
+            {"text": "Meeting", "value": "Meeting"},
+            {"text": "Webinar", "value": "Webinar"},
+            {"text": "Report Deadline", "value": "Report Deadline"},
+            {"text": "Conference", "value": "Conference"},
+            {"text": "Other", "value": "Other"}
+          ]
+        }
+      }
+    },
+    {
+      "field": "event_date",
+      "type": "timestamp",
+      "schema": {
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "required": true,
+        "display": "datetime",
+        "display_options": {
+          "relative": false
+        }
+      }
+    },
+    {
+      "field": "end_date",
+      "type": "timestamp",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "display": "datetime",
+        "display_options": {
+          "relative": false
+        },
+        "note": "Optional end date for multi-day events"
+      }
+    },
+    {
+      "field": "location",
+      "type": "string",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "options": {
+          "placeholder": "Event location or meeting URL",
+          "iconLeft": "place"
+        }
+      }
+    },
+    {
+      "field": "visibility",
+      "type": "string",
+      "schema": {
+        "default_value": "all_portal_users",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "select-dropdown",
+        "required": true,
+        "options": {
+          "choices": [
+            {"text": "All Portal Users", "value": "all_portal_users"},
+            {"text": "Shareholders Only", "value": "shareholders"},
+            {"text": "Institutional Only", "value": "institutional"}
+          ]
+        },
+        "note": "Who can see this event"
+      }
+    },
+    {
+      "field": "send_reminder",
+      "type": "boolean",
+      "schema": {
+        "default_value": false,
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "boolean",
+        "display": "boolean",
+        "note": "Send email reminder 24 hours before event"
+      }
+    },
+    {
+      "field": "created_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-created"]
+      }
+    },
+    {
+      "field": "updated_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-updated"]
+      }
+    }
+  ]
+}

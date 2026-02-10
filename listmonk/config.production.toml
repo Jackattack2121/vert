@@ -1,0 +1,90 @@
+# Listmonk Production Configuration for Vert Capital
+# This config is for Railway deployment with Supabase + Resend
+# Documentation: https://listmonk.app/docs/configuration
+
+[app]
+# Interface and port where the app will run
+address = "0.0.0.0:9000"
+
+# BasicAuth username and password for API access
+# This is used by the Next.js API to create subscribers
+# Set these via Railway environment variables
+admin_username = "listmonk_api"
+admin_password = "${LISTMONK_API_PASSWORD}"
+
+# Database settings - Supabase PostgreSQL
+[db]
+host = "${SUPABASE_DB_HOST}"  # e.g., db.xxxxxx.supabase.co
+port = 5432
+user = "postgres"
+password = "${SUPABASE_DB_PASSWORD}"
+database = "postgres"
+ssl_mode = "require"  # CRITICAL for Supabase
+max_open = 25
+max_idle = 25
+max_lifetime = "300s"
+
+# SMTP settings - Resend
+[smtp]
+[[smtp.servers]]
+enabled = true
+host = "smtp.resend.com"
+port = 465
+auth_protocol = "login"
+username = "resend"
+password = "${RESEND_API_KEY}"  # Your Resend API key
+hello_hostname = "listmonk.vertcapital.com.au"
+max_conns = 10
+idle_timeout = "15s"
+wait_timeout = "5s"
+max_msg_retries = 2
+tls_enabled = true
+tls_skip_verify = false
+email_headers = [
+  ["List-Unsubscribe-Post", "List-Unsubscribe=One-Click"],
+]
+
+# Bounce processing
+[bounce]
+enabled = true
+webhooks_enabled = false
+
+# Upload settings - Supabase Storage (S3 compatible)
+[upload]
+provider = "s3"
+aws_access_key_id = "${SUPABASE_STORAGE_ACCESS_KEY}"
+aws_secret_access_key = "${SUPABASE_STORAGE_SECRET_KEY}"
+aws_default_region = "us-east-1"
+aws_use_path_style = true
+bucket = "listmonk-uploads"
+# Replace with your Supabase project ref
+endpoint = "https://${SUPABASE_PROJECT_REF}.supabase.co/storage/v1/s3"
+
+# Privacy settings
+[privacy]
+individual_tracking = false
+allow_blocklist = true
+allow_export = true
+allow_wipe = true
+exportable = ["profile", "subscriptions", "campaign_views", "link_clicks"]
+
+# Security settings
+[security]
+# CRITICAL: Generate a new 32-character encryption key for production!
+# Never use the same key as development
+encryption_key = "${LISTMONK_ENCRYPTION_KEY}"
+
+# Media settings
+[media]
+provider = "s3"
+aws_access_key_id = "${SUPABASE_STORAGE_ACCESS_KEY}"
+aws_secret_access_key = "${SUPABASE_STORAGE_SECRET_KEY}"
+aws_default_region = "us-east-1"
+aws_use_path_style = true
+bucket = "listmonk-uploads"
+endpoint = "https://${SUPABASE_PROJECT_REF}.supabase.co/storage/v1/s3"
+
+# Analytics and tracking
+[analytics]
+enable = true
+

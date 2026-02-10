@@ -1,0 +1,153 @@
+{
+  "collection": "portfolios",
+  "meta": {
+    "collection": "portfolios",
+    "icon": "account_balance_wallet",
+    "note": "Investment portfolio holdings for shareholders",
+    "display_template": "{{user_id.first_name}} {{user_id.last_name}} - {{shares}} shares",
+    "hidden": false,
+    "singleton": false,
+    "translations": null,
+    "archive_field": null,
+    "archive_app_filter": true,
+    "archive_value": null,
+    "unarchive_value": null,
+    "sort_field": "created_at",
+    "accountability": "all",
+    "color": "#10B981",
+    "item_duplication_fields": null,
+    "sort": 2,
+    "group": null,
+    "collapse": "open"
+  },
+  "schema": {
+    "name": "portfolios",
+    "comment": "Shareholder investment portfolio holdings"
+  },
+  "fields": [
+    {
+      "field": "id",
+      "type": "uuid",
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": false,
+        "is_nullable": false
+      },
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "special": ["uuid"]
+      }
+    },
+    {
+      "field": "user_id",
+      "type": "uuid",
+      "schema": {
+        "is_nullable": false,
+        "foreign_key_table": "portal_users",
+        "foreign_key_column": "id"
+      },
+      "meta": {
+        "width": "full",
+        "interface": "select-dropdown-m2o",
+        "required": true,
+        "display": "related-values",
+        "options": {
+          "template": "{{first_name}} {{last_name}} ({{email}})"
+        }
+      }
+    },
+    {
+      "field": "shares",
+      "type": "integer",
+      "schema": {
+        "is_nullable": false,
+        "default_value": 0
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "required": true,
+        "options": {
+          "placeholder": "Number of shares"
+        }
+      }
+    },
+    {
+      "field": "cost_basis",
+      "type": "decimal",
+      "schema": {
+        "is_nullable": true,
+        "numeric_precision": 10,
+        "numeric_scale": 2
+      },
+      "meta": {
+        "width": "half",
+        "interface": "input",
+        "options": {
+          "placeholder": "Average cost per share"
+        }
+      }
+    },
+    {
+      "field": "purchase_date",
+      "type": "date",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "display": "datetime",
+        "display_options": {
+          "relative": false
+        }
+      }
+    },
+    {
+      "field": "notes",
+      "type": "text",
+      "schema": {
+        "is_nullable": true
+      },
+      "meta": {
+        "width": "full",
+        "interface": "input-multiline",
+        "options": {
+          "placeholder": "Additional notes about this holding"
+        }
+      }
+    },
+    {
+      "field": "created_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-created"]
+      }
+    },
+    {
+      "field": "updated_at",
+      "type": "timestamp",
+      "schema": {
+        "default_value": "CURRENT_TIMESTAMP",
+        "is_nullable": false
+      },
+      "meta": {
+        "width": "half",
+        "interface": "datetime",
+        "readonly": true,
+        "display": "datetime",
+        "special": ["date-updated"]
+      }
+    }
+  ]
+}

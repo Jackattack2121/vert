@@ -1,0 +1,84 @@
+# Listmonk Configuration for Yugo Metals / CoreConnect
+# Documentation: https://listmonk.app/docs/configuration
+
+[app]
+# Interface and port where the app will run
+address = "0.0.0.0:9000"
+
+# BasicAuth username and password for API access
+# This is SEPARATE from your web UI login
+# Keep these for API automation
+# IMPORTANT: Set LISTMONK_USERNAME and LISTMONK_PASSWORD in your .env.local file
+admin_username = "listmonk_api"
+admin_password = ""  # Set via LISTMONK_PASSWORD environment variable
+
+# Database settings
+[db]
+host = "listmonk_db"
+port = 5432
+user = "listmonk"
+password = ""  # Set via LISTMONK_DB_PASSWORD environment variable
+database = "listmonk"
+ssl_mode = "disable"
+max_open = 25
+max_idle = 25
+max_lifetime = "300s"
+
+# SMTP settings for sending emails
+# Configure this with your email provider
+[smtp]
+[[smtp.servers]]
+enabled = false  # Enable and configure with your SMTP provider
+host = "smtp.example.com"
+port = 587
+auth_protocol = "login"
+username = ""  # Set your SMTP username
+password = ""  # Set via environment variable or directly (if using Docker secrets)
+hello_hostname = ""
+max_conns = 10
+idle_timeout = "15s"
+wait_timeout = "5s"
+max_msg_retries = 2
+tls_enabled = true
+tls_skip_verify = false
+email_headers = []
+
+# Bounce processing (optional)
+[bounce]
+enabled = false
+webhooks_enabled = false
+
+# Upload settings
+[upload]
+provider = "filesystem"
+filesystem_upload_path = "/listmonk/uploads"
+filesystem_upload_uri = "/uploads"
+
+# Privacy settings
+[privacy]
+individual_tracking = false
+allow_blocklist = true
+allow_export = true
+allow_wipe = true
+exportable = ["profile", "subscriptions", "campaign_views", "link_clicks"]
+
+# Security settings
+[security]
+# CRITICAL: Generate a NEW encryption key for production!
+# Generate with: openssl rand -hex 16
+# NEVER use the example value below in production
+encryption_key = ""  # Set via environment variable or generate new key
+
+# Messenger settings (optional)
+[messengers]
+
+# Media settings
+[media]
+provider = "filesystem"
+upload_path = "/listmonk/uploads"
+upload_uri = "/uploads"
+
+# Analytics and tracking
+[analytics]
+enable = true
+
