@@ -5,7 +5,12 @@
 
 const bcrypt = require('bcryptjs');
 
-const password = process.argv[2] || 'CoreConnect2024!';
+const password = process.argv[2];
+
+if (!password) {
+  console.error('Usage: node scripts/generate-admin-password.js "YourSecurePassword"');
+  process.exit(1);
+}
 
 bcrypt.hash(password, 10).then(hash => {
   console.log('\n=== CoreConnect Admin Password ===');

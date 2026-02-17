@@ -20,6 +20,7 @@ export default function PortalVerifyPage() {
     }
 
     verifyToken(token);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const verifyToken = async (token: string) => {

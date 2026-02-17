@@ -44,11 +44,12 @@ function TradingViewWidget({
 
   // Initialize TradingView widget with calculated dimensions
   useEffect(() => {
-    if (!containerRef.current || dimensions.width === 0 || dimensions.height === 0) return
+    const container = containerRef.current
+    if (!container || dimensions.width === 0 || dimensions.height === 0) return
 
     const widgetContainer = document.createElement('div')
     widgetContainer.className = 'tradingview-widget-container__widget'
-    containerRef.current.appendChild(widgetContainer)
+    container.appendChild(widgetContainer)
 
     // TradingView widget configuration with enhanced styling
     const widgetConfig = {
@@ -108,9 +109,9 @@ function TradingViewWidget({
 
     // Cleanup function
     return () => {
-      if (containerRef.current) {
-        while (containerRef.current.firstChild) {
-          containerRef.current.removeChild(containerRef.current.firstChild)
+      if (container) {
+        while (container.firstChild) {
+          container.removeChild(container.firstChild)
         }
       }
     }

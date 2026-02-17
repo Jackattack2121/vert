@@ -42,3 +42,13 @@ VERCEL_ENV_PRODUCTION.txt
 directus/uploads/
 directus_db/
 docker-compose.override.yml
+
+# IDE / Editor
+.claude/
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~

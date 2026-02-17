@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FiMail, FiMailOpen, FiClock, FiCheckCircle } from 'react-icons/fi';
+import { FiMail, FiSend, FiClock, FiCheckCircle } from 'react-icons/fi';
 
 interface Message {
   id: string;
@@ -22,6 +22,7 @@ export default function AdminMessagesTable() {
 
   useEffect(() => {
     fetchMessages();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
   const fetchMessages = async () => {
@@ -66,7 +67,7 @@ export default function AdminMessagesTable() {
   const getStatusIcon = (status: Message['status']) => {
     switch (status) {
       case 'open': return <FiClock className="w-4 h-4" />;
-      case 'replied': return <FiMailOpen className="w-4 h-4" />;
+      case 'replied': return <FiSend className="w-4 h-4" />;
       case 'resolved': return <FiCheckCircle className="w-4 h-4" />;
     }
   };

@@ -20,8 +20,15 @@
 const LISTMONK_URL = process.env.LISTMONK_URL || 'http://localhost:9000'
 
 // API credentials from config.toml (separate from web UI login)
-const LISTMONK_USERNAME = process.env.LISTMONK_USERNAME || 'listmonk_api'
-const LISTMONK_PASSWORD = process.env.LISTMONK_PASSWORD || 'VERT_API_2024_Secure!'
+const LISTMONK_USERNAME = process.env.LISTMONK_USERNAME
+const LISTMONK_PASSWORD = process.env.LISTMONK_PASSWORD
+
+if (!LISTMONK_USERNAME || !LISTMONK_PASSWORD) {
+  console.error('❌ LISTMONK_USERNAME and LISTMONK_PASSWORD environment variables are required.')
+  console.log('   Set them in your .env.local file or pass them inline:')
+  console.log('   LISTMONK_USERNAME=your_user LISTMONK_PASSWORD=your_pass node scripts/setup-listmonk.js')
+  process.exit(1)
+}
 
 console.log('🚀 Starting Listmonk setup for Vert Capital...\n')
 

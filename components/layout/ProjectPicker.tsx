@@ -75,6 +75,7 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
     if (isOpen) {
       setHoveredProject(projects[0].slug)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   useEffect(() => {

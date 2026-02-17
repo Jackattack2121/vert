@@ -76,11 +76,11 @@ export function verifyMagicLinkToken(token: string): MagicLinkToken | null {
  */
 export function cleanupExpiredTokens(): void {
   const now = new Date();
-  for (const [token, data] of tokenStore.entries()) {
+  tokenStore.forEach((data, token) => {
     if (now > data.expiresAt) {
       tokenStore.delete(token);
     }
-  }
+  });
 }
 
 /**

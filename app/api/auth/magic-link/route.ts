@@ -57,29 +57,25 @@ export async function POST(request: NextRequest) {
     // 2. If user exists, generate token and send email
     // 3. If user doesn't exist, still return success (security best practice)
     
-    // Simulated user lookup (will be replaced with Directus query)
-    const mockUserLookup = async (email: string) => {
-      // This will be replaced with:
-      // const user = await directusClient.request(readItems('portal_users', { filter: { email } }));
+    // TODO: Replace with Directus query: directusClient.request(readItems('portal_users', { filter: { email } }))
+    // Stub lookup - returns null until Directus is integrated
+    const lookupUser = async (_email: string): Promise<{ id: string; email: string; role: 'shareholder' | 'institutional'; name: string } | null> => {
       return null;
     };
 
-    const user = await mockUserLookup(email);
-    
+    const user = await lookupUser(email);
+
     if (user) {
-      // Generate magic link token
       const token = generateMagicLinkToken(
         email,
-        user.role as 'shareholder' | 'institutional',
+        user.role,
         user.id
       );
 
-      // Generate magic link URL
-      const baseUrl = process.env.NEXTAUTH_URL || 
+      const baseUrl = process.env.NEXTAUTH_URL ||
                      `${request.headers.get('x-forwarded-proto') || 'http'}://${request.headers.get('host')}`;
       const magicLinkUrl = generateMagicLinkUrl(token, baseUrl);
 
-      // Send magic link email
       await sendMagicLinkEmail(email, magicLinkUrl, user.name);
     }
 

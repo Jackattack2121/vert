@@ -14,7 +14,7 @@ export default function ProspectusPage() {
         {/* Background Image with fade */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/mineral-resource-estimate-report-2023-05-28-08-30-13-utc.jpg)' }}
+          style={{ backgroundImage: 'url(/images/hero-mining-1.jpg)' }}
         />
         
         {/* Blue Overlay */}
