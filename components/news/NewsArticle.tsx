@@ -9,30 +9,30 @@ interface NewsArticleProps {
 
 export default function NewsArticle({ post }: NewsArticleProps) {
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article className="max-w-4xl mx-auto px-6 lg:px-12 py-16">
       {/* Back Link */}
       <Link
         href="/news"
-        className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-8 group"
+        className="inline-flex items-center font-sans text-sm text-accent-gold hover:text-accent-goldDark mb-8 group transition-colors duration-300"
       >
-        <FiArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+        <FiArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
         Back to News
       </Link>
 
       {/* Category Badge */}
       <div className="mb-4">
-        <span className="inline-block px-3 py-1 text-sm font-medium text-primary-700 bg-primary-100 rounded-full">
+        <span className="inline-block font-sans text-xs tracking-[0.1em] uppercase text-accent-gold font-medium">
           {post.category}
         </span>
       </div>
 
       {/* Title */}
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <h1 className="font-serif font-light text-4xl md:text-5xl text-primary-500 mb-6 leading-tight">
         {post.title}
       </h1>
 
       {/* Meta */}
-      <div className="flex items-center text-gray-600 mb-8 space-x-6">
+      <div className="flex items-center font-sans text-secondary-400 mb-8 space-x-6 text-sm">
         {post.author && (
           <div className="flex items-center">
             <FiUser className="w-4 h-4 mr-2" />
@@ -51,7 +51,7 @@ export default function NewsArticle({ post }: NewsArticleProps) {
 
       {/* Featured Image */}
       {post.featured_image && (
-        <div className="relative w-full h-96 rounded-xl overflow-hidden mb-8">
+        <div className="relative w-full h-96 rounded-md overflow-hidden mb-10">
           <Image
             src={post.featured_image}
             alt={post.title}
@@ -63,26 +63,26 @@ export default function NewsArticle({ post }: NewsArticleProps) {
 
       {/* Excerpt */}
       {post.excerpt && (
-        <div className="text-xl text-gray-700 mb-8 pb-8 border-b italic">
+        <div className="font-serif text-xl text-primary-500 mb-8 pb-8 border-b border-primary-500/10 font-light leading-relaxed">
           {post.excerpt}
         </div>
       )}
 
       {/* Content */}
-      <div 
-        className="prose prose-lg max-w-none"
+      <div
+        className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:font-light prose-headings:text-primary-500 prose-p:font-sans prose-p:text-secondary-500 prose-a:text-accent-gold"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
       {/* Share */}
-      <div className="mt-12 pt-8 border-t">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Share this article</h3>
-        <div className="flex space-x-4">
+      <div className="mt-12 pt-8 border-t border-primary-500/10">
+        <h3 className="font-serif text-lg font-normal text-primary-500 mb-4">Share this article</h3>
+        <div className="flex space-x-3">
           <a
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="px-5 py-2.5 bg-primary-500 text-cream-100 rounded-md font-sans text-sm font-medium hover:bg-primary-600 transition-colors duration-300"
           >
             Twitter
           </a>
@@ -90,7 +90,7 @@ export default function NewsArticle({ post }: NewsArticleProps) {
             href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
+            className="px-5 py-2.5 bg-primary-500 text-cream-100 rounded-md font-sans text-sm font-medium hover:bg-primary-600 transition-colors duration-300"
           >
             LinkedIn
           </a>

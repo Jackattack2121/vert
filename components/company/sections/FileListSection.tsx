@@ -12,7 +12,7 @@ export default function FileListSection({ section }: Props) {
     <AnimatedSection>
       <div>
         {section.heading && (
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-8">
+          <h2 className="text-3xl md:text-4xl font-serif font-light mb-8">
             {section.heading}
           </h2>
         )}
@@ -20,19 +20,19 @@ export default function FileListSection({ section }: Props) {
           {section.files.map((file, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex items-center justify-between"
+              className="bg-white rounded-md p-6 shadow-elegant hover:shadow-card-hover transition-shadow flex items-center justify-between"
             >
               <div className="flex-1">
-                <h3 className="text-lg font-semibold uppercase tracking-wider mb-1">
+                <h3 className="text-lg font-serif font-light mb-1">
                   {file.title}
                 </h3>
                 {file.description && (
-                  <p className="text-gray-600 text-sm mb-2">
+                  <p className="text-secondary-500 font-sans text-sm mb-2">
                     {file.description}
                   </p>
                 )}
                 {file.date && (
-                  <p className="text-gray-500 text-xs">
+                  <p className="text-secondary-400 font-sans text-xs">
                     {file.date}
                   </p>
                 )}
@@ -42,7 +42,7 @@ export default function FileListSection({ section }: Props) {
                   href={file.fileId.startsWith('/') ? file.fileId : `/documents/${file.fileId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-4 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-md font-semibold uppercase tracking-wider text-sm transition-colors"
+                  className="ml-4 bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md font-sans font-medium tracking-wide text-sm transition-colors"
                 >
                   Download
                 </a>
@@ -54,4 +54,3 @@ export default function FileListSection({ section }: Props) {
     </AnimatedSection>
   )
 }
-

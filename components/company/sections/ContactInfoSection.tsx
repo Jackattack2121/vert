@@ -12,7 +12,7 @@ export default function ContactInfoSection({ section }: Props) {
     <AnimatedSection>
       <div>
         {section.heading && (
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-light mb-8 text-center">
             {section.heading}
           </h2>
         )}
@@ -27,7 +27,7 @@ export default function ContactInfoSection({ section }: Props) {
               <ItemWrapper
                 key={index}
                 {...wrapperProps}
-                className={`bg-white rounded-lg p-6 shadow-md ${item.link ? 'hover:shadow-lg transition-shadow cursor-pointer' : ''}`}
+                className={`bg-white rounded-md p-6 shadow-elegant ${item.link ? 'hover:shadow-card-hover transition-shadow cursor-pointer' : ''}`}
               >
                 <div className="flex items-start">
                   {item.icon && (
@@ -36,10 +36,10 @@ export default function ContactInfoSection({ section }: Props) {
                     </div>
                   )}
                   <div>
-                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                    <p className="text-sm font-sans font-medium text-secondary-400 tracking-wide mb-1">
                       {item.label}
                     </p>
-                    <p className="text-lg font-bold text-gray-900">
+                    <p className="text-lg font-serif font-light text-primary-500">
                       {item.value}
                     </p>
                   </div>
@@ -52,4 +52,3 @@ export default function ContactInfoSection({ section }: Props) {
     </AnimatedSection>
   )
 }
-

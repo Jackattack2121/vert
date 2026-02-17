@@ -59,20 +59,20 @@ export default function ProjectsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-secondary-900 text-white overflow-hidden">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-primary-500 text-cream-100 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: 'url(/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg)' }}
         />
         <div className="relative z-10 container text-center">
           <AnimatedSection>
-            <p className="text-sm uppercase tracking-wider text-primary-400 mb-4">
+            <p className="text-sm uppercase tracking-wider text-cream-300 mb-4">
               {t('pageTitle')}
             </p>
-            <h1 className="text-display mb-6">
+            <h1 className="font-serif font-light text-hero text-cream-100 mb-6">
               {t('heading')}
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto font-josefin">
+            <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto font-serif">
               {t('subtitle')}
             </p>
           </AnimatedSection>
@@ -102,19 +102,19 @@ export default function ProjectsPage() {
 
                     {/* Content */}
                     <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                      <div className="inline-block px-4 py-2 bg-primary-600 text-white text-xs uppercase tracking-wider font-semibold mb-4">
+                      <div className="inline-block px-4 py-2 bg-primary-500 text-cream-100 text-xs uppercase tracking-wider font-semibold mb-4">
                         {project.type}
                       </div>
-                      <h2 className="text-4xl font-black uppercase tracking-tight text-secondary-900 mb-4 group-hover:text-primary-600 transition-colors">
+                      <h2 className="text-4xl font-serif font-light tracking-tight text-primary-500 mb-4 group-hover:text-primary-600 transition-colors">
                         {project.title}
                       </h2>
-                      <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
+                      <p className="text-sm text-secondary-400 uppercase tracking-wider mb-4">
                         {project.location}
                       </p>
-                      <p className="text-lg text-gray-600 leading-relaxed mb-6 font-josefin">
+                      <p className="font-sans text-base text-secondary-500 leading-relaxed mb-6">
                         {project.description}
                       </p>
-                      <div className="flex items-center gap-2 text-primary-600 font-semibold uppercase tracking-wider text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="flex items-center gap-2 text-primary-500 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                         <span>{t('exploreProject')}</span>
                         <svg className="w-4 h-4 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -130,30 +130,30 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary-600 text-white">
+      <section className="section-padding bg-primary-500 text-cream-100">
         <div className="container">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-heading-xl mb-8">
+              <h2 className="font-serif font-light text-display text-cream-100 mb-8">
                 {t('cta.titleLine1')}<br />
                 {t('cta.titleLine2')}
               </h2>
-              <p className="text-xl mb-12 font-josefin opacity-90">
+              <p className="text-xl mb-12 font-serif opacity-90">
                 {t('cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
+                <Link
                   href={`/${locale}/investors/asx-announcements`}
-                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-secondary-800 text-white font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-secondary-900 hover:shadow-lg text-sm"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary-700 text-cream-100 font-semibold transition-all duration-300 hover:bg-primary-800 hover:shadow-elegant text-sm"
                 >
                   <span>{t('cta.viewAnnouncements')}</span>
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <Link 
+                <Link
                   href={`/${locale}/contact`}
-                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-primary-600 text-sm"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-cream-100 font-semibold transition-all duration-300 hover:bg-white hover:text-primary-500 text-sm"
                 >
                   <span>{t('cta.contactUs')}</span>
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,4 +168,3 @@ export default function ProjectsPage() {
     </>
   )
 }
-

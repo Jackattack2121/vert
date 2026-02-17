@@ -53,8 +53,6 @@ export default function LanguageSwitcher({ isSolid = true }: LanguageSwitcherPro
   }, [isOpen]);
 
   const handleLanguageChange = (newLocale: string) => {
-    // Use next-intl's router to navigate to the current path with new locale
-    // This automatically handles locale prefixes and cookie persistence
     router.replace(pathname, { locale: newLocale });
     setIsOpen(false);
   };
@@ -64,45 +62,45 @@ export default function LanguageSwitcher({ isSolid = true }: LanguageSwitcherPro
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+          'flex items-center gap-2 px-3 py-2 rounded-md font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300',
           isSolid
-            ? 'text-gray-900 hover:bg-gray-100'
-            : 'text-white hover:bg-white/10',
-          isOpen && 'bg-gray-100'
+            ? 'text-primary-500 hover:text-accent-gold'
+            : 'text-cream-100 hover:text-accent-gold',
+          isOpen && 'text-accent-gold'
         )}
         aria-label="Language selector"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <HiGlobeAlt className="w-5 h-5" />
+        <HiGlobeAlt className="w-4 h-4" />
         <span className="hidden md:inline">{currentLanguage.name}</span>
         <span className="md:hidden">{currentLanguage.code.toUpperCase()}</span>
         <HiChevronDown
-          className={cn('w-4 h-4 transition-transform', isOpen && 'rotate-180')}
+          className={cn('w-3.5 h-3.5 transition-transform duration-300', isOpen && 'rotate-180')}
         />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-48 bg-white/80 backdrop-blur-md rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+        <div className="absolute right-0 top-full mt-2 w-48 bg-white/95 backdrop-blur-md rounded-md shadow-elegant-lg ring-1 ring-primary-500/5 z-50">
           <div className="py-1" role="menu" aria-orientation="vertical">
             {languages.map((language) => (
               <button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
                 className={cn(
-                  'flex items-center gap-3 w-full px-4 py-2 text-sm text-left transition-colors',
+                  'flex items-center gap-3 w-full px-4 py-2.5 font-sans text-sm text-left transition-colors duration-200',
                   locale === language.code
-                    ? 'bg-primary-50 text-primary-700 font-semibold'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-cream-200 text-accent-gold font-medium'
+                    : 'text-primary-500 hover:bg-cream-100 hover:text-accent-gold'
                 )}
                 role="menuitem"
                 aria-current={locale === language.code ? 'true' : undefined}
               >
-                <span className="text-xl">{language.flag}</span>
+                <span className="text-lg">{language.flag}</span>
                 <span className="flex-1">{language.name}</span>
                 {locale === language.code && (
                   <svg
-                    className="w-4 h-4 text-primary-600"
+                    className="w-4 h-4 text-accent-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

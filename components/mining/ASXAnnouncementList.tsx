@@ -19,7 +19,7 @@ interface ASXAnnouncementListProps {
 
 export default function ASXAnnouncementList({ announcements, limit }: ASXAnnouncementListProps) {
   const [searchTerm, setSearchTerm] = useState('')
-  
+
   const filteredAnnouncements = announcements
     .filter((announcement) =>
       announcement.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -36,7 +36,7 @@ export default function ASXAnnouncementList({ announcements, limit }: ASXAnnounc
             placeholder="Search announcements..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-500 focus:outline-none transition-colors"
+            className="w-full px-4 py-3 border-2 border-secondary-300 rounded-md focus:border-primary-500 focus:outline-none transition-colors font-sans"
           />
         </div>
       )}
@@ -46,20 +46,20 @@ export default function ASXAnnouncementList({ announcements, limit }: ASXAnnounc
         {filteredAnnouncements.map((announcement) => (
           <div
             key={announcement.id}
-            className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            className="bg-white border border-secondary-200 rounded-md p-6 hover:shadow-elegant transition-shadow"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
                   <EnglishOnlyWrapper>
-                    <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wider rounded">
+                    <span className="inline-block px-3 py-1 bg-cream-200 text-primary-600 text-xs font-sans font-medium tracking-wide rounded-md">
                       {announcement.category}
                     </span>
                   </EnglishOnlyWrapper>
-                  <span className="text-sm text-gray-500">{announcement.date}</span>
+                  <span className="text-sm font-sans text-secondary-400">{announcement.date}</span>
                 </div>
                 <EnglishOnlyWrapper>
-                  <h3 className="text-lg font-semibold text-gray-900 hover:text-primary-600 transition-colors">
+                  <h3 className="text-lg font-serif font-light text-primary-500 hover:text-accent-gold transition-colors">
                     {announcement.title}
                   </h3>
                 </EnglishOnlyWrapper>
@@ -69,7 +69,7 @@ export default function ASXAnnouncementList({ announcements, limit }: ASXAnnounc
                   <a
                     href={announcement.file}
                     download
-                    className="inline-flex items-center px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded hover:bg-primary-700 transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-primary-500 text-white text-sm font-sans font-medium rounded-md hover:bg-primary-600 transition-colors"
                   >
                     <svg
                       className="w-4 h-4 mr-2"
@@ -95,11 +95,10 @@ export default function ASXAnnouncementList({ announcements, limit }: ASXAnnounc
       </div>
 
       {filteredAnnouncements.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
+        <div className="text-center py-12 text-secondary-400 font-sans">
           No announcements found.
         </div>
       )}
     </div>
   )
 }
-

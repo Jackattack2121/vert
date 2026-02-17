@@ -151,18 +151,19 @@ export default function CompanyPageLayout({ slug }: Props) {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-r from-primary-900 to-primary-700">
+      {/* Hero Section - Montfort-style deep teal */}
+      <section className="relative py-40 md:py-48 bg-primary-500">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url(${pageData.heroImage})` }}
         />
-        <div className="relative container text-center text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wider">
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+        <div className="container relative z-10">
+          <h1 className="font-serif font-light text-hero text-cream-100 mb-4">
             {pageData.heroTitle}
           </h1>
           {pageData.heroSubtitle && (
-            <p className="text-xl md:text-2xl mt-4 font-light">
+            <p className="font-sans text-xl text-cream-200 opacity-90 max-w-2xl leading-relaxed">
               {pageData.heroSubtitle}
             </p>
           )}
@@ -176,4 +177,3 @@ export default function CompanyPageLayout({ slug }: Props) {
     </>
   )
 }
-

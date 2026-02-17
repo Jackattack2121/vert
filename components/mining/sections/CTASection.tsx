@@ -11,8 +11,8 @@ interface CTASectionProps {
 
 export default function CTASection({ section, index }: CTASectionProps) {
   const bgClass = {
-    gradient: 'bg-gradient-to-r from-primary-800 to-primary-600',
-    primary: 'bg-primary-600',
+    gradient: 'bg-gradient-to-r from-primary-700 to-primary-500',
+    primary: 'bg-primary-500',
     secondary: 'bg-secondary-600',
   }[section.backgroundColor || 'gradient'];
 
@@ -21,10 +21,10 @@ export default function CTASection({ section, index }: CTASectionProps) {
       <div className="container">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-light mb-6">
               {section.heading}
             </h2>
-            <p className="text-xl mb-8 opacity-90">{section.description}</p>
+            <p className="text-xl font-sans mb-8 opacity-90">{section.description}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {section.buttons.map((button, idx) => (
                 <Button
@@ -38,7 +38,7 @@ export default function CTASection({ section, index }: CTASectionProps) {
             </div>
 
             {section.showReferences && section.references && section.references.length > 0 && (
-              <div className="mt-12 pt-8 border-t border-white/20 text-sm opacity-75">
+              <div className="mt-12 pt-8 border-t border-white/20 text-sm font-sans opacity-75">
                 <p className="mb-2">
                   <strong>References:</strong>
                 </p>
@@ -53,4 +53,3 @@ export default function CTASection({ section, index }: CTASectionProps) {
     </section>
   );
 }
-

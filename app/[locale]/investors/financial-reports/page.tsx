@@ -7,27 +7,27 @@ import { HiOutlineDocumentReport } from 'react-icons/hi'
 
 export default function FinancialReportsPage() {
   const t = useTranslations('investors.financialReports')
-  
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
+      <section className="relative bg-primary-500 py-32 md:py-40 overflow-hidden">
         {/* Background Image with fade */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: 'url(/images/mineral-resource-estimate-report-2023-05-28-08-30-13-utc.jpg)' }}
         />
-        
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-primary-600/60"></div>
-        
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+
         <div className="container relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-4">
                 {t('heroTitle')}
               </h1>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white/90">
+              <p className="font-sans text-xl text-cream-200 opacity-90">
                 {t('heroSubtitle')}
               </p>
             </div>

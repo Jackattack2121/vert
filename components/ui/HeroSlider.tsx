@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules'
 import gsap from 'gsap'
@@ -26,21 +26,20 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    // Animate text content for the active slide
     const titleElements = document.querySelectorAll('.hero-title')
     const subtitleElements = document.querySelectorAll('.hero-subtitle')
-    
+
     if (titleElements[activeIndex] && subtitleElements[activeIndex]) {
       const tl = gsap.timeline()
-      
+
       tl.fromTo(
         titleElements[activeIndex],
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 }
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', delay: 0.3 }
       ).fromTo(
         subtitleElements[activeIndex],
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+        { opacity: 0, y: 25 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
         '-=0.4'
       )
 
@@ -55,7 +54,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"
-        speed={1000}
+        speed={1200}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -83,31 +82,31 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
                   >
                     <source src={slide.video} type="video/mp4" />
                   </video>
-                  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                  <div className="absolute inset-0 bg-primary-500/60"></div>
                 </div>
               ) : (
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${slide.image})` }}
                 >
-                  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                  <div className="absolute inset-0 bg-primary-500/60"></div>
                 </div>
               )}
 
               {/* Content */}
-              <div className="relative h-full flex items-center justify-center text-center text-white">
-                <div className="container max-w-4xl px-4">
+              <div className="relative h-full flex items-center justify-center text-center text-cream-100">
+                <div className="container max-w-5xl px-6">
                   <div className="hero-title opacity-0">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wider mb-6 font-montserrat">
+                    <h1 className="font-serif font-light text-4xl md:text-5xl lg:text-7xl leading-tight tracking-tight mb-6">
                       {slide.title}
                     </h1>
                   </div>
                   <div className="hero-subtitle opacity-0">
-                    <p className="text-lg md:text-xl lg:text-2xl font-light italic tracking-widest font-josefin mb-4">
+                    <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide mb-4 opacity-90">
                       {slide.subtitle}
                     </p>
                     {slide.description && (
-                      <p className="text-base md:text-lg max-w-3xl mx-auto">
+                      <p className="font-sans text-base md:text-lg max-w-3xl mx-auto opacity-80">
                         {slide.description}
                       </p>
                     )}
@@ -119,26 +118,24 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
         ))}
       </Swiper>
 
-      {/* Custom Pagination Styles */}
+      {/* Custom Pagination Styles - Montfort aesthetic */}
       <style jsx global>{`
         .swiper-pagination {
           bottom: 40px !important;
         }
         .swiper-pagination-bullet {
-          width: 12px;
-          height: 12px;
-          background: white;
-          opacity: 0.5;
-          transition: all 0.3s;
+          width: 10px;
+          height: 10px;
+          background: rgba(250, 249, 246, 0.5);
+          opacity: 1;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .swiper-pagination-bullet-active {
-          opacity: 1;
-          width: 40px;
-          border-radius: 6px;
-          background: #2563eb;
+          width: 36px;
+          border-radius: 5px;
+          background: #C9A961;
         }
       `}</style>
     </div>
   )
 }
-

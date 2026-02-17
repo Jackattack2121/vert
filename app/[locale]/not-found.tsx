@@ -1,31 +1,25 @@
 import { Link } from '@/i18n/navigation'
-import Button from '@/components/ui/Button'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-primary-900 to-primary-700">
-      <div className="container text-center text-white px-4">
-        <h1 className="text-9xl font-bold mb-4">404</h1>
-        <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-primary-500">
+      <div className="container text-center text-cream-100 px-4">
+        <h1 className="font-serif font-light text-[10rem] leading-none mb-4 text-accent-gold">404</h1>
+        <h2 className="font-serif font-light text-3xl md:text-4xl mb-6">
           Page Not Found
         </h2>
-        <p className="text-xl mb-8 font-josefin italic">
-          Sorry, the page you're looking for doesn't exist or has been moved.
+        <p className="font-sans text-lg opacity-80 max-w-lg mx-auto mb-10 leading-relaxed">
+          Sorry, the page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/">
-            <button className="btn-primary">
-              Go to Homepage
-            </button>
+          <Link href="/" className="btn-primary">
+            Go to Homepage
           </Link>
-          <Link href="/contact">
-            <button className="bg-transparent border-2 border-white text-white px-8 py-3 font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-primary-900">
-              Contact Us
-            </button>
+          <Link href="/contact" className="btn-secondary border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500">
+            Contact Us
           </Link>
         </div>
       </div>
     </div>
   )
 }
-

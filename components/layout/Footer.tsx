@@ -8,51 +8,78 @@ import { HiMail } from 'react-icons/hi'
 
 export default function Footer() {
   const t = useTranslations('footer')
-  const tProjects = useTranslations('footer.projects')
   const tCompany = useTranslations('footer.company')
   const tInvestors = useTranslations('footer.investors')
   const tLocation = useTranslations('footer.location')
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-secondary-900 text-white">
+    <footer className="bg-primary-500 text-cream-100">
       <div className="container section-padding-small">
-        {/* Logo */}
-        <div className="mb-12">
-          <div className="relative h-12 w-auto mb-4">
-            <Image
-              src="/vert-logo.svg"
-              alt="Vert Capital"
-              width={150}
-              height={48}
-              className="h-12 w-auto object-contain brightness-0 invert"
-            />
+        {/* Newsletter Section - Montfort style top of footer */}
+        <div className="mb-16 pb-16 border-b border-cream-100/10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="font-serif font-light text-3xl lg:text-4xl mb-4">{t('newsletter.title')}</h3>
+              <p className="font-sans text-cream-200 opacity-80 text-base">
+                {t('newsletter.subtitle')}
+              </p>
+            </div>
+            <div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder={t('newsletter.placeholder')}
+                  className="flex-1 px-5 py-4 bg-cream-100/10 text-cream-100 placeholder:text-cream-300/50
+                             border border-cream-100/20 rounded-md font-sans text-sm
+                             focus:border-accent-gold focus:outline-none transition-colors duration-300"
+                />
+                <button className="px-8 py-4 bg-accent-gold text-white font-sans font-medium text-sm
+                                   tracking-wide rounded-md transition-all duration-300
+                                   hover:bg-accent-goldDark hover:scale-[1.02] whitespace-nowrap">
+                  {t('newsletter.button')}
+                </button>
+              </div>
+            </div>
           </div>
-          <p className="text-sm text-gray-400 mt-4 max-w-md">
-            {t('tagline')}
-          </p>
         </div>
 
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        {/* Main Footer Content - Multi-column Montfort style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          {/* Logo & Tagline */}
+          <div className="lg:col-span-2">
+            <div className="relative h-11 w-auto mb-6">
+              <Image
+                src="/vert-logo.svg"
+                alt="Vert Capital"
+                width={150}
+                height={44}
+                className="h-11 w-auto object-contain brightness-0 invert"
+              />
+            </div>
+            <p className="font-sans text-sm text-cream-200 opacity-70 max-w-sm leading-relaxed">
+              {t('tagline')}
+            </p>
+          </div>
+
           {/* Services */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider mb-6">
+            <h4 className="font-sans text-xs font-medium tracking-[0.1em] uppercase mb-6 text-accent-gold">
               {t('navigation.servicesTitle')}
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/services" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="/services" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {t('services.corporateAdvisory')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="/services" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {t('services.capitalRaising')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="/services" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {t('services.assetManagement')}
                 </Link>
               </li>
@@ -61,57 +88,23 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider mb-6">
+            <h4 className="font-sans text-xs font-medium tracking-[0.1em] uppercase mb-6 text-accent-gold">
               {t('navigation.companyTitle')}
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="/about" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {tCompany('about')}
                 </Link>
               </li>
               <li>
-                <Link href="/companies" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="/companies" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {tCompany('companies')}
                 </Link>
               </li>
               <li>
-                <Link href="/sponsorships" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="/sponsorships" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {tCompany('sponsorships')}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider mb-6">
-              {t('navigation.resourcesTitle')}
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/news" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  {t('resources.news')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  {t('resources.contact')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/investors/presentations" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  {tInvestors('presentations')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/investors/fact-sheet" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  {tInvestors('factSheet')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/prospectus" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  {tInvestors('prospectus')}
                 </Link>
               </li>
             </ul>
@@ -119,19 +112,19 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider mb-6">
+            <h4 className="font-sans text-xs font-medium tracking-[0.1em] uppercase mb-6 text-accent-gold">
               {t('navigation.contactTitle')}
             </h4>
-            <div className="space-y-3 text-sm text-gray-400">
+            <div className="space-y-3 font-sans text-sm text-cream-200 opacity-80">
               <p>{tLocation('city')}</p>
               <p>{tLocation('country')}</p>
               <p className="mt-4">
-                <a href="tel:+61894810389" className="hover:text-white transition-colors">
+                <a href="tel:+61894810389" className="hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   +61 8 9481 0389
                 </a>
               </p>
               <p>
-                <a href="mailto:info@vertcapital.com.au" className="hover:text-white transition-colors">
+                <a href="mailto:info@vertcapital.com.au" className="hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   info@vertcapital.com.au
                 </a>
               </p>
@@ -139,48 +132,28 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="border-t border-white/10 pt-12 mb-12">
-          <div className="max-w-2xl">
-            <h3 className="text-2xl font-bold mb-4 uppercase tracking-wider">{t('newsletter.title')}</h3>
-            <p className="text-gray-400 mb-6">
-              {t('newsletter.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder={t('newsletter.placeholder')}
-                className="flex-1 px-4 py-3 bg-white/10 text-white placeholder:text-gray-500 border border-white/20 focus:border-primary-500 focus:outline-none transition-colors"
-              />
-              <button className="btn-primary whitespace-nowrap">
-                {t('newsletter.button')}
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/10 pt-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-cream-100/10 pt-8">
           <div className="flex items-center gap-6">
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-cream-200 opacity-60 hover:text-accent-gold hover:opacity-100 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <FaLinkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:info@vertcapital.com.au"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-cream-200 opacity-60 hover:text-accent-gold hover:opacity-100 transition-all duration-300"
               aria-label="Email"
             >
               <HiMail className="w-5 h-5" />
             </a>
           </div>
           <div className="text-center md:text-right">
-            <p className="text-xs text-gray-500">
+            <p className="font-sans text-xs text-cream-200 opacity-50">
               {t('copyright', { year: currentYear })}
             </p>
           </div>

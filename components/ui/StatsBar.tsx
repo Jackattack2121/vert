@@ -9,15 +9,16 @@ interface Stat {
 interface StatsBarProps {
   stats: Stat[]
   variant?: 'horizontal' | 'grid'
-  background?: 'dark' | 'light' | 'blue'
+  background?: 'dark' | 'light' | 'teal' | 'cream'
   className?: string
 }
 
-export default function StatsBar({ stats, variant = 'horizontal', background = 'dark', className }: StatsBarProps) {
+export default function StatsBar({ stats, variant = 'horizontal', background = 'teal', className }: StatsBarProps) {
   const backgrounds = {
-    dark: 'bg-secondary-900 text-white',
-    light: 'bg-gray-50 text-gray-900',
-    blue: 'bg-primary-600 text-white',
+    dark: 'bg-primary-700 text-cream-100',
+    light: 'bg-white text-primary-500',
+    teal: 'bg-primary-500 text-cream-100',
+    cream: 'bg-cream-200 text-primary-500',
   }
 
   return (
@@ -33,14 +34,14 @@ export default function StatsBar({ stats, variant = 'horizontal', background = '
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-5xl md:text-6xl lg:text-7xl font-black mb-2 tracking-tight">
+              <div className="font-serif text-5xl md:text-6xl lg:text-7xl font-light mb-3 tracking-tight text-accent-gold">
                 {stat.value}
               </div>
-              <div className="text-sm md:text-base uppercase tracking-wider font-semibold opacity-80">
+              <div className="text-sm md:text-base font-sans font-medium tracking-wide opacity-90">
                 {stat.label}
               </div>
               {stat.sublabel && (
-                <div className="text-xs md:text-sm mt-1 opacity-60">
+                <div className="text-xs md:text-sm mt-1 font-sans opacity-60">
                   {stat.sublabel}
                 </div>
               )}
@@ -51,4 +52,3 @@ export default function StatsBar({ stats, variant = 'horizontal', background = '
     </section>
   )
 }
-

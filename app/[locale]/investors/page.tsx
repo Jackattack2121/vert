@@ -6,9 +6,9 @@ import SubscriptionForm from '@/components/investor/SubscriptionForm'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import { Link } from '@/i18n/navigation'
-import { 
-  HiOutlineDocumentText, 
-  HiOutlinePresentationChartLine, 
+import {
+  HiOutlineDocumentText,
+  HiOutlinePresentationChartLine,
   HiOutlineCalendar,
   HiOutlineChartBar,
   HiOutlineDownload,
@@ -60,23 +60,23 @@ export default function InvestorCentre() {
   return (
     <>
       {/* Hero Section - Minimal */}
-      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
+      <section className="relative bg-primary-500 py-32 md:py-40 overflow-hidden">
         {/* Background Image with fade */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: 'url(/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg)' }}
         />
-        
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-primary-600/60"></div>
-        
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+
         <div className="container relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-4">
                 {t('centre.title')}
               </h1>
-              <p className="text-base text-white/90">
+              <p className="font-sans text-xl text-cream-200 opacity-90">
                 {t('centre.subtitle')}
               </p>
             </div>
@@ -91,7 +91,7 @@ export default function InvestorCentre() {
             <AnimatedSection className="lg:col-span-2">
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary-600 mb-2">
+                  <p className="text-xs font-serif font-normal tracking-wider text-primary-500 mb-2">
                     LIVE MARKET DATA
                   </p>
                 </div>
@@ -99,14 +99,14 @@ export default function InvestorCentre() {
                   <TradingViewWidget symbol="ASX:YUG|1M|AUD" />
                 </div>
                 <div className="space-y-2">
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs font-sans text-secondary-500 leading-relaxed">
                     Share price data provided by TradingView. 20-minute delay. Not financial advice.
                   </p>
-                  <a 
-                    href="https://www.asx.com.au/markets/company/YUG" 
-                    target="_blank" 
+                  <a
+                    href="https://www.asx.com.au/markets/company/YUG"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary-600 hover:text-primary-700 font-semibold"
+                    className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 font-semibold"
                     aria-label="View real-time YUG share price on ASX website (opens in new tab)"
                   >
                     View real-time price on ASX.com.au
@@ -129,10 +129,10 @@ export default function InvestorCentre() {
         <div className="container">
           <AnimatedSection>
             <div className="mb-16">
-              <h2 className="text-heading-lg text-secondary-900 mb-4">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-4">
                 {t('centre.resourcesTitle')}
               </h2>
-              <div className="w-24 h-1 bg-primary-600"></div>
+              <div className="w-24 h-1 bg-primary-500"></div>
             </div>
           </AnimatedSection>
 
@@ -141,22 +141,22 @@ export default function InvestorCentre() {
               const Icon = link.icon
               return (
                 <AnimatedSection key={link.title} delay={index * 0.05}>
-                  <Link 
+                  <Link
                     href={link.href}
-                    className="block focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 rounded-lg"
+                    className="block focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2 rounded-md"
                     aria-label={`Navigate to ${link.title}`}
                   >
-                    <div className="group bg-white border border-gray-200 p-8 hover-lift hover:border-primary-600 transition-all h-full rounded-lg">
-                      <div className="bg-primary-50 p-4 rounded-lg inline-block mb-4">
-                        <Icon className="w-16 h-16 text-primary-600 transition-transform group-hover:scale-110" aria-hidden="true" />
+                    <div className="group bg-white border border-primary-500/10 p-8 hover-lift hover:border-primary-500 transition-all h-full rounded-md">
+                      <div className="bg-cream-100 p-4 rounded-md inline-block mb-4">
+                        <Icon className="w-16 h-16 text-primary-500 transition-transform group-hover:scale-110" aria-hidden="true" />
                       </div>
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 transition-colors uppercase tracking-wide">
+                      <h3 className="text-xl font-serif font-normal mb-3 group-hover:text-primary-500 transition-colors tracking-wide">
                         {link.title}
                       </h3>
-                      <p className="text-base text-gray-600 leading-relaxed mb-4">
+                      <p className="text-base font-sans text-secondary-500 leading-relaxed mb-4">
                         {link.description}
                       </p>
-                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-600">
+                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-500">
                         <span>{tQuickLinks('view')}</span>
                         <svg className="w-3 h-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -172,10 +172,10 @@ export default function InvestorCentre() {
       </section>
 
       {/* Contact IR Team - Compact Banner */}
-      <section className="py-16 bg-primary-600 text-white text-center">
+      <section className="py-16 bg-primary-500 text-cream-100 text-center">
         <div className="container max-w-4xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl font-serif font-light mb-4">
               {t('centre.questionsTitle')}
             </h2>
             <p className="text-lg mb-8 opacity-90">
@@ -185,9 +185,9 @@ export default function InvestorCentre() {
               <Button href="/investors/contact" variant="secondary">
                 {t('centre.contactIrButton')}
               </Button>
-              <a 
+              <a
                 href="/investors/fact-sheet"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-cream-100 text-cream-100 font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-cream-100 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-cream-100 focus:ring-offset-2 focus:ring-offset-primary-500"
                 aria-label="Download company fact sheet"
               >
                 <span>{t('centre.downloadFactSheet')}</span>

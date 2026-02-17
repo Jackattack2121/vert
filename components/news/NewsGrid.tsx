@@ -27,19 +27,19 @@ export default function NewsGrid({ posts, currentPage, totalPages, category }: N
   return (
     <>
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {posts.map((post) => (
           <NewsCard key={post.id} post={post} locale={locale} />
         ))}
       </div>
 
-      {/* Pagination */}
+      {/* Pagination - Montfort minimal style */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center space-x-2">
           {currentPage > 1 && (
             <Link
               href={buildPageUrl(currentPage - 1)}
-              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+              className="px-5 py-2 border border-primary-500/20 rounded-md font-sans text-sm text-primary-500 hover:bg-primary-500 hover:text-cream-100 transition-all duration-300"
             >
               Previous
             </Link>
@@ -49,10 +49,10 @@ export default function NewsGrid({ posts, currentPage, totalPages, category }: N
             <Link
               key={page}
               href={buildPageUrl(page)}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-4 py-2 rounded-md font-sans text-sm transition-all duration-300 ${
                 page === currentPage
-                  ? 'bg-primary-600 text-white'
-                  : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  ? 'bg-primary-500 text-cream-100'
+                  : 'border border-primary-500/20 text-primary-500 hover:bg-primary-500 hover:text-cream-100'
               }`}
             >
               {page}
@@ -62,7 +62,7 @@ export default function NewsGrid({ posts, currentPage, totalPages, category }: N
           {currentPage < totalPages && (
             <Link
               href={buildPageUrl(currentPage + 1)}
-              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+              className="px-5 py-2 border border-primary-500/20 rounded-md font-sans text-sm text-primary-500 hover:bg-primary-500 hover:text-cream-100 transition-all duration-300"
             >
               Next
             </Link>

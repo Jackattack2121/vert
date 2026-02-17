@@ -34,7 +34,7 @@ export default function CompanySectionRenderer({ sections }: Props) {
 
           case 'two_column':
             return (
-              <section key={section.id} className="section-padding bg-gray-50">
+              <section key={section.id} className="section-padding bg-cream-100">
                 <div className="container">
                   <TwoColumnSection section={section} />
                 </div>
@@ -52,7 +52,7 @@ export default function CompanySectionRenderer({ sections }: Props) {
 
           case 'file_list':
             return (
-              <section key={section.id} className="section-padding bg-gray-50">
+              <section key={section.id} className="section-padding bg-cream-100">
                 <div className="container">
                   <FileListSection section={section} />
                 </div>
@@ -76,4 +76,3 @@ export default function CompanySectionRenderer({ sections }: Props) {
     </>
   )
 }
-

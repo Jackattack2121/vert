@@ -11,7 +11,7 @@ import { HiOutlineCheckCircle } from 'react-icons/hi'
 export default function WhyYugoMetals() {
   const t = useTranslations('company.about')
   const tButtons = useTranslations('buttons')
-  
+
   // Build reasons array from translations
   const reasons = [
     {
@@ -59,7 +59,7 @@ export default function WhyYugoMetals() {
     <>
       {/* Hero Section - Split */}
       <section className="grid md:grid-cols-2 min-h-[70vh]">
-        <div className="bg-secondary-900 flex items-center justify-center p-12">
+        <div className="bg-primary-500 flex items-center justify-center p-12">
           <div className="w-full max-w-sm">
             <Image
               src="/vert-logo.svg"
@@ -73,21 +73,21 @@ export default function WhyYugoMetals() {
         </div>
         <div className="relative overflow-hidden flex items-center p-8 md:p-12 lg:p-20">
           {/* Background Image with fade */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center opacity-20"
             style={{ backgroundImage: 'url(/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg)' }}
           />
-          
+
           {/* Blue Overlay */}
-          <div className="absolute inset-0 bg-primary-600/60"></div>
-          
+          <div className="absolute inset-0 bg-primary-500/60"></div>
+
           <div className="relative z-10">
             <AnimatedSection>
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-4">
                 {t('titleLine1')}<br />
                 {t('titleLine2')}
               </h1>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white/90">
+              <p className="font-sans text-sm font-normal tracking-wider text-cream-100/90">
                 {t('subtitle')}
               </p>
             </AnimatedSection>
@@ -101,13 +101,13 @@ export default function WhyYugoMetals() {
         leftContent={
           <div className="max-w-xl">
             <AnimatedSection>
-              <h2 className="text-heading-lg text-secondary-900 mb-8">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-8">
                 {t('introTitleLine1')}<br />
                 {t('introTitleLine2')}<br />
                 {t('introTitleLine3')}<br />
                 {t('introTitleLine4')}
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed font-josefin">
+              <p className="font-sans text-base text-secondary-500 leading-relaxed">
                 {t('introDescription')}
               </p>
             </AnimatedSection>
@@ -127,7 +127,7 @@ export default function WhyYugoMetals() {
 
       {/* Stats */}
       <StatsBar
-        background="blue"
+        background="teal"
         stats={[
           { value: '5', label: t('stat1') },
           { value: '100%', label: t('stat2') },
@@ -140,23 +140,23 @@ export default function WhyYugoMetals() {
         <div className="container">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-heading-lg text-secondary-900 mb-4">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-4">
                 {t('reasonsTitleLine1')}<br />
                 {t('reasonsTitleLine2')}
               </h2>
-              <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
+              <div className="w-24 h-1 bg-primary-500 mx-auto"></div>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {reasons.map((reason, index) => (
               <AnimatedSection key={index} delay={index * 0.1} className="h-full">
-                <div className="border-2 border-gray-200 p-8 hover:border-primary-600 transition-all h-full flex flex-col">
+                <div className="border-2 border-gray-200 p-8 hover:border-primary-500 transition-all h-full flex flex-col">
                   <div className="text-5xl mb-6">{reason.icon}</div>
-                  <h3 className="text-xl font-bold uppercase tracking-wider mb-4 text-secondary-900">
+                  <h3 className="text-xl font-serif font-normal mb-4 text-primary-500">
                     {reason.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed flex-grow">
+                  <p className="text-secondary-500 leading-relaxed flex-grow">
                     {reason.description}
                   </p>
                 </div>
@@ -171,15 +171,15 @@ export default function WhyYugoMetals() {
         fullHeight={false}
         reverse={true}
         leftContent={
-          <div className="p-12 bg-secondary-900 text-white flex items-center">
+          <div className="p-12 bg-primary-500 text-cream-100 flex items-center">
             <div className="max-w-xl">
               <AnimatedSection>
-                <h2 className="text-heading-lg mb-8">
+                <h2 className="font-serif font-light text-display text-cream-100 mb-8">
                   {t('modernExplorationTitleLine1')}<br />
                   {t('modernExplorationTitleLine2')}<br />
                   {t('modernExplorationTitleLine3')}
                 </h2>
-                <div className="space-y-6 text-lg leading-relaxed font-josefin opacity-90">
+                <div className="space-y-6 font-sans text-base leading-relaxed opacity-90">
                   <p>{t('modernExplorationParagraph1')}</p>
                   <p>{t('modernExplorationParagraph2')}</p>
                 </div>
@@ -200,17 +200,17 @@ export default function WhyYugoMetals() {
       />
 
       {/* Key Highlights */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-cream-100">
         <div className="container max-w-4xl">
           <AnimatedSection>
-            <h2 className="text-heading-xl text-secondary-900 text-center mb-12">
+            <h2 className="font-serif font-light text-display text-primary-500 text-center mb-12">
               {t('keyHighlights')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {highlights.map((highlight, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <HiOutlineCheckCircle className="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" />
-                  <span className="text-lg text-gray-700">{highlight}</span>
+                  <HiOutlineCheckCircle className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
+                  <span className="font-sans text-base text-secondary-600">{highlight}</span>
                 </div>
               ))}
             </div>
@@ -219,13 +219,13 @@ export default function WhyYugoMetals() {
       </section>
 
       {/* Critical Metals Section */}
-      <section className="section-padding bg-primary-600 text-white text-center">
+      <section className="section-padding bg-primary-500 text-cream-100 text-center">
         <div className="container max-w-4xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-heading-xl mb-4">
+            <h2 className="font-serif font-light text-display text-cream-100 mb-4">
               {t('criticalMetalsTitle')}
             </h2>
-            <p className="text-2xl font-josefin opacity-90">
+            <p className="text-2xl font-serif opacity-90">
               {t('criticalMetalsSubtitle')}
             </p>
           </AnimatedSection>
@@ -236,10 +236,10 @@ export default function WhyYugoMetals() {
       <section className="section-padding bg-white text-center">
         <div className="container max-w-4xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-heading-lg text-secondary-900 mb-6">
+            <h2 className="font-serif font-light text-display text-primary-500 mb-6">
               {t('ctaTitleLine1')}
             </h2>
-            <p className="text-xl text-gray-600 mb-12 font-josefin">
+            <p className="text-xl font-sans text-secondary-500 mb-12">
               {t('ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -24,7 +24,7 @@ export default function ProjectCard({
     <Link href={href}>
       <div
         className={cn(
-          'relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-2xl group h-full',
+          'relative overflow-hidden rounded-md shadow-elegant transition-all duration-500 hover:shadow-card-hover group h-full',
           className
         )}
       >
@@ -39,14 +39,14 @@ export default function ProjectCard({
 
           {/* Overlay Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-              <span className="inline-block px-3 py-1 bg-primary-600 text-white text-xs font-semibold uppercase tracking-wider mb-3">
+            <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+              <span className="inline-block px-3 py-1 bg-primary-500 text-white text-xs font-sans font-medium tracking-wide mb-3">
                 {type}
               </span>
-              <h3 className="text-2xl font-bold uppercase tracking-wider mb-2">
+              <h3 className="text-2xl font-serif font-light mb-2">
                 {title}
               </h3>
-              <p className="text-sm text-gray-300 mb-4 flex items-center">
+              <p className="text-sm text-cream-200 mb-4 flex items-center font-sans">
                 <svg
                   className="w-4 h-4 mr-2"
                   fill="currentColor"
@@ -67,10 +67,10 @@ export default function ProjectCard({
 
         {/* Description */}
         <div className="bg-white p-6">
-          <p className="text-gray-600 leading-relaxed line-clamp-3">
+          <p className="text-secondary-500 font-sans leading-relaxed line-clamp-3">
             {description}
           </p>
-          <div className="mt-4 flex items-center text-primary-600 font-semibold group-hover:text-primary-700 transition-colors">
+          <div className="mt-4 flex items-center text-primary-500 font-sans font-medium group-hover:text-accent-gold transition-colors">
             <span className="mr-2">Learn More</span>
             <svg
               className="w-4 h-4 transform transition-transform group-hover:translate-x-2"
@@ -92,4 +92,3 @@ export default function ProjectCard({
     </Link>
   )
 }
-

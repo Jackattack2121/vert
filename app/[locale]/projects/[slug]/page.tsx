@@ -133,7 +133,7 @@ export default async function ProjectPage({ params }: { params: { slug: string; 
       </section>
 
       {/* Stats Bar */}
-      <StatsBar background="blue" stats={project.stats} />
+      <StatsBar background="teal" stats={project.stats} />
 
       {/* Overview Split Section */}
       <SplitSection

@@ -31,39 +31,44 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   const totalPages = Math.ceil(total / postsPerPage);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+    <div className="min-h-screen">
+      {/* Hero Section - Montfort-style deep teal */}
+      <section className="bg-primary-500 py-40 md:py-48">
+        <div className="max-w-8xl mx-auto px-6 lg:px-12">
+          <h1 className="font-serif font-light text-hero text-cream-100 mb-4">
             News & Updates
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="font-sans text-xl text-cream-200 opacity-90 max-w-2xl leading-relaxed">
             Stay informed with the latest company news, project updates, and industry insights
           </p>
         </div>
+      </section>
 
-        {/* Category Filter */}
-        <NewsCategoryFilter 
-          categories={categories}
-          currentCategory={category}
-        />
+      {/* Content area */}
+      <section className="section-padding bg-cream-100">
+        <div className="max-w-8xl mx-auto px-6 lg:px-12">
+          {/* Category Filter */}
+          <NewsCategoryFilter
+            categories={categories}
+            currentCategory={category}
+          />
 
-        {/* News Grid */}
-        <NewsGrid 
-          posts={posts}
-          currentPage={page}
-          totalPages={totalPages}
-          category={category}
-        />
+          {/* News Grid */}
+          <NewsGrid
+            posts={posts}
+            currentPage={page}
+            totalPages={totalPages}
+            category={category}
+          />
 
-        {/* Empty State */}
-        {posts.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-600">No news articles found.</p>
-          </div>
-        )}
-      </div>
+          {/* Empty State */}
+          {posts.length === 0 && (
+            <div className="text-center py-16">
+              <p className="font-sans text-secondary-400">No news articles found.</p>
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

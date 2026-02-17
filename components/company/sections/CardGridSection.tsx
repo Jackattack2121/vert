@@ -19,7 +19,7 @@ export default function CardGridSection({ section }: Props) {
     <AnimatedSection>
       <div>
         {section.heading && (
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-light mb-12 text-center">
             {section.heading}
           </h2>
         )}
@@ -30,10 +30,10 @@ export default function CardGridSection({ section }: Props) {
                 {card.icon && (
                   <div className="text-4xl mb-4">{card.icon}</div>
                 )}
-                <h3 className="text-xl font-bold uppercase tracking-wider mb-3">
+                <h3 className="text-xl font-serif font-light mb-3">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-500 font-sans leading-relaxed">
                   {card.content}
                 </p>
               </>
@@ -43,14 +43,14 @@ export default function CardGridSection({ section }: Props) {
               <Link
                 key={index}
                 href={card.link}
-                className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                className="bg-white rounded-md p-6 shadow-elegant hover:shadow-card-hover transition-shadow cursor-pointer"
               >
                 {cardContent}
               </Link>
             ) : (
               <div
                 key={index}
-                className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white rounded-md p-6 shadow-elegant hover:shadow-card-hover transition-shadow"
               >
                 {cardContent}
               </div>
@@ -61,4 +61,3 @@ export default function CardGridSection({ section }: Props) {
     </AnimatedSection>
   )
 }
-

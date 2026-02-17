@@ -18,7 +18,7 @@ export default function Header() {
   const logoRef = useRef<HTMLImageElement>(null)
   const pathname = usePathname()
   const t = useTranslations('navigation.header')
-  
+
   // Check if we're on the homepage
   const isHomepage = pathname === '/' || pathname === ''
 
@@ -57,13 +57,12 @@ export default function Header() {
     }
   }, [mobileMenuOpen])
 
-  // Animate header background and logo when dropdown opens
+  // Animate header background when dropdown opens
   useEffect(() => {
     if (headerRef.current) {
       if (projectsDropdownOpen) {
-        // Dropdown opening - go dark
         gsap.to(headerRef.current, {
-          backgroundColor: '#0f172a', // secondary-900
+          backgroundColor: '#0A4D4D',
           duration: 0.4,
           ease: 'power3.out',
         })
@@ -75,8 +74,7 @@ export default function Header() {
           })
         }
       } else {
-        // Dropdown closing - return to normal
-        const targetBg = scrolled || !isHomepage ? '#ffffff' : 'transparent'
+        const targetBg = scrolled || !isHomepage ? '#FFFFFF' : 'transparent'
         const shouldInvert = !scrolled && isHomepage
         gsap.to(headerRef.current, {
           backgroundColor: targetBg,
@@ -94,46 +92,44 @@ export default function Header() {
     }
   }, [projectsDropdownOpen, scrolled, isHomepage])
 
-  // Determine if header should be solid (scrolled or not on homepage)
   const isSolid = scrolled || !isHomepage
-  // When dropdown is open, treat as dark theme
   const isDarkHeader = projectsDropdownOpen || (!isSolid && isHomepage)
 
   return (
     <header
       ref={headerRef}
       className={cn(
-        'fixed top-0 left-0 right-0 z-[60]',
-        isSolid && !projectsDropdownOpen && 'shadow-md'
+        'fixed top-0 left-0 right-0 z-[60] transition-shadow duration-300',
+        isSolid && !projectsDropdownOpen && 'shadow-[0_1px_0_rgba(0,0,0,0.06)]'
       )}
-      style={{ backgroundColor: projectsDropdownOpen ? '#0f172a' : (isSolid ? '#ffffff' : 'transparent') }}
+      style={{ backgroundColor: projectsDropdownOpen ? '#0A4D4D' : (isSolid ? '#FFFFFF' : 'transparent') }}
     >
       <div className="container">
-        <div className="flex items-center justify-between py-4 md:py-6">
+        <div className="flex items-center justify-between py-5 md:py-6">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-10 md:h-12 w-auto">
+            <div className="relative h-10 md:h-11 w-auto">
               <Image
                 ref={logoRef}
                 src="/vert-logo.svg"
                 alt="Vert Capital"
                 width={150}
-                height={48}
-                className="h-10 md:h-12 w-auto object-contain"
+                height={44}
+                className="h-10 md:h-11 w-auto object-contain"
                 style={{ filter: isDarkHeader ? 'brightness(0) invert(1)' : 'brightness(1) invert(0)' }}
                 priority
               />
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Desktop Navigation - Montfort-style clean minimal */}
+          <nav className="hidden lg:flex items-center gap-8">
             <Link
               href="/"
               className={cn(
-                'text-sm font-semibold uppercase tracking-wider transition-colors duration-[400ms] hover:text-primary-400',
-                isDarkHeader ? 'text-white' : 'text-gray-900',
-                pathname === '/' && 'text-primary-400'
+                'font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300 link-underline',
+                isDarkHeader ? 'text-cream-100 hover:text-accent-gold' : 'text-primary-500 hover:text-accent-gold',
+                pathname === '/' && 'text-accent-gold'
               )}
             >
               {t('homeLink')}
@@ -141,8 +137,8 @@ export default function Header() {
             <div className="relative group">
               <button
                 className={cn(
-                  'text-sm font-semibold uppercase tracking-wider transition-colors duration-[400ms] hover:text-primary-400',
-                  isDarkHeader ? 'text-white' : 'text-gray-900'
+                  'font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300',
+                  isDarkHeader ? 'text-cream-100 hover:text-accent-gold' : 'text-primary-500 hover:text-accent-gold'
                 )}
                 onMouseEnter={() => setProjectsDropdownOpen(true)}
                 onMouseLeave={() => setProjectsDropdownOpen(false)}
@@ -150,18 +146,18 @@ export default function Header() {
                 {t('servicesLink')}
               </button>
               {projectsDropdownOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-2 z-50"
+                <div
+                  className="absolute top-full left-0 mt-2 w-64 bg-white shadow-elegant-lg rounded-md py-2 z-50"
                   onMouseEnter={() => setProjectsDropdownOpen(true)}
                   onMouseLeave={() => setProjectsDropdownOpen(false)}
                 >
-                  <Link href="/services" className="block px-6 py-3 text-gray-900 hover:bg-primary-50 hover:text-primary-600 font-medium">
+                  <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
                     {t('corporateAdvisoryLink')}
                   </Link>
-                  <Link href="/services" className="block px-6 py-3 text-gray-900 hover:bg-primary-50 hover:text-primary-600 font-medium">
+                  <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
                     {t('capitalRaisingLink')}
                   </Link>
-                  <Link href="/services" className="block px-6 py-3 text-gray-900 hover:bg-primary-50 hover:text-primary-600 font-medium">
+                  <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
                     {t('assetManagementLink')}
                   </Link>
                 </div>
@@ -172,9 +168,9 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'text-sm font-semibold uppercase tracking-wider transition-colors duration-[400ms] hover:text-primary-400',
-                  isDarkHeader ? 'text-white' : 'text-gray-900',
-                  pathname === item.href && 'text-primary-400'
+                  'font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300 link-underline',
+                  isDarkHeader ? 'text-cream-100 hover:text-accent-gold' : 'text-primary-500 hover:text-accent-gold',
+                  pathname === item.href && 'text-accent-gold'
                 )}
               >
                 {item.name}
@@ -190,17 +186,17 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <HiX className={cn('w-6 h-6 transition-colors duration-[400ms]', isDarkHeader ? 'text-white' : 'text-gray-900')} />
+              <HiX className={cn('w-6 h-6 transition-colors duration-300', isDarkHeader ? 'text-cream-100' : 'text-primary-500')} />
             ) : (
-              <HiMenu className={cn('w-6 h-6 transition-colors duration-[400ms]', isDarkHeader ? 'text-white' : 'text-gray-900')} />
+              <HiMenu className={cn('w-6 h-6 transition-colors duration-300', isDarkHeader ? 'text-cream-100' : 'text-primary-500')} />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className="mobile-menu fixed top-0 right-0 bottom-0 w-full max-w-sm bg-secondary-900 text-white shadow-2xl lg:hidden translate-x-full z-50">
-        <div className="flex justify-between items-center p-6 border-b border-white/10">
+      {/* Mobile Menu - Montfort-style full-screen overlay */}
+      <div className="mobile-menu fixed top-0 right-0 bottom-0 w-full bg-primary-500 text-cream-100 lg:hidden translate-x-full z-50 overflow-y-auto">
+        <div className="flex justify-between items-center p-6 border-b border-cream-100/10">
           <div className="relative h-10 w-auto">
             <Image
               src="/vert-logo.svg"
@@ -214,20 +210,26 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
           >
-            <HiX className="w-6 h-6" />
+            <HiX className="w-6 h-6 text-cream-100" />
           </button>
         </div>
 
-        <nav className="p-6 space-y-6 overflow-y-auto max-h-[calc(100vh-100px)]">
-          <div>
-            <p className="text-xs uppercase tracking-wider opacity-60 mb-4">Navigation</p>
+        <nav className="p-8 space-y-8">
+          <div className="space-y-1">
+            <Link
+              href="/"
+              className="block py-4 font-serif text-2xl font-light tracking-wide hover:text-accent-gold transition-colors duration-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t('homeLink')}
+            </Link>
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'block py-3 text-base font-semibold uppercase tracking-wider hover:text-primary-400 transition-colors',
-                  pathname === item.href && 'text-primary-400'
+                  'block py-4 font-serif text-2xl font-light tracking-wide hover:text-accent-gold transition-colors duration-300',
+                  pathname === item.href && 'text-accent-gold'
                 )}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -236,26 +238,26 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="border-t border-white/10 pt-6">
-            <p className="text-xs uppercase tracking-wider opacity-60 mb-4">{t('servicesLink')}</p>
-            <div className="space-y-2">
+          <div className="border-t border-cream-100/10 pt-8">
+            <p className="text-xs font-sans tracking-[0.1em] opacity-50 mb-4 uppercase">{t('servicesLink')}</p>
+            <div className="space-y-1">
               <Link
                 href="/services"
-                className="block py-2 text-sm hover:text-primary-400 transition-colors"
+                className="block py-3 font-sans text-base text-cream-200 hover:text-accent-gold transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t('corporateAdvisoryLink')}
               </Link>
               <Link
                 href="/services"
-                className="block py-2 text-sm hover:text-primary-400 transition-colors"
+                className="block py-3 font-sans text-base text-cream-200 hover:text-accent-gold transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t('capitalRaisingLink')}
               </Link>
               <Link
                 href="/services"
-                className="block py-2 text-sm hover:text-primary-400 transition-colors"
+                className="block py-3 font-sans text-base text-cream-200 hover:text-accent-gold transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t('assetManagementLink')}
@@ -263,15 +265,13 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-6">
-            <div className="mb-4">
-              <LanguageSwitcher isSolid={true} />
-            </div>
+          <div className="border-t border-cream-100/10 pt-8">
+            <LanguageSwitcher isSolid={true} />
           </div>
 
-          <div className="border-t border-white/10 pt-6">
-            <p className="text-xs text-gray-400 mb-2">Contact</p>
-            <a href="mailto:info@vertcapital.com.au" className="text-sm hover:text-primary-400 transition-colors">
+          <div className="border-t border-cream-100/10 pt-8">
+            <p className="text-xs font-sans tracking-[0.1em] opacity-50 mb-3 uppercase">Contact</p>
+            <a href="mailto:info@vertcapital.com.au" className="font-sans text-sm text-cream-200 hover:text-accent-gold transition-colors duration-300">
               info@vertcapital.com.au
             </a>
           </div>
@@ -281,7 +281,7 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 lg:hidden z-40"
+          className="fixed inset-0 bg-black/50 lg:hidden z-40"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}

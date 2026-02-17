@@ -2,11 +2,13 @@
 
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
+import Button from '@/components/ui/Button'
 import { Link } from '@/i18n/navigation'
+import { HiArrowRight } from 'react-icons/hi'
 
 export default function CompaniesPage() {
   const t = useTranslations('companies')
-  
+
   // Placeholder companies - will be populated with real data later
   const companies = [
     {
@@ -31,24 +33,24 @@ export default function CompaniesPage() {
       image: '/images/aerial-view-over-the-sand-pit-2025-10-13-02-21-23-utc.jpg'
     }
   ]
-  
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+      {/* Hero Section - Montfort deep teal */}
+      <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: 'url(/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg)' }}
         />
-        <div className="absolute inset-0 bg-primary-600/60"></div>
-        
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+
         <div className="container relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-6">
                 {t('heroTitle')}
               </h1>
-              <p className="text-xl text-white/90">
+              <p className="font-sans text-xl text-cream-200 opacity-90 max-w-2xl leading-relaxed">
                 {t('heroSubtitle')}
               </p>
             </div>
@@ -56,13 +58,14 @@ export default function CompaniesPage() {
         </div>
       </section>
 
-      {/* Companies Grid */}
-      <section className="section-padding bg-white">
+      {/* Companies Grid - Montfort-style cream background */}
+      <section className="section-padding bg-cream-100">
         <div className="container">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-heading-xl mb-4">{t('portfolioTitle')}</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="mb-16">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-2">{t('portfolioTitle')}</h2>
+              <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-8"></div>
+              <p className="font-sans text-lg text-secondary-500 max-w-3xl leading-relaxed">
                 {t('portfolioSubtitle')}
               </p>
             </div>
@@ -71,22 +74,24 @@ export default function CompaniesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {companies.map((company) => (
               <AnimatedSection key={company.id}>
-                <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div 
-                    className="h-64 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${company.image})` }}
-                  />
-                  <div className="p-6">
-                    <div className="text-sm text-primary-600 font-semibold uppercase tracking-wider mb-2">
+                <div className="group bg-white rounded-md overflow-hidden shadow-elegant hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
+                  <div className="relative h-64 overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                      style={{ backgroundImage: `url(${company.image})` }}
+                    />
+                  </div>
+                  <div className="p-8">
+                    <span className="font-sans text-xs tracking-[0.1em] uppercase text-accent-gold mb-2 block">
                       {company.industry}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3">{company.name}</h3>
-                    <p className="text-gray-600 mb-4">
+                    </span>
+                    <h3 className="font-serif text-xl font-normal text-primary-500 mb-3">{company.name}</h3>
+                    <p className="font-sans text-secondary-500 leading-relaxed mb-4">
                       {company.description}
                     </p>
-                    <div className="text-primary-600 font-semibold uppercase tracking-wider text-sm">
-                      {t('learnMore')} →
-                    </div>
+                    <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
+                      {t('learnMore')} <HiArrowRight className="w-4 h-4" />
+                    </span>
                   </div>
                 </div>
               </AnimatedSection>
@@ -95,21 +100,18 @@ export default function CompaniesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gray-50">
+      {/* CTA Section - Montfort deep teal */}
+      <section className="section-padding bg-primary-500">
         <div className="container">
           <AnimatedSection>
-            <div className="bg-primary-600 rounded-2xl p-12 text-center text-white">
-              <h2 className="text-4xl font-bold mb-6">{t('ctaTitle')}</h2>
-              <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="font-serif font-light text-display text-cream-100 mb-6">{t('ctaTitle')}</h2>
+              <p className="font-sans text-lg text-cream-200 opacity-80 mb-10 max-w-2xl mx-auto leading-relaxed">
                 {t('ctaDescription')}
               </p>
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-gray-100"
-              >
+              <Button href="/contact" variant="gold">
                 {t('ctaButton')}
-              </Link>
+              </Button>
             </div>
           </AnimatedSection>
         </div>

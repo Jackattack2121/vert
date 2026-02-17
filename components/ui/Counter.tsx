@@ -32,7 +32,7 @@ export default function Counter({ end, duration = 2, suffix = '', prefix = '', t
         onEnter: () => {
           if (hasAnimated.current) return
           hasAnimated.current = true
-          
+
           gsap.to({ val: 0 }, {
             val: end,
             duration,
@@ -51,18 +51,17 @@ export default function Counter({ end, duration = 2, suffix = '', prefix = '', t
   return (
     <div ref={counterRef} className="text-center">
       {icon && (
-        <div className="text-5xl mb-4 text-primary-500 flex justify-center">
+        <div className="text-5xl mb-4 text-accent-gold flex justify-center">
           {icon}
         </div>
       )}
-      <div className="text-4xl md:text-5xl font-bold text-primary-900 mb-2">
+      <div className="font-serif text-4xl md:text-5xl font-light text-accent-gold mb-2">
         {prefix}{count}{suffix}
       </div>
-      <h6 className="text-sm uppercase tracking-wider text-gray-600 font-semibold">
+      <h6 className="font-sans text-sm tracking-[0.05em] text-secondary-500 font-medium">
         {title}
       </h6>
-      <div className="w-12 h-0.5 bg-primary-600 mx-auto mt-4"></div>
+      <div className="w-12 h-0.5 bg-accent-gold mx-auto mt-4"></div>
     </div>
   )
 }
-

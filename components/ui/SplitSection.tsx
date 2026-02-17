@@ -15,7 +15,7 @@ export default function SplitSection({
   leftContent,
   rightContent,
   leftBg = 'bg-white',
-  rightBg = 'bg-white',
+  rightBg = 'bg-cream-200',
   reverse = false,
   className,
   fullHeight = true,
@@ -24,7 +24,7 @@ export default function SplitSection({
     <section
       className={cn(
         'grid md:grid-cols-2',
-        fullHeight && 'min-h-screen',
+        fullHeight && 'min-h-[80vh]',
         className
       )}
     >
@@ -49,4 +49,3 @@ export default function SplitSection({
     </section>
   )
 }
-

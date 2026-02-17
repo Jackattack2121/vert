@@ -67,7 +67,7 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
           placeholder={t('emailPlaceholder')}
           required
           aria-label="Email address for subscription"
-          className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          className="flex-1 px-4 py-3 bg-white border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent font-sans"
         />
         <button
           type="submit"
@@ -104,27 +104,27 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
 
   // Card variant - full form with preferences
   return (
-    <div className={`bg-white rounded-lg shadow-lg border border-primary-600 p-8 h-full flex flex-col ${className}`}>
+    <div className={`bg-white rounded-md shadow-elegant border border-primary-500 p-8 h-full flex flex-col ${className}`}>
       <div className="flex items-center space-x-3 mb-6">
-        <div className="bg-primary-50 p-3 rounded-lg">
-          <HiOutlineMail className="w-7 h-7 text-primary-600" />
+        <div className="bg-cream-100 p-3 rounded-md">
+          <HiOutlineMail className="w-7 h-7 text-primary-500" />
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-secondary-900">Email Updates</h3>
-          <p className="text-sm text-gray-600">Receive notifications for:</p>
+          <h3 className="text-2xl font-serif font-light text-primary-500">Email Updates</h3>
+          <p className="text-sm font-sans text-secondary-500">Receive notifications for:</p>
         </div>
       </div>
 
       {status === 'success' ? (
-        <div className="bg-primary-50 border border-primary-200 rounded-lg p-6 text-center flex-1 flex flex-col items-center justify-center" role="status" aria-live="polite">
-          <HiOutlineCheckCircle className="w-16 h-16 text-primary-600 mx-auto mb-3" aria-hidden="true" />
-          <p className="text-secondary-900 font-bold text-lg mb-2">Successfully Subscribed!</p>
-          <p className="text-sm text-gray-600">{message}</p>
+        <div className="bg-cream-100 border border-primary-200 rounded-md p-6 text-center flex-1 flex flex-col items-center justify-center" role="status" aria-live="polite">
+          <HiOutlineCheckCircle className="w-16 h-16 text-primary-500 mx-auto mb-3" aria-hidden="true" />
+          <p className="text-primary-500 font-serif font-light text-lg mb-2">Successfully Subscribed!</p>
+          <p className="text-sm font-sans text-secondary-500">{message}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col" aria-label="Email subscription form">
           <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-secondary-900 mb-2">
+            <label htmlFor="name" className="block text-sm font-sans font-medium text-primary-500 mb-2">
               Name
             </label>
             <input
@@ -136,12 +136,12 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
               placeholder="Your name"
               required
               aria-required="true"
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-primary-600 transition-all text-secondary-900 placeholder-gray-400"
+              className="w-full px-4 py-3 bg-white border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all font-sans text-primary-500 placeholder-secondary-400"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-secondary-900 mb-2">
+            <label htmlFor="email" className="block text-sm font-sans font-medium text-primary-500 mb-2">
               Email Address
             </label>
             <input
@@ -153,12 +153,12 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
               placeholder="your.email@example.com"
               required
               aria-required="true"
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-primary-600 transition-all text-secondary-900 placeholder-gray-400"
+              className="w-full px-4 py-3 bg-white border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all font-sans text-primary-500 placeholder-secondary-400"
             />
           </div>
 
           <fieldset>
-            <legend className="block text-sm font-semibold text-secondary-900 mb-3">
+            <legend className="block text-sm font-sans font-medium text-primary-500 mb-3">
               Email Preferences
             </legend>
             <div className="space-y-2">
@@ -169,9 +169,9 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
                   checked={preferences.announcements}
                   onChange={() => togglePreference('announcements')}
                   aria-label="Subscribe to ASX Announcements"
-                  className="w-5 h-5 text-primary-600 bg-white border-gray-300 rounded focus:ring-primary-600 focus:ring-offset-0"
+                  className="w-5 h-5 text-primary-500 bg-white border-secondary-300 rounded focus:ring-primary-500 focus:ring-offset-0"
                 />
-                <span className="text-sm text-gray-700 group-hover:text-secondary-900 transition-colors">ASX Announcements</span>
+                <span className="text-sm font-sans text-secondary-600 group-hover:text-primary-500 transition-colors">ASX Announcements</span>
               </label>
               <label className="flex items-center space-x-3 cursor-pointer group">
                 <input
@@ -180,9 +180,9 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
                   checked={preferences.reports}
                   onChange={() => togglePreference('reports')}
                   aria-label="Subscribe to Quarterly & Annual Reports"
-                  className="w-5 h-5 text-primary-600 bg-white border-gray-300 rounded focus:ring-primary-600 focus:ring-offset-0"
+                  className="w-5 h-5 text-primary-500 bg-white border-secondary-300 rounded focus:ring-primary-500 focus:ring-offset-0"
                 />
-                <span className="text-sm text-gray-700 group-hover:text-secondary-900 transition-colors">Quarterly & Annual Reports</span>
+                <span className="text-sm font-sans text-secondary-600 group-hover:text-primary-500 transition-colors">Quarterly & Annual Reports</span>
               </label>
               <label className="flex items-center space-x-3 cursor-pointer group">
                 <input
@@ -191,15 +191,15 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
                   checked={preferences.news}
                   onChange={() => togglePreference('news')}
                   aria-label="Subscribe to Company News & Updates"
-                  className="w-5 h-5 text-primary-600 bg-white border-gray-300 rounded focus:ring-primary-600 focus:ring-offset-0"
+                  className="w-5 h-5 text-primary-500 bg-white border-secondary-300 rounded focus:ring-primary-500 focus:ring-offset-0"
                 />
-                <span className="text-sm text-gray-700 group-hover:text-secondary-900 transition-colors">Company News & Updates</span>
+                <span className="text-sm font-sans text-secondary-600 group-hover:text-primary-500 transition-colors">Company News & Updates</span>
               </label>
             </div>
           </fieldset>
 
           {status === 'error' && (
-            <div className="bg-red-50 border border-red-300 rounded-lg p-3 text-red-700 text-sm" role="alert" aria-live="polite">
+            <div className="bg-red-50 border border-red-300 rounded-md p-3 text-red-700 text-sm font-sans" role="alert" aria-live="polite">
               {message}
             </div>
           )}
@@ -209,7 +209,7 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
               type="submit"
               disabled={status === 'loading'}
               aria-label={status === 'loading' ? 'Subscribing to updates' : 'Subscribe to investor updates'}
-              className="w-full bg-primary-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-primary-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
+              className="w-full bg-primary-500 text-white font-sans font-medium py-4 px-6 rounded-md hover:bg-primary-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-elegant hover:shadow-elegant-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             >
               {status === 'loading' ? (
                 <>
@@ -224,7 +224,7 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
               )}
             </button>
 
-            <p className="text-xs text-gray-500 text-center mt-3" role="note">
+            <p className="text-xs font-sans text-secondary-400 text-center mt-3" role="note">
               We respect your privacy. Unsubscribe anytime.
             </p>
           </div>
@@ -233,4 +233,3 @@ export default function SubscriptionForm({ variant = 'inline', className = '' }:
     </div>
   )
 }
-

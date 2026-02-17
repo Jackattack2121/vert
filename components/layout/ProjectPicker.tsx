@@ -127,8 +127,8 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors duration-[400ms] hover:text-primary-400',
-          isOpen ? 'text-white' : (isSolid ? 'text-gray-900' : 'text-white')
+          'flex items-center gap-2 text-sm font-sans font-medium tracking-wide transition-colors duration-[400ms] hover:text-accent-gold',
+          isOpen ? 'text-white' : (isSolid ? 'text-primary-500' : 'text-white')
         )}
       >
         <span>{t('picker.title')}</span>
@@ -145,14 +145,14 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
       {/* Dropdown Panel */}
       <div
         ref={panelRef}
-        className="fixed left-0 right-0 top-[72px] md:top-[96px] bg-secondary-900 text-white overflow-hidden shadow-2xl z-40"
+        className="fixed left-0 right-0 top-[72px] md:top-[96px] bg-primary-500 text-white overflow-hidden shadow-2xl z-40"
         style={{ height: 0, opacity: 0, transform: 'translateY(-20px)' }}
       >
         <div className="max-w-6xl mx-auto px-6 py-8">
-          <p className="text-xs uppercase tracking-wider opacity-60 mb-6">
+          <p className="text-xs font-sans tracking-wide opacity-60 mb-6">
             {t('picker.subtitle')}
           </p>
-          
+
           {/* Two Column Layout */}
           <div className="grid grid-cols-2 gap-8">
             {/* Left Column - Project List */}
@@ -164,34 +164,34 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
                 onClick={() => setIsOpen(false)}
                   onMouseEnter={() => setHoveredProject(project.slug)}
                   className={cn(
-                    'block p-4 rounded transition-all duration-300 group',
+                    'block p-4 rounded-md transition-all duration-300 group',
                     hoveredProject === project.slug
-                      ? 'bg-white/10 border-l-4 border-primary-400'
+                      ? 'bg-white/10 border-l-4 border-accent-gold'
                       : 'bg-transparent border-l-4 border-transparent hover:bg-white/5'
                   )}
               >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-primary-400 opacity-60">
+                      <span className="text-xs font-sans font-medium text-accent-gold opacity-60">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <div>
                         <h3
                           className={cn(
-                            'text-base font-bold uppercase tracking-tight transition-colors',
+                            'text-base font-serif font-light tracking-tight transition-colors',
                             hoveredProject === project.slug
                               ? 'text-white'
-                              : 'text-gray-300 group-hover:text-white'
+                              : 'text-cream-200 group-hover:text-white'
                           )}
                         >
                           {project.title}
                         </h3>
                         <p
                           className={cn(
-                            'text-xs transition-colors mt-0.5',
+                            'text-xs font-sans transition-colors mt-0.5',
                             hoveredProject === project.slug
-                              ? 'text-primary-400'
-                              : 'text-gray-400 group-hover:text-primary-400'
+                              ? 'text-accent-gold'
+                              : 'text-cream-300 group-hover:text-accent-gold'
                           )}
                         >
                           {project.type}
@@ -202,8 +202,8 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
                       className={cn(
                         'w-4 h-4 transition-all flex-shrink-0',
                         hoveredProject === project.slug
-                          ? 'text-primary-400 translate-x-1'
-                          : 'text-gray-500 group-hover:text-white group-hover:translate-x-1'
+                          ? 'text-accent-gold translate-x-1'
+                          : 'text-cream-300 group-hover:text-white group-hover:translate-x-1'
                       )}
                       fill="none"
                       stroke="currentColor"
@@ -222,7 +222,7 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
             </div>
 
             {/* Right Column - Preview Image */}
-            <div className="relative h-[380px] rounded overflow-hidden">
+            <div className="relative h-[380px] rounded-md overflow-hidden">
               <div
                 ref={imageRef}
                 className="absolute inset-0 bg-cover bg-center transition-all duration-500"
@@ -230,9 +230,9 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h4 className="text-2xl font-bold mb-1">{currentProject.title}</h4>
-                  <p className="text-primary-400 font-semibold text-sm mb-1">{currentProject.type}</p>
-                  <p className="text-xs text-gray-300">{currentProject.location}</p>
+                  <h4 className="text-2xl font-serif font-light mb-1">{currentProject.title}</h4>
+                  <p className="text-accent-gold font-sans font-medium text-sm mb-1">{currentProject.type}</p>
+                  <p className="text-xs text-cream-200">{currentProject.location}</p>
                 </div>
               </div>
             </div>
@@ -250,4 +250,3 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
     </>
   )
 }
-
