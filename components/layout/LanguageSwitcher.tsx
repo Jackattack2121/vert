@@ -8,11 +8,8 @@ import { cn } from '@/lib/utils';
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'bs', name: 'Bosanski', flag: '🇧🇦' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'it', name: 'Italiano', flag: '🇮🇹' },
 ];
 
 interface LanguageSwitcherProps {

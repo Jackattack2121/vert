@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
  * Tests URL structure, locale detection, and routing behavior
  */
 
-const locales = ['en', 'de', 'bs', 'zh', 'ja', 'fr', 'it'];
+const locales = ['en', 'fr', 'zh'];
 
 test.describe('Locale Routing', () => {
   test('should access all pages in all locales', async ({ page }) => {
@@ -81,13 +81,13 @@ test.describe('Locale Routing', () => {
 
   test('should handle deep linking with locale', async ({ page }) => {
     // Direct access to deeply nested page
-    await page.goto('/de/investors/asx-announcements');
+    await page.goto('/fr/investors/asx-announcements');
     
     // Should load successfully
     await expect(page.locator('body')).toBeVisible();
     
     // Locale should be correct
-    await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
   });
 
   test('should not apply locale prefix to admin routes', async ({ page }) => {
@@ -97,7 +97,7 @@ test.describe('Locale Routing', () => {
     // Should not redirect to /en/admin/login
     const url = page.url();
     expect(url).toContain('/admin/login');
-    expect(url).not.toMatch(/\/(en|de|bs|zh|ja|fr|it)\/admin/);
+    expect(url).not.toMatch(/\/(en|fr|zh)\/admin/);
   });
 
   test('should not apply locale prefix to API routes', async ({ page }) => {
@@ -126,11 +126,11 @@ test.describe('Locale Routing', () => {
 
 test.describe('Locale Detection', () => {
   test('should detect locale from Accept-Language header', async ({ browser }) => {
-    // Create context with German Accept-Language header
+    // Create context with French Accept-Language header
     const context = await browser.newContext({
-      locale: 'de-DE',
+      locale: 'fr-FR',
       extraHTTPHeaders: {
-        'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8',
+        'Accept-Language': 'fr-FR,fr;q=0.9,en;q=0.8',
       },
     });
     
@@ -142,27 +142,27 @@ test.describe('Locale Detection', () => {
     // Wait for redirect
     await page.waitForLoadState('networkidle');
     
-    // Should redirect to German version (if no cookie exists)
+    // Should redirect to French version (if no cookie exists)
     const url = page.url();
     // Note: This behavior depends on middleware configuration
-    // May redirect to /de or stay on /en as default
+    // May redirect to /fr or stay on /en as default
     expect(url).toContain('/');
     
     await context.close();
   });
 
   test('should prefer cookie over Accept-Language header', async ({ browser }) => {
-    // Create context with French Accept-Language
+    // Create context with Chinese Accept-Language
     const context = await browser.newContext({
-      locale: 'fr-FR',
+      locale: 'zh-CN',
     });
     
     const page = await context.newPage();
     
-    // First set cookie to Italian
+    // First set cookie to French
     await context.addCookies([{
       name: 'NEXT_LOCALE',
-      value: 'it',
+      value: 'fr',
       domain: 'localhost',
       path: '/',
     }]);
@@ -171,10 +171,10 @@ test.describe('Locale Detection', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
     
-    // Should use cookie (Italian) instead of Accept-Language (French)
-    // Check if we end up on Italian version
+    // Should use cookie (French) instead of Accept-Language (Chinese)
+    // Check if we end up on French version
     const url = page.url();
-    expect(url).toContain('/it');
+    expect(url).toContain('/fr');
     
     await context.close();
   });
@@ -215,17 +215,17 @@ test.describe('SEO and Metadata', () => {
     );
     
     expect(hreflangValues).toContain('en');
-    expect(hreflangValues).toContain('de');
+    expect(hreflangValues).toContain('fr');
     expect(hreflangValues).toContain('x-default');
   });
 
   test('should have correct canonical URLs per locale', async ({ page }) => {
-    await page.goto('/de/investors');
+    await page.goto('/fr/investors');
     
     // Canonical should point to current locale version
     const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
     
-    expect(canonical).toContain('/de');
+    expect(canonical).toContain('/fr');
   });
 
   test('should have localized metadata', async ({ page }) => {
@@ -233,35 +233,35 @@ test.describe('SEO and Metadata', () => {
     await page.goto('/en');
     const enTitle = await page.title();
     
-    // German version
-    await page.goto('/de');
-    const deTitle = await page.title();
+    // French version
+    await page.goto('/fr');
+    const frTitle = await page.title();
     
     // Titles should be different (translated)
-    expect(enTitle).not.toBe(deTitle);
+    expect(enTitle).not.toBe(frTitle);
   });
 
   test('should have Open Graph locale metadata', async ({ page }) => {
-    await page.goto('/ja/investors');
+    await page.goto('/zh/investors');
     
     // Check for og:locale meta tag
     const ogLocale = await page.locator('meta[property="og:locale"]').getAttribute('content');
     
-    // Should be set to Japanese
-    expect(ogLocale).toBe('ja');
+    // Should be set to Chinese
+    expect(ogLocale).toBe('zh');
   });
 });
 
 test.describe('Navigation and Links', () => {
   test('should maintain locale when navigating between pages', async ({ page }) => {
-    await page.goto('/it/investors');
+    await page.goto('/fr/investors');
     
     // Click a link to another page
-    await page.click('a[href*="/it/projects"]');
+    await page.click('a[href*="/fr/projects"]');
     
-    // Should stay on Italian version
-    await expect(page).toHaveURL(/\/it\/projects/);
-    await expect(page.locator('html')).toHaveAttribute('lang', 'it');
+    // Should stay on French version
+    await expect(page).toHaveURL(/\/fr\/projects/);
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
   });
 
   test('should update all navigation links when locale changes', async ({ page }) => {
@@ -307,9 +307,9 @@ test.describe('Error Handling', () => {
   });
 
   test('should handle locale-specific 404 pages', async ({ page }) => {
-    await page.goto('/de/non-existent-page');
+    await page.goto('/fr/non-existent-page');
     
     // Even 404 page should respect locale
-    await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
   });
 });

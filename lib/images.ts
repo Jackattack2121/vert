@@ -20,8 +20,8 @@
 // LOGO — Used in Header, Footer, and Why Yugo Metals page
 // ---------------------------------------------------------------------------
 export const LOGO = {
-  /** Main logo file (SVG preferred). Used in header and footer. */
-  main: '/vert-logo.svg',
+  /** Main logo file (PNG). Used in header and footer. */
+  main: '/images/vert_logo.png',
 
   /**
    * White variant for dark backgrounds.
@@ -29,7 +29,7 @@ export const LOGO = {
    * white logo file, set it here and remove the CSS brightness/invert filters
    * in Header.tsx and Footer.tsx.
    */
-  white: '/vert-logo.svg',
+  white: '/images/vert_logo.png',
 
   /** Browser tab icon */
   favicon: '/favicon.ico',
@@ -114,7 +114,12 @@ export const SPONSORSHIP_IMAGES = {
 // COMPANY CARD IMAGES — Used on /companies listing page
 // ---------------------------------------------------------------------------
 export const COMPANY_CARD_IMAGES = {
-  company1: '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg',
-  company2: '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg',
-  company3: '/images/aerial-view-over-the-sand-pit-2025-10-13-02-21-23-utc.jpg',
+  meteoricResources: '/images/companies/imgi_5_Logo-Meteoric-Resources-Ltd-MEI.png',
+  techGenMetals: '/images/companies/imgi_6_Logo-TechGen-Metals-Ltd-TG1-2.png',
+  provinceResources: '/images/companies/imgi_7_Logo-Province-Resources-Ltd-PRL-1.png',
+  peakMinerals: '/images/companies/imgi_8_Logo-Peak-Minerals-Ltd-PUA.png',
+  msmCorporation: '/images/companies/imgi_9_Logo-MSM-Corporation-International-MSM-1.png',
+  raidenResources: '/images/companies/imgi_10_Logo-Raiden-Resources-Ltd-RDN-1.png',
+  minbosResources: '/images/companies/imgi_11_Logo-Minbos-Resources-Ltd-MNB-1.png',
+  ragusaMinerals: '/images/companies/imgi_12_Logo-Ragusa-Minerals-Ltd-RAS.png',
 } as const

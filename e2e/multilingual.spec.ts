@@ -7,16 +7,12 @@ import { test, expect } from '@playwright/test';
 
 const languages = [
   { code: 'en', name: 'English', nativeName: 'English' },
-  { code: 'de', name: 'German', nativeName: 'Deutsch' },
-  { code: 'bs', name: 'Bosnian', nativeName: 'Bosanski' },
-  { code: 'zh', name: 'Chinese', nativeName: '中文' },
-  { code: 'ja', name: 'Japanese', nativeName: '日本語' },
   { code: 'fr', name: 'French', nativeName: 'Français' },
-  { code: 'it', name: 'Italian', nativeName: 'Italiano' },
+  { code: 'zh', name: 'Chinese', nativeName: '中文' },
 ];
 
 test.describe('Language Switcher', () => {
-  test('should display all 7 languages in dropdown', async ({ page }) => {
+  test('should display all 3 languages in dropdown', async ({ page }) => {
     await page.goto('/en');
     
     // Click language switcher button
@@ -39,14 +35,14 @@ test.describe('Language Switcher', () => {
     // Open language switcher
     await page.click('[aria-label="Language selector"]');
     
-    // Select German
-    await page.click('text=Deutsch');
+    // Select French
+    await page.click('text=Français');
     
-    // Verify URL changed to German but kept the path
-    await expect(page).toHaveURL('/de/investors');
+    // Verify URL changed to French but kept the path
+    await expect(page).toHaveURL('/fr/investors');
     
-    // Verify page content is in German (check for German text)
-    await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+    // Verify page content is in French (check for French text)
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
   });
 
   test('should set cookie when switching languages', async ({ page, context }) => {
@@ -70,26 +66,26 @@ test.describe('Language Switcher', () => {
   });
 
   test('should persist language choice across page navigation', async ({ page }) => {
-    // Go to home page in Japanese
-    await page.goto('/ja');
+    // Go to home page in Chinese
+    await page.goto('/zh');
     
     // Navigate to different pages
-    await page.click('a[href*="/ja/investors"]');
-    await expect(page).toHaveURL(/\/ja\/investors/);
+    await page.click('a[href*="/zh/investors"]');
+    await expect(page).toHaveURL(/\/zh\/investors/);
     
-    // Language should still be Japanese
-    await expect(page.locator('html')).toHaveAttribute('lang', 'ja');
+    // Language should still be Chinese
+    await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
   });
 
   test('should highlight current language in dropdown', async ({ page }) => {
-    await page.goto('/de/investors');
+    await page.goto('/fr/investors');
     
     // Open language switcher
     await page.click('[aria-label="Language selector"]');
     
-    // German option should be marked as current
-    const germanOption = page.locator('button:has-text("Deutsch")');
-    await expect(germanOption).toHaveAttribute('aria-current', 'true');
+    // French option should be marked as current
+    const frenchOption = page.locator('button:has-text("Français")');
+    await expect(frenchOption).toHaveAttribute('aria-current', 'true');
   });
 
   test('should support keyboard navigation', async ({ page }) => {
@@ -124,13 +120,13 @@ test.describe('Language Switcher', () => {
       // Visit page in English
       await page.goto(`/en${pagePath}`);
       
-      // Switch to Italian
+      // Switch to Chinese
       await page.click('[aria-label="Language selector"]');
-      await page.click('text=Italiano');
+      await page.click('text=中文');
       
-      // Verify we're on the Italian version of the same page
-      await expect(page).toHaveURL(`/it${pagePath}`);
-      await expect(page.locator('html')).toHaveAttribute('lang', 'it');
+      // Verify we're on the Chinese version of the same page
+      await expect(page).toHaveURL(`/zh${pagePath}`);
+      await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
     }
   });
 

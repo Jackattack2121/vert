@@ -6,7 +6,7 @@ import AxeBuilder from '@axe-core/playwright';
  * Tests lang attributes, screen reader support, and keyboard navigation
  */
 
-const locales = ['en', 'de', 'bs', 'zh', 'ja', 'fr', 'it'];
+const locales = ['en', 'fr', 'zh'];
 
 test.describe('WCAG 2.1 Level AA Compliance', () => {
   test('should have no accessibility violations on home page', async ({ page }) => {
@@ -31,7 +31,7 @@ test.describe('WCAG 2.1 Level AA Compliance', () => {
 
   test('should have no accessibility violations in all locales', async ({ page }) => {
     // Test a subset of locales to keep test time reasonable
-    const testLocales = ['en', 'de', 'zh'];
+    const testLocales = ['en', 'fr', 'zh'];
     
     for (const locale of testLocales) {
       await page.goto(`/${locale}`);
@@ -91,14 +91,14 @@ test.describe('Lang Attribute Validation', () => {
     // Verify initial lang
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     
-    // Switch to Japanese
+    // Switch to Chinese
     await page.click('[aria-label="Language selector"]');
-    await page.click('text=日本語');
+    await page.click('text=中文');
     
-    await page.waitForURL('/ja/investors');
+    await page.waitForURL('/zh/investors');
     
     // Verify lang changed
-    await expect(page.locator('html')).toHaveAttribute('lang', 'ja');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
   });
 });
 

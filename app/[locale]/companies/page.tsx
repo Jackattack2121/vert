@@ -5,33 +5,77 @@ import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import { Link } from '@/i18n/navigation'
 import { HiArrowRight } from 'react-icons/hi'
+import Image from 'next/image'
 import { HERO_IMAGES, COMPANY_CARD_IMAGES } from '@/lib/images'
 
 export default function CompaniesPage() {
   const t = useTranslations('companies')
 
-  // Placeholder companies - will be populated with real data later
+  // Portfolio companies
   const companies = [
     {
       id: 1,
-      name: t('company1Name'),
-      industry: t('company1Industry'),
-      description: t('company1Description'),
-      image: COMPANY_CARD_IMAGES.company1
+      name: 'Meteoric Resources Ltd',
+      ticker: 'ASX: MEI',
+      industry: 'Mining & Resources',
+      description: 'Exploring and developing mineral resources with a focus on sustainable mining practices.',
+      image: COMPANY_CARD_IMAGES.meteoricResources
     },
     {
       id: 2,
-      name: t('company2Name'),
-      industry: t('company2Industry'),
-      description: t('company2Description'),
-      image: COMPANY_CARD_IMAGES.company2
+      name: 'TechGen Metals Ltd',
+      ticker: 'ASX: TG1',
+      industry: 'Mining & Resources',
+      description: 'Advancing technology metals projects for the future of sustainable energy and infrastructure.',
+      image: COMPANY_CARD_IMAGES.techGenMetals
     },
     {
       id: 3,
-      name: t('company3Name'),
-      industry: t('company3Industry'),
-      description: t('company3Description'),
-      image: COMPANY_CARD_IMAGES.company3
+      name: 'Province Resources Ltd',
+      ticker: 'ASX: PRL',
+      industry: 'Mining & Resources',
+      description: 'Developing green hydrogen and helium projects with a commitment to clean energy solutions.',
+      image: COMPANY_CARD_IMAGES.provinceResources
+    },
+    {
+      id: 4,
+      name: 'Peak Minerals Ltd',
+      ticker: 'ASX: PUA',
+      industry: 'Mining & Resources',
+      description: 'Exploring high-grade mineral deposits with a focus on copper and precious metals.',
+      image: COMPANY_CARD_IMAGES.peakMinerals
+    },
+    {
+      id: 5,
+      name: 'MSM Corporation International',
+      ticker: 'ASX: MSM',
+      industry: 'Mining & Resources',
+      description: 'International mining corporation specializing in strategic mineral development and partnerships.',
+      image: COMPANY_CARD_IMAGES.msmCorporation
+    },
+    {
+      id: 6,
+      name: 'Raiden Resources Ltd',
+      ticker: 'ASX: RDN',
+      industry: 'Mining & Resources',
+      description: 'Exploring battery metals and critical minerals for the renewable energy transition.',
+      image: COMPANY_CARD_IMAGES.raidenResources
+    },
+    {
+      id: 7,
+      name: 'Minbos Resources Ltd',
+      ticker: 'ASX: MNB',
+      industry: 'Mining & Resources',
+      description: 'Developing phosphate projects to support agricultural growth and food security in Africa.',
+      image: COMPANY_CARD_IMAGES.minbosResources
+    },
+    {
+      id: 8,
+      name: 'Ragusa Minerals Ltd',
+      ticker: 'ASX: RAS',
+      industry: 'Mining & Resources',
+      description: 'Exploring and developing gold and base metal projects with proven geological potential.',
+      image: COMPANY_CARD_IMAGES.ragusaMinerals
     }
   ]
 
@@ -72,26 +116,29 @@ export default function CompaniesPage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companies.map((company) => (
               <AnimatedSection key={company.id}>
                 <div className="group bg-white rounded-md overflow-hidden shadow-elegant hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
-                  <div className="relative h-64 overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                      style={{ backgroundImage: `url(${company.image})` }}
+                  <div className="relative h-48 overflow-hidden bg-cream-100 flex items-center justify-center p-8">
+                    <Image
+                      src={company.image}
+                      alt={company.name}
+                      width={300}
+                      height={150}
+                      className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-8">
+                  <div className="p-6">
                     <span className="font-sans text-xs tracking-[0.1em] uppercase text-accent-gold mb-2 block">
-                      {company.industry}
+                      {company.ticker}
                     </span>
-                    <h3 className="font-serif text-xl font-normal text-primary-500 mb-3">{company.name}</h3>
-                    <p className="font-sans text-secondary-500 leading-relaxed mb-4">
+                    <h3 className="font-serif text-lg font-normal text-primary-500 mb-2">{company.name}</h3>
+                    <p className="font-sans text-sm text-secondary-500 leading-relaxed mb-4">
                       {company.description}
                     </p>
-                    <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
-                      {t('learnMore')} <HiArrowRight className="w-4 h-4" />
+                    <span className="inline-flex items-center gap-2 font-sans text-xs font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
+                      {t('learnMore')} <HiArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>
