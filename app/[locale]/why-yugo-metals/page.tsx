@@ -144,14 +144,14 @@ export default function WhyYugoMetals() {
                 {t('reasonsTitleLine1')}<br />
                 {t('reasonsTitleLine2')}
               </h2>
-              <div className="w-24 h-1 bg-primary-500 mx-auto"></div>
+              <div className="w-16 h-0.5 bg-accent-gold mx-auto"></div>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {reasons.map((reason, index) => (
               <AnimatedSection key={index} delay={index * 0.1} className="h-full">
-                <div className="border-2 border-gray-200 p-8 hover:border-primary-500 transition-all h-full flex flex-col">
+                <div className="border border-primary-500/10 rounded-md p-8 hover:border-primary-500 hover:shadow-elegant transition-all h-full flex flex-col">
                   <div className="text-5xl mb-6">{reason.icon}</div>
                   <h3 className="text-xl font-serif font-normal mb-4 text-primary-500">
                     {reason.title}

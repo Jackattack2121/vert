@@ -78,28 +78,28 @@ export default function ProspectusPage() {
               {t('datesHeading')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <div className="border-2 border-gray-200 p-6">
-                <p className="text-sm font-semibold text-secondary-400 mb-2">{t('dateAnnouncementLabel')}</p>
+              <div className="border border-primary-500/10 rounded-md p-6">
+                <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-2">{t('dateAnnouncementLabel')}</p>
                 <p className="text-lg font-serif font-normal text-primary-500">{t('dateAnnouncement')}</p>
               </div>
-              <div className="border-2 border-gray-200 p-6">
-                <p className="text-sm font-semibold text-secondary-400 mb-2">{t('dateExDateLabel')}</p>
+              <div className="border border-primary-500/10 rounded-md p-6">
+                <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-2">{t('dateExDateLabel')}</p>
                 <p className="text-lg font-serif font-normal text-primary-500">{t('dateExDate')}</p>
               </div>
-              <div className="border-2 border-gray-200 p-6">
-                <p className="text-sm font-semibold text-secondary-400 mb-2">{t('dateRecordLabel')}</p>
+              <div className="border border-primary-500/10 rounded-md p-6">
+                <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-2">{t('dateRecordLabel')}</p>
                 <p className="text-lg font-serif font-normal text-primary-500">{t('dateRecord')}</p>
               </div>
-              <div className="border-2 border-gray-200 p-6">
-                <p className="text-sm font-semibold text-secondary-400 mb-2">{t('dateOpeningLabel')}</p>
+              <div className="border border-primary-500/10 rounded-md p-6">
+                <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-2">{t('dateOpeningLabel')}</p>
                 <p className="text-lg font-serif font-normal text-primary-500">{t('dateOpening')}</p>
               </div>
-              <div className="border-2 border-gray-200 p-6">
-                <p className="text-sm font-semibold text-secondary-400 mb-2">{t('dateClosingLabel')}</p>
+              <div className="border border-primary-500/10 rounded-md p-6">
+                <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-2">{t('dateClosingLabel')}</p>
                 <p className="text-lg font-serif font-normal text-primary-500">{t('dateClosing')}</p>
               </div>
-              <div className="border-2 border-gray-200 p-6">
-                <p className="text-sm font-semibold text-secondary-400 mb-2">{t('dateIssueLabel')}</p>
+              <div className="border border-primary-500/10 rounded-md p-6">
+                <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-2">{t('dateIssueLabel')}</p>
                 <p className="text-lg font-serif font-normal text-primary-500">{t('dateIssue')}</p>
               </div>
             </div>
@@ -112,18 +112,18 @@ export default function ProspectusPage() {
             </h2>
             <p className="text-secondary-500 mb-8">{t('documentsDescription')}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <a href="#" className="border-2 border-gray-200 p-8 hover:border-primary-500 transition-all flex items-center gap-4">
-                <HiOutlineDownload className="w-8 h-8 text-primary-500" />
+              <a href="#" className="border border-primary-500/10 rounded-md p-8 hover:border-primary-500 hover:shadow-elegant transition-all duration-300 flex items-center gap-4">
+                <HiOutlineDownload className="w-8 h-8 text-accent-gold" />
                 <div>
                   <h3 className="font-serif font-normal text-primary-500 mb-1">{t('prospectusDocument')}</h3>
-                  <p className="text-sm text-secondary-400">{t('prospectusDescription')}</p>
+                  <p className="font-sans text-sm text-secondary-400">{t('prospectusDescription')}</p>
                 </div>
               </a>
-              <a href="#" className="border-2 border-gray-200 p-8 hover:border-primary-500 transition-all flex items-center gap-4">
-                <HiOutlineDownload className="w-8 h-8 text-primary-500" />
+              <a href="#" className="border border-primary-500/10 rounded-md p-8 hover:border-primary-500 hover:shadow-elegant transition-all duration-300 flex items-center gap-4">
+                <HiOutlineDownload className="w-8 h-8 text-accent-gold" />
                 <div>
                   <h3 className="font-serif font-normal text-primary-500 mb-1">{t('formDocument')}</h3>
-                  <p className="text-sm text-secondary-400">{t('formDescription')}</p>
+                  <p className="font-sans text-sm text-secondary-400">{t('formDescription')}</p>
                 </div>
               </a>
             </div>
@@ -131,9 +131,9 @@ export default function ProspectusPage() {
 
           {/* Important Notice */}
           <AnimatedSection delay={0.4}>
-            <div className="bg-amber-50 border-2 border-amber-200 p-8">
+            <div className="bg-cream-200 border border-accent-gold/30 rounded-md p-8">
               <h3 className="text-xl font-serif font-normal text-primary-500 mb-4">{t('noticeHeading')}</h3>
-              <p className="text-secondary-600 leading-relaxed">{t('noticeContent')}</p>
+              <p className="font-sans text-secondary-500 leading-relaxed">{t('noticeContent')}</p>
             </div>
           </AnimatedSection>
         </div>
@@ -148,7 +148,10 @@ export default function ProspectusPage() {
             </h2>
             <a
               href="/investors/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-500 font-semibold hover:bg-cream-200 transition-colors"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-accent-gold text-white
+                         font-sans font-medium tracking-wide text-sm rounded-md
+                         transition-all duration-300 ease-montfort
+                         hover:bg-accent-goldDark hover:scale-[1.02] hover:shadow-elegant"
             >
               {t('contactHeading')}
             </a>

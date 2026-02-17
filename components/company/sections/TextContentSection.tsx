@@ -12,9 +12,12 @@ export default function TextContentSection({ section }: Props) {
     <AnimatedSection>
       <div className={`${section.centered ? 'text-center max-w-4xl mx-auto' : ''}`}>
         {section.heading && (
-          <h2 className="text-3xl md:text-4xl font-serif font-light mb-6">
-            {section.heading}
-          </h2>
+          <>
+            <h2 className="font-serif font-light text-display text-primary-500 mb-2">
+              {section.heading}
+            </h2>
+            <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-8"></div>
+          </>
         )}
         <div
           className="prose prose-lg max-w-none text-secondary-500 font-sans leading-relaxed"

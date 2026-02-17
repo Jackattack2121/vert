@@ -15,7 +15,7 @@ export default function FinancialReportsPage() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/mineral-resource-estimate-report-2023-05-28-08-30-13-utc.jpg)' }}
+          style={{ backgroundImage: 'url(/images/natural-quarry-is-located-near-road-against-backdr-2025-01-29-05-43-49-utc.jpg)' }}
         />
 
         {/* Overlay */}

@@ -134,23 +134,37 @@ export default function Header() {
             >
               {t('homeLink')}
             </Link>
-            <div className="relative group">
+            <div
+              className="relative"
+              onMouseEnter={() => setProjectsDropdownOpen(true)}
+              onMouseLeave={() => setProjectsDropdownOpen(false)}
+            >
               <button
                 className={cn(
-                  'font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300',
+                  'font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300 flex items-center gap-1',
                   isDarkHeader ? 'text-cream-100 hover:text-accent-gold' : 'text-primary-500 hover:text-accent-gold'
                 )}
-                onMouseEnter={() => setProjectsDropdownOpen(true)}
-                onMouseLeave={() => setProjectsDropdownOpen(false)}
               >
                 {t('servicesLink')}
-              </button>
-              {projectsDropdownOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-white shadow-elegant-lg rounded-md py-2 z-50"
-                  onMouseEnter={() => setProjectsDropdownOpen(true)}
-                  onMouseLeave={() => setProjectsDropdownOpen(false)}
+                <svg
+                  className={cn('w-3 h-3 transition-transform duration-300', projectsDropdownOpen && 'rotate-180')}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
                 >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={cn(
+                  'absolute left-0 top-full pt-3 transition-all duration-200',
+                  projectsDropdownOpen
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-0 invisible -translate-y-1 pointer-events-none'
+                )}
+              >
+                <div className="w-64 bg-white shadow-elegant-lg rounded-md py-2">
                   <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
                     {t('corporateAdvisoryLink')}
                   </Link>
@@ -161,7 +175,7 @@ export default function Header() {
                     {t('assetManagementLink')}
                   </Link>
                 </div>
-              )}
+              </div>
             </div>
             {navigation.map((item) => (
               <Link

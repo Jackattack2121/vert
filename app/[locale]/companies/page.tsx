@@ -40,7 +40,7 @@ export default function CompaniesPage() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg)' }}
+          style={{ backgroundImage: 'url(/images/the-truck-transports-the-minerals-from-the-top-vie-2025-10-16-12-14-08-utc.jpg)' }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

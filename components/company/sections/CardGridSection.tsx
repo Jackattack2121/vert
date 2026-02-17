@@ -19,9 +19,12 @@ export default function CardGridSection({ section }: Props) {
     <AnimatedSection>
       <div>
         {section.heading && (
-          <h2 className="text-3xl md:text-4xl font-serif font-light mb-12 text-center">
-            {section.heading}
-          </h2>
+          <>
+            <h2 className="font-serif font-light text-display text-primary-500 mb-2 text-center">
+              {section.heading}
+            </h2>
+            <div className="w-16 h-0.5 bg-accent-gold mt-4 mx-auto mb-12"></div>
+          </>
         )}
         <div className={`grid grid-cols-1 ${gridColsClass} gap-6`}>
           {section.cards.map((card, index) => {

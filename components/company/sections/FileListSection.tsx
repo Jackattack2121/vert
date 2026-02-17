@@ -12,9 +12,12 @@ export default function FileListSection({ section }: Props) {
     <AnimatedSection>
       <div>
         {section.heading && (
-          <h2 className="text-3xl md:text-4xl font-serif font-light mb-8">
-            {section.heading}
-          </h2>
+          <>
+            <h2 className="font-serif font-light text-display text-primary-500 mb-2">
+              {section.heading}
+            </h2>
+            <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-10"></div>
+          </>
         )}
         <div className="space-y-4">
           {section.files.map((file, index) => (

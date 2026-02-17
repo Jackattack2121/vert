@@ -30,34 +30,34 @@ export default function NewsCard({
   const CardContent = () => (
     <div
       className={cn(
-        'group bg-white border border-gray-200 rounded-none overflow-hidden hover-lift hover:border-primary-600 transition-all duration-300',
+        'group bg-white rounded-md overflow-hidden shadow-elegant hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300',
         className
       )}
     >
       {image && (
         <div className="relative h-48 overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
             style={{ backgroundImage: `url(${image})` }}
           />
         </div>
       )}
-      <div className="p-6">
+      <div className="p-8">
         <div className="flex items-center gap-4 mb-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary-600">
+          <span className="font-sans text-xs tracking-[0.1em] uppercase text-accent-gold font-medium">
             {category}
           </span>
-          <span className="text-xs text-gray-500">{date}</span>
+          <span className="font-sans text-xs text-secondary-400">{date}</span>
         </div>
-        <h3 className="text-lg font-bold mb-2 group-hover:text-primary-600 transition-colors">
+        <h3 className="font-serif text-lg font-normal text-primary-500 mb-2 group-hover:text-accent-gold transition-colors duration-300">
           {title}
         </h3>
         {excerpt && (
-          <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-2">
+          <p className="font-sans text-sm text-secondary-500 leading-relaxed mb-4 line-clamp-2">
             {excerpt}
           </p>
         )}
-        <div className="flex items-center text-primary-600 font-semibold text-sm uppercase tracking-wider">
+        <div className="flex items-center font-sans text-sm font-medium text-accent-gold tracking-wide">
           {downloadUrl ? (
             <>
               <span>{t('download')}</span>
@@ -96,4 +96,3 @@ export default function NewsCard({
 
   return <CardContent />
 }
-

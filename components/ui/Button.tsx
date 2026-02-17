@@ -8,6 +8,7 @@ interface ButtonProps {
   className?: string
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
 export default function Button({
@@ -17,6 +18,7 @@ export default function Button({
   className,
   onClick,
   type = 'button',
+  disabled,
 }: ButtonProps) {
   const baseStyles = 'group inline-flex items-center gap-3 px-10 py-4 font-sans font-medium tracking-wide transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] text-sm rounded-md'
 
@@ -46,7 +48,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={cn(classes, disabled && 'opacity-50 cursor-not-allowed')}>
       {children}
       <Arrow />
     </button>

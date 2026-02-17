@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
+import Button from '@/components/ui/Button'
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker, HiOutlinePaperAirplane } from 'react-icons/hi'
 
 export default function InvestorContact() {
@@ -32,24 +33,21 @@ export default function InvestorContact() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
-        {/* Background Image with fade */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+      {/* Hero Section - Montfort-style deep teal */}
+      <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: 'url(/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg)' }}
         />
-        
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-primary-600/60"></div>
-        
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+
         <div className="container relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-6">
                 {t('heroTitle')}
               </h1>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white/90">
+              <p className="font-sans text-xl text-cream-200 opacity-90 max-w-2xl leading-relaxed">
                 {t('heroSubtitle')}
               </p>
             </div>
@@ -58,22 +56,22 @@ export default function InvestorContact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-cream-100">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Information Cards */}
             <div className="space-y-6">
               <AnimatedSection>
-                <div className="bg-white border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="bg-primary-600 p-3">
-                      <HiOutlineMail className="w-6 h-6 text-white" />
+                <div className="bg-white rounded-md p-8 shadow-elegant">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center">
+                      <HiOutlineMail className="w-5 h-5 text-primary-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-secondary-900 uppercase tracking-wider">{t('emailTitle')}</h3>
+                    <h3 className="font-serif text-lg font-normal text-primary-500">{t('emailTitle')}</h3>
                   </div>
-                  <a 
+                  <a
                     href="mailto:info@vertcapital.com.au"
-                    className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                    className="font-sans text-secondary-500 hover:text-accent-gold transition-colors duration-300"
                   >
                     info@vertcapital.com.au
                   </a>
@@ -81,16 +79,16 @@ export default function InvestorContact() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
-                <div className="bg-white border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="bg-primary-600 p-3">
-                      <HiOutlinePhone className="w-6 h-6 text-white" />
+                <div className="bg-white rounded-md p-8 shadow-elegant">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center">
+                      <HiOutlinePhone className="w-5 h-5 text-primary-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-secondary-900 uppercase tracking-wider">{t('phoneTitle')}</h3>
+                    <h3 className="font-serif text-lg font-normal text-primary-500">{t('phoneTitle')}</h3>
                   </div>
-                  <a 
+                  <a
                     href="tel:+61894810389"
-                    className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                    className="font-sans text-secondary-500 hover:text-accent-gold transition-colors duration-300"
                   >
                     +61 8 9481 0389
                   </a>
@@ -98,14 +96,14 @@ export default function InvestorContact() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.2}>
-                <div className="bg-white border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="bg-primary-600 p-3">
-                      <HiOutlineLocationMarker className="w-6 h-6 text-white" />
+                <div className="bg-white rounded-md p-8 shadow-elegant">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center">
+                      <HiOutlineLocationMarker className="w-5 h-5 text-primary-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-secondary-900 uppercase tracking-wider">{t('officeTitle')}</h3>
+                    <h3 className="font-serif text-lg font-normal text-primary-500">{t('officeTitle')}</h3>
                   </div>
-                  <address className="text-gray-700 not-italic" dangerouslySetInnerHTML={{ __html: t('officeAddress').replace(/\n/g, '<br />') }} />
+                  <address className="font-sans text-secondary-500 not-italic leading-relaxed" dangerouslySetInnerHTML={{ __html: t('officeAddress').replace(/\n/g, '<br />') }} />
                 </div>
               </AnimatedSection>
             </div>
@@ -113,28 +111,25 @@ export default function InvestorContact() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <AnimatedSection delay={0.1}>
-                <div className="bg-white border-2 border-gray-200 p-8">
-                  <h2 className="text-heading-lg text-secondary-900 mb-8">{t('messageTitle')}</h2>
+                <div className="bg-white rounded-md p-10 shadow-elegant">
+                  <h2 className="font-serif font-light text-display text-primary-500 mb-2">{t('messageTitle')}</h2>
+                  <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-10"></div>
 
                   {status === 'success' ? (
-                    <div className="bg-green-50 border-2 border-green-200 p-8 text-center">
-                      <div className="bg-green-600 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <HiOutlinePaperAirplane className="w-8 h-8 text-white" />
+                    <div className="bg-cream-100 rounded-md p-10 text-center">
+                      <div className="w-16 h-16 bg-accent-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <HiOutlinePaperAirplane className="w-8 h-8 text-accent-gold" />
                       </div>
-                      <h3 className="text-xl font-bold text-secondary-900 mb-2 uppercase tracking-wider">{t('successTitle')}</h3>
-                      <p className="text-green-700">{t('successDescription')}</p>
-                      <button
-                        onClick={() => setStatus('idle')}
-                        className="mt-6 px-6 py-3 bg-green-600 text-white hover:bg-green-700 transition-colors uppercase tracking-wider font-semibold"
-                      >
+                      <h3 className="font-serif text-xl font-normal text-primary-500 mb-2">{t('successTitle')}</h3>
+                      <p className="font-sans text-secondary-500 mb-6">{t('successDescription')}</p>
+                      <Button onClick={() => setStatus('idle')} variant="primary">
                         {t('anotherMessage')}
-                      </button>
+                      </Button>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Name */}
                       <div>
-                        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="name" className="block font-sans text-xs tracking-[0.1em] uppercase text-secondary-500 mb-2">
                           {t('fullNameLabel')}
                         </label>
                         <input
@@ -144,15 +139,16 @@ export default function InvestorContact() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 focus:outline-none focus:border-primary-600 transition-colors"
+                          className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
+                                     font-sans text-primary-500 focus:border-accent-gold focus:outline-none
+                                     transition-colors duration-300 text-base"
                           placeholder={t('fullNamePlaceholder')}
                         />
                       </div>
 
-                      {/* Email & Phone */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                          <label htmlFor="email" className="block font-sans text-xs tracking-[0.1em] uppercase text-secondary-500 mb-2">
                             {t('emailLabel')}
                           </label>
                           <input
@@ -162,12 +158,14 @@ export default function InvestorContact() {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-300 focus:outline-none focus:border-primary-600 transition-colors"
+                            className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
+                                       font-sans text-primary-500 focus:border-accent-gold focus:outline-none
+                                       transition-colors duration-300 text-base"
                             placeholder={t('emailPlaceholder')}
                           />
                         </div>
                         <div>
-                          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                          <label htmlFor="phone" className="block font-sans text-xs tracking-[0.1em] uppercase text-secondary-500 mb-2">
                             {t('phoneLabel')}
                           </label>
                           <input
@@ -176,15 +174,16 @@ export default function InvestorContact() {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 focus:outline-none focus:border-primary-600 transition-colors"
+                            className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
+                                       font-sans text-primary-500 focus:border-accent-gold focus:outline-none
+                                       transition-colors duration-300 text-base"
                             placeholder={t('phonePlaceholder')}
                           />
                         </div>
                       </div>
 
-                      {/* Subject */}
                       <div>
-                        <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="subject" className="block font-sans text-xs tracking-[0.1em] uppercase text-secondary-500 mb-2">
                           {t('subjectLabel')}
                         </label>
                         <select
@@ -193,7 +192,9 @@ export default function InvestorContact() {
                           value={formData.subject}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 focus:outline-none focus:border-primary-600 transition-colors"
+                          className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
+                                     font-sans text-primary-500 focus:border-accent-gold focus:outline-none
+                                     transition-colors duration-300 text-base appearance-none cursor-pointer"
                         >
                           <option value="">{t('subjectPlaceholder')}</option>
                           <option value="general">{t('subjectGeneral')}</option>
@@ -204,9 +205,8 @@ export default function InvestorContact() {
                         </select>
                       </div>
 
-                      {/* Message */}
                       <div>
-                        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="message" className="block font-sans text-xs tracking-[0.1em] uppercase text-secondary-500 mb-2">
                           {t('messageLabel')}
                         </label>
                         <textarea
@@ -215,39 +215,37 @@ export default function InvestorContact() {
                           value={formData.message}
                           onChange={handleChange}
                           required
-                          rows={6}
-                          className="w-full px-4 py-3 border-2 border-gray-300 focus:outline-none focus:border-primary-600 transition-colors resize-none"
+                          rows={5}
+                          className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
+                                     font-sans text-primary-500 focus:border-accent-gold focus:outline-none
+                                     transition-colors duration-300 resize-none text-base"
                           placeholder={t('messagePlaceholder')}
                         />
                       </div>
 
-                      {/* Error Message */}
                       {status === 'error' && (
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800 text-sm">
+                        <div className="bg-cream-200 rounded-md p-4 font-sans text-sm text-primary-500">
                           {message}
                         </div>
                       )}
 
-                      {/* Submit Button */}
-                      <button
-                        type="submit"
-                        disabled={status === 'loading'}
-                        className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-                      >
-                        {status === 'loading' ? (
-                          <>
-                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                            <span>{t('sending')}</span>
-                          </>
-                        ) : (
-                          <>
-                            <HiOutlinePaperAirplane className="w-5 h-5" />
-                            <span>{t('sendButton')}</span>
-                          </>
-                        )}
-                      </button>
+                      <div className="pt-4">
+                        <Button type="submit" variant="primary" disabled={status === 'loading'}>
+                          {status === 'loading' ? (
+                            <span className="flex items-center gap-2">
+                              <div className="w-4 h-4 border-2 border-cream-100 border-t-transparent rounded-full animate-spin"></div>
+                              {t('sending')}
+                            </span>
+                          ) : (
+                            <span className="flex items-center gap-2">
+                              <HiOutlinePaperAirplane className="w-4 h-4" />
+                              {t('sendButton')}
+                            </span>
+                          )}
+                        </Button>
+                      </div>
 
-                      <p className="text-xs text-gray-500 text-center">
+                      <p className="font-sans text-xs text-secondary-400 text-center">
                         {t('requiredNote')}
                       </p>
                     </form>
@@ -260,40 +258,31 @@ export default function InvestorContact() {
       </section>
 
       {/* Quick Links CTA */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container max-w-4xl mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-heading-lg text-secondary-900 mb-4">
+            <h2 className="font-serif font-light text-display text-primary-500 mb-2">
               {t('lookingForTitle')}
             </h2>
-            <p className="text-gray-600 mb-8">
+            <div className="w-16 h-0.5 bg-accent-gold mt-4 mx-auto mb-8"></div>
+            <p className="font-sans text-secondary-500 mb-8 leading-relaxed">
               {t('lookingForDescription')}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              <a
-                href="/investors/asx-announcements"
-                className="p-4 bg-white border-2 border-gray-200 hover:border-primary-600 transition-all"
-              >
-                <h3 className="font-semibold text-secondary-900 uppercase tracking-wider">{t('asxLink')}</h3>
-              </a>
-              <a
-                href="/investors/financial-reports"
-                className="p-4 bg-white border-2 border-gray-200 hover:border-primary-600 transition-all"
-              >
-                <h3 className="font-semibold text-secondary-900 uppercase tracking-wider">{t('reportsLink')}</h3>
-              </a>
-              <a
-                href="/investors/share-information"
-                className="p-4 bg-white border-2 border-gray-200 hover:border-primary-600 transition-all"
-              >
-                <h3 className="font-semibold text-secondary-900 uppercase tracking-wider">{t('shareLink')}</h3>
-              </a>
-              <a
-                href="/investors/fact-sheet"
-                className="p-4 bg-white border-2 border-gray-200 hover:border-primary-600 transition-all"
-              >
-                <h3 className="font-semibold text-secondary-900 uppercase tracking-wider">{t('factSheetLink')}</h3>
-              </a>
+              {[
+                { href: '/investors/asx-announcements', label: t('asxLink') },
+                { href: '/investors/financial-reports', label: t('reportsLink') },
+                { href: '/investors/share-information', label: t('shareLink') },
+                { href: '/investors/fact-sheet', label: t('factSheetLink') },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="p-4 bg-cream-100 rounded-md hover:bg-primary-500 hover:text-cream-100 transition-all duration-300 group"
+                >
+                  <h3 className="font-sans text-sm font-medium text-primary-500 group-hover:text-cream-100 transition-colors duration-300">{link.label}</h3>
+                </a>
+              ))}
             </div>
           </AnimatedSection>
         </div>
@@ -301,4 +290,3 @@ export default function InvestorContact() {
     </>
   )
 }
-

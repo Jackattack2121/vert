@@ -62,7 +62,7 @@ export default function ProjectsPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-primary-500 text-cream-100 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg)' }}
+          style={{ backgroundImage: 'url(/images/yellow-excavator-digging-rocks-at-the-quarry-doin-2025-01-29-03-01-59-utc.jpg)' }}
         />
         <div className="relative z-10 container text-center">
           <AnimatedSection>

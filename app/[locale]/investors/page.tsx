@@ -106,7 +106,7 @@ export default function InvestorCentre() {
                     href="https://www.asx.com.au/markets/company/YUG"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 font-semibold"
+                    className="inline-flex items-center text-sm text-accent-gold hover:text-accent-goldDark font-medium transition-colors duration-300"
                     aria-label="View real-time YUG share price on ASX website (opens in new tab)"
                   >
                     View real-time price on ASX.com.au
@@ -132,7 +132,7 @@ export default function InvestorCentre() {
               <h2 className="font-serif font-light text-display text-primary-500 mb-4">
                 {t('centre.resourcesTitle')}
               </h2>
-              <div className="w-24 h-1 bg-primary-500"></div>
+              <div className="w-16 h-0.5 bg-accent-gold mt-4"></div>
             </div>
           </AnimatedSection>
 
@@ -187,7 +187,10 @@ export default function InvestorCentre() {
               </Button>
               <a
                 href="/investors/fact-sheet"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-cream-100 text-cream-100 font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-cream-100 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-cream-100 focus:ring-offset-2 focus:ring-offset-primary-500"
+                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-transparent border border-cream-100/40 text-cream-100
+                           font-sans font-medium tracking-wide text-sm rounded-md
+                           transition-all duration-300 ease-montfort
+                           hover:bg-cream-100 hover:text-primary-500 hover:border-cream-100"
                 aria-label="Download company fact sheet"
               >
                 <span>{t('centre.downloadFactSheet')}</span>

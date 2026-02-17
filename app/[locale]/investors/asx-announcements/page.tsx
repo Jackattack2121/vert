@@ -12,11 +12,11 @@ async function getAnnouncements() {
     const res = await fetch(`${baseUrl}/api/announcements?limit=50`, {
       next: { revalidate: 900 }, // Revalidate every 15 minutes
     })
-    
+
     if (!res.ok) {
       throw new Error('Failed to fetch announcements')
     }
-    
+
     const data = await res.json()
     return data.announcements || []
   } catch (error) {
@@ -28,34 +28,31 @@ async function getAnnouncements() {
 export default async function ASXAnnouncements() {
   const t = await getTranslations('investors.announcements')
   const announcements = await getAnnouncements()
-  
+
   return (
     <>
-      {/* Hero Section - Minimal */}
-      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
-        {/* Background Image with fade */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+      {/* Hero Section - Montfort-style deep teal */}
+      <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: 'url(/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg)' }}
         />
-        
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-primary-600/60"></div>
-        
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+
         <div className="container relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-6">
                 {t('heroTitle')}
               </h1>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-6">
+              <p className="font-sans text-xl text-cream-200 opacity-90 max-w-2xl leading-relaxed mb-6">
                 {t('heroSubtitle')}
               </p>
               <a
                 href={`https://www.asx.com.au/markets/company/${companyASXCode}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white font-semibold text-sm uppercase tracking-wider hover:gap-4 transition-all hover:text-white/80"
+                className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide hover:gap-4 transition-all duration-300"
               >
                 <span>{t('viewOnAsx')}</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +65,7 @@ export default async function ASXAnnouncements() {
       </section>
 
       {/* Announcements Grid */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-cream-100">
         <div className="container">
           {announcements.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -100,25 +97,29 @@ export default async function ASXAnnouncements() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="section-padding-small bg-white">
+      {/* Subscribe CTA */}
+      <section className="section-padding bg-primary-500 text-cream-100">
         <div className="container">
           <AnimatedSection>
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-heading-lg text-secondary-900 mb-6">
+              <h2 className="font-serif font-light text-display mb-6">
                 {t('subscribeTitle')}
               </h2>
-              <p className="text-lg text-gray-600 mb-8 font-josefin">
+              <p className="font-sans text-lg opacity-80 mb-8 leading-relaxed">
                 {t('subscribeDescription')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <input
                   type="email"
                   placeholder={t('searchPlaceholder')}
-                  className="flex-1 max-w-md px-4 py-3 border-2 border-gray-300 focus:border-primary-600 focus:outline-none transition-colors"
+                  className="px-5 py-3 bg-white/10 border border-cream-100/20 rounded-md font-sans text-sm text-cream-100
+                             placeholder:text-cream-100/50 focus:border-accent-gold focus:outline-none
+                             transition-colors duration-300 w-full sm:w-72"
                 />
-                <button className="btn-primary whitespace-nowrap">
-                  <span>{t('subscribeTitle')}</span>
+                <button className="px-8 py-3 bg-accent-gold text-white font-sans font-medium text-sm
+                                   tracking-wide rounded-md transition-all duration-300
+                                   hover:bg-accent-goldDark hover:scale-[1.02] whitespace-nowrap">
+                  {t('subscribeTitle')}
                 </button>
               </div>
             </div>

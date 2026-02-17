@@ -3,31 +3,29 @@
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SubscriptionForm from '@/components/investor/SubscriptionForm'
-import { HiOutlineGlobe, HiOutlineUserGroup, HiOutlineShieldCheck, HiOutlineLightningBolt } from 'react-icons/hi'
+import Button from '@/components/ui/Button'
+import { HiOutlineGlobe, HiOutlineUserGroup, HiOutlineShieldCheck } from 'react-icons/hi'
 
 export default function ESGPage() {
   const t = useTranslations('investors.esg')
-  
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-secondary-900 py-32 md:py-40 overflow-hidden">
-        {/* Background Image with fade */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+      {/* Hero Section - Montfort-style deep teal */}
+      <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: 'url(/images/green-dense-forests-surround-old-mining-factory-wi-2025-08-28-11-53-12-utc.jpg)' }}
         />
-        
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-primary-600/60"></div>
-        
+        <div className="absolute inset-0 bg-primary-500/70"></div>
+
         <div className="container relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-heading-lg text-white mb-4">
+              <h1 className="font-serif font-light text-hero text-cream-100 mb-6">
                 {t('heroTitle')}
               </h1>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white/90">
+              <p className="font-sans text-xl text-cream-200 opacity-90 max-w-2xl leading-relaxed">
                 {t('heroSubtitle')}
               </p>
             </div>
@@ -36,14 +34,15 @@ export default function ESGPage() {
       </section>
 
       {/* ESG Pillars */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-cream-100">
         <div className="container">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-heading-xl text-secondary-900 mb-6">
+            <div className="text-center mb-16">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-2">
                 {t('frameworkHeading')}
               </h2>
-              <p className="text-lg text-gray-600 font-josefin max-w-3xl mx-auto">
+              <div className="w-16 h-0.5 bg-accent-gold mt-4 mx-auto mb-8"></div>
+              <p className="font-sans text-lg text-secondary-500 max-w-3xl mx-auto leading-relaxed">
                 {t('frameworkDescription')}
               </p>
             </div>
@@ -52,12 +51,12 @@ export default function ESGPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {/* Environmental */}
             <AnimatedSection delay={0.1}>
-              <div className="bg-emerald-50 border-2 border-emerald-200 p-8 text-center hover:border-emerald-600 transition-all">
-                <div className="bg-emerald-600 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <HiOutlineGlobe className="w-8 h-8 text-white" />
+              <div className="bg-white rounded-md p-10 hover:-translate-y-1 hover:shadow-elegant-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 bg-primary-500/10 rounded-full flex items-center justify-center mb-6">
+                  <HiOutlineGlobe className="w-7 h-7 text-primary-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-3 uppercase tracking-wider">{t('environmentTitle')}</h3>
-                <p className="text-gray-700 leading-relaxed">
+                <h3 className="font-serif text-xl font-normal text-primary-500 mb-3">{t('environmentTitle')}</h3>
+                <p className="font-sans text-secondary-500 leading-relaxed">
                   {t('environmentalDescription')}
                 </p>
               </div>
@@ -65,12 +64,12 @@ export default function ESGPage() {
 
             {/* Social */}
             <AnimatedSection delay={0.2}>
-              <div className="bg-blue-50 border-2 border-blue-200 p-8 text-center hover:border-blue-600 transition-all">
-                <div className="bg-blue-600 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <HiOutlineUserGroup className="w-8 h-8 text-white" />
+              <div className="bg-white rounded-md p-10 hover:-translate-y-1 hover:shadow-elegant-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 bg-primary-500/10 rounded-full flex items-center justify-center mb-6">
+                  <HiOutlineUserGroup className="w-7 h-7 text-primary-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-3 uppercase tracking-wider">{t('socialTitle')}</h3>
-                <p className="text-gray-700 leading-relaxed">
+                <h3 className="font-serif text-xl font-normal text-primary-500 mb-3">{t('socialTitle')}</h3>
+                <p className="font-sans text-secondary-500 leading-relaxed">
                   {t('socialDescription')}
                 </p>
               </div>
@@ -78,12 +77,12 @@ export default function ESGPage() {
 
             {/* Governance */}
             <AnimatedSection delay={0.3}>
-              <div className="bg-purple-50 border-2 border-purple-200 p-8 text-center hover:border-purple-600 transition-all">
-                <div className="bg-purple-600 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <HiOutlineShieldCheck className="w-8 h-8 text-white" />
+              <div className="bg-white rounded-md p-10 hover:-translate-y-1 hover:shadow-elegant-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 bg-primary-500/10 rounded-full flex items-center justify-center mb-6">
+                  <HiOutlineShieldCheck className="w-7 h-7 text-primary-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-3 uppercase tracking-wider">{t('governanceTitle')}</h3>
-                <p className="text-gray-700 leading-relaxed">
+                <h3 className="font-serif text-xl font-normal text-primary-500 mb-3">{t('governanceTitle')}</h3>
+                <p className="font-sans text-secondary-500 leading-relaxed">
                   {t('governanceDescription')}
                 </p>
               </div>
@@ -93,48 +92,38 @@ export default function ESGPage() {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
-              <div className="bg-white p-12 text-center border-2 border-gray-200">
-                <div className="bg-primary-600 w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                  <HiOutlineLightningBolt className="w-12 h-12 text-white" />
+              <div className="bg-cream-100 rounded-md p-12 text-center">
+                <div className="w-16 h-16 bg-accent-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
-                <h2 className="text-heading-lg text-secondary-900 mb-6 uppercase tracking-wider">
+                <h2 className="font-serif font-light text-display text-primary-500 mb-6">
                   {t('comingSoonTitle')}
                 </h2>
-                <p className="text-lg text-gray-600 mb-8 font-josefin leading-relaxed">
+                <p className="font-sans text-lg text-secondary-500 mb-8 leading-relaxed max-w-2xl mx-auto">
                   {t('comingSoonIntro')}
                 </p>
-                <p className="text-gray-700 mb-6 font-semibold uppercase tracking-wider">
+                <p className="font-sans text-sm tracking-[0.1em] uppercase text-primary-500 mb-6">
                   {t('reportWillInclude')}
                 </p>
-                <ul className="text-left max-w-2xl mx-auto space-y-2 mb-8 text-gray-700">
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary-600 mt-1 font-bold">✓</span>
-                    <span>{t('reportItem1')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary-600 mt-1 font-bold">✓</span>
-                    <span>{t('reportItem2')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary-600 mt-1 font-bold">✓</span>
-                    <span>{t('reportItem3')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary-600 mt-1 font-bold">✓</span>
-                    <span>{t('reportItem4')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary-600 mt-1 font-bold">✓</span>
-                    <span>{t('reportItem5')}</span>
-                  </li>
+                <ul className="text-left max-w-2xl mx-auto space-y-3 mb-10">
+                  {[1, 2, 3, 4, 5].map((num) => (
+                    <li key={num} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-accent-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent-gold"></div>
+                      </div>
+                      <span className="font-sans text-secondary-500">{t(`reportItem${num}`)}</span>
+                    </li>
+                  ))}
                 </ul>
-                
+
                 <div className="max-w-md mx-auto">
-                  <p className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">
+                  <p className="font-sans text-xs tracking-[0.1em] uppercase text-secondary-400 mb-4">
                     {t('subscribePrompt')}
                   </p>
                   <SubscriptionForm variant="inline" />
@@ -146,28 +135,22 @@ export default function ESGPage() {
       </section>
 
       {/* Commitment Statement */}
-      <section className="section-padding bg-primary-600 text-white text-center">
+      <section className="section-padding bg-primary-500 text-cream-100 text-center">
         <div className="container max-w-4xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-heading-xl mb-8">
+            <h2 className="font-serif font-light text-display mb-8">
               {t('commitmentTitle')}
             </h2>
-            <p className="text-xl font-josefin leading-relaxed mb-12 opacity-90">
+            <p className="font-sans text-xl leading-relaxed mb-12 opacity-90">
               {t('commitmentQuote')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="/company/corporate-governance"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 font-semibold uppercase tracking-wider hover:bg-gray-100 transition-colors"
-              >
+              <Button href="/company/corporate-governance" variant="gold">
                 {t('governanceButton')}
-              </a>
-              <a
-                href="/company/corporate-responsibility"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white font-semibold uppercase tracking-wider hover:bg-white hover:text-primary-600 transition-colors"
-              >
+              </Button>
+              <Button href="/company/corporate-responsibility" variant="outline" className="border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500 hover:border-cream-100">
                 {t('responsibilityButton')}
-              </a>
+              </Button>
             </div>
           </AnimatedSection>
         </div>
@@ -175,4 +158,3 @@ export default function ESGPage() {
     </>
   )
 }
-
