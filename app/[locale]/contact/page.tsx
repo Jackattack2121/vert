@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function Contact() {
   const t = useTranslations('contact')
@@ -34,7 +35,7 @@ export default function Contact() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.contact})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 
@@ -187,7 +188,7 @@ export default function Contact() {
                   </h3>
                   <div className="space-y-2 font-sans text-secondary-500">
                     <p><span className="text-xs tracking-[0.1em] uppercase text-secondary-400">{t('phone')}:</span> <a href="tel:+61894810389" className="hover:text-accent-gold transition-colors duration-300">+61 8 9481 0389</a></p>
-                    <p><span className="text-xs tracking-[0.1em] uppercase text-secondary-400">{t('email')}:</span> <a href="mailto:info@lykosmetals.com" className="hover:text-accent-gold transition-colors duration-300">info@lykosmetals.com</a></p>
+                    <p><span className="text-xs tracking-[0.1em] uppercase text-secondary-400">{t('email')}:</span> <a href="mailto:info@vertcapital.com.au" className="hover:text-accent-gold transition-colors duration-300">info@vertcapital.com.au</a></p>
                   </div>
                 </div>
 

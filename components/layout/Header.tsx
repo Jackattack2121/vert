@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import gsap from 'gsap'
 import ProjectPicker from './ProjectPicker'
 import LanguageSwitcher from './LanguageSwitcher'
+import { LOGO } from '@/lib/images'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -111,7 +112,7 @@ export default function Header() {
             <div className="relative h-10 md:h-11 w-auto">
               <Image
                 ref={logoRef}
-                src="/vert-logo.svg"
+                src={LOGO.main}
                 alt="Vert Capital"
                 width={150}
                 height={44}
@@ -213,7 +214,7 @@ export default function Header() {
         <div className="flex justify-between items-center p-6 border-b border-cream-100/10">
           <div className="relative h-10 w-auto">
             <Image
-              src="/vert-logo.svg"
+              src={LOGO.main}
               alt="Vert Capital"
               width={120}
               height={40}

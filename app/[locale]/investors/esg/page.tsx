@@ -5,6 +5,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection'
 import SubscriptionForm from '@/components/investor/SubscriptionForm'
 import Button from '@/components/ui/Button'
 import { HiOutlineGlobe, HiOutlineUserGroup, HiOutlineShieldCheck } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function ESGPage() {
   const t = useTranslations('investors.esg')
@@ -15,7 +16,7 @@ export default function ESGPage() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/green-dense-forests-surround-old-mining-factory-wi-2025-08-28-11-53-12-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.esg})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

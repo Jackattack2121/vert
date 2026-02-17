@@ -14,6 +14,7 @@ import {
   HiOutlineDownload,
   HiOutlineGlobe
 } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function InvestorCentre() {
   const t = useTranslations('investors')
@@ -64,7 +65,7 @@ export default function InvestorCentre() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.investors})` }}
         />
 
         {/* Overlay */}

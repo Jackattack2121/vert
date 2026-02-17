@@ -1,6 +1,7 @@
 import CompanySectionRenderer from './CompanySectionRenderer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { CompanyContentSection } from '@/lib/admin/section-types'
+import { COMPANY_PAGE_IMAGES } from '@/lib/images'
 
 interface Props {
   slug: string
@@ -11,7 +12,7 @@ function getCompanyPageData(slug: string): { heroTitle: string; heroSubtitle?: s
     'corporate-directory': {
       heroTitle: 'Corporate Directory',
       heroSubtitle: 'Contact Information and Office Locations',
-      heroImage: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
+      heroImage: COMPANY_PAGE_IMAGES.corporateDirectory,
       sections: [
         {
           id: 'overview',
@@ -65,7 +66,7 @@ function getCompanyPageData(slug: string): { heroTitle: string; heroSubtitle?: s
     'corporate-governance': {
       heroTitle: 'Corporate Governance',
       heroSubtitle: 'Commitment to Best Practice',
-      heroImage: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
+      heroImage: COMPANY_PAGE_IMAGES.corporateGovernance,
       sections: [
         {
           id: 'overview',
@@ -109,7 +110,7 @@ function getCompanyPageData(slug: string): { heroTitle: string; heroSubtitle?: s
     'corporate-responsibility': {
       heroTitle: 'Corporate Responsibility',
       heroSubtitle: 'Sustainable Mining Practices',
-      heroImage: '/images/green-dense-forests-surround-old-mining-factory-wi-2025-08-28-11-53-12-utc.jpg',
+      heroImage: COMPANY_PAGE_IMAGES.corporateResponsibility,
       sections: [
         {
           id: 'overview',

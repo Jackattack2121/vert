@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import EmptyState from '@/components/ui/EmptyState'
 import { HiOutlineNewspaper } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function MediaPage() {
   const t = useTranslations('investors.media')
@@ -15,7 +16,7 @@ export default function MediaPage() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.media})` }}
         />
 
         {/* Overlay */}

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
+import { LOGO } from '@/lib/images'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -50,7 +51,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="relative h-11 w-auto mb-6">
               <Image
-                src="/vert-logo.svg"
+                src={LOGO.main}
                 alt="Vert Capital"
                 width={150}
                 height={44}

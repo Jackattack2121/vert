@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import gsap from 'gsap'
+import { PROJECT_IMAGES } from '@/lib/images'
 
 interface Project {
   title: string
@@ -29,35 +30,35 @@ export default function ProjectPicker({ isSolid = true, onOpenChange }: ProjectP
       slug: 'doboj',
       location: t('doboj.location'),
       type: t('doboj.type'),
-      image: '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg',
+      image: PROJECT_IMAGES.doboj,
     },
     {
       title: t('jezero.name'),
       slug: 'jezero',
       location: t('jezero.location'),
       type: t('jezero.type'),
-      image: '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg',
+      image: PROJECT_IMAGES.jezero,
     },
     {
       title: t('sockovac.name'),
       slug: 'sockovac',
       location: t('sockovac.location'),
       type: t('sockovac.type'),
-      image: '/images/aerial-view-over-the-sand-pit-2025-10-13-02-21-23-utc.jpg',
+      image: PROJECT_IMAGES.sockovac,
     },
     {
       title: t('sinjakovo.name'),
       slug: 'sinjakovo',
       location: t('sinjakovo.location'),
       type: t('sinjakovo.type'),
-      image: '/images/yellow-excavator-digging-rocks-at-the-quarry-doin-2025-01-29-03-01-59-utc.jpg',
+      image: PROJECT_IMAGES.sinjakovo,
     },
     {
       title: t('cajnice.name'),
       slug: 'cajnice',
       location: t('cajnice.location'),
       type: t('cajnice.type'),
-      image: '/images/natural-quarry-is-located-near-road-against-backdr-2025-01-29-05-43-49-utc.jpg',
+      image: PROJECT_IMAGES.cajnice,
     },
   ]
   const [isOpen, setIsOpen] = useState(false)

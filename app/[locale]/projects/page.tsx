@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Image from 'next/image'
+import { HERO_IMAGES, PROJECT_IMAGES } from '@/lib/images'
 
 export default function ProjectsPage() {
   const locale = useLocale()
@@ -15,7 +16,7 @@ export default function ProjectsPage() {
       slug: 'doboj',
       location: t('doboj.location'),
       type: t('doboj.type'),
-      image: '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg',
+      image: PROJECT_IMAGES.doboj,
       number: t('doboj.number'),
       description: t('doboj.shortDescription'),
     },
@@ -24,7 +25,7 @@ export default function ProjectsPage() {
       slug: 'jezero',
       location: t('jezero.location'),
       type: t('jezero.type'),
-      image: '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg',
+      image: PROJECT_IMAGES.jezero,
       number: t('jezero.number'),
       description: t('jezero.shortDescription'),
     },
@@ -33,7 +34,7 @@ export default function ProjectsPage() {
       slug: 'sockovac',
       location: t('sockovac.location'),
       type: t('sockovac.type'),
-      image: '/images/aerial-view-over-the-sand-pit-2025-10-13-02-21-23-utc.jpg',
+      image: PROJECT_IMAGES.sockovac,
       number: t('sockovac.number'),
       description: t('sockovac.shortDescription'),
     },
@@ -42,7 +43,7 @@ export default function ProjectsPage() {
       slug: 'sinjakovo',
       location: t('sinjakovo.location'),
       type: t('sinjakovo.type'),
-      image: '/images/yellow-excavator-digging-rocks-at-the-quarry-doin-2025-01-29-03-01-59-utc.jpg',
+      image: PROJECT_IMAGES.sinjakovo,
       number: t('sinjakovo.number'),
       description: t('sinjakovo.shortDescription'),
     },
@@ -51,7 +52,7 @@ export default function ProjectsPage() {
       slug: 'cajnice',
       location: t('cajnice.location'),
       type: t('cajnice.type'),
-      image: '/images/natural-quarry-is-located-near-road-against-backdr-2025-01-29-05-43-49-utc.jpg',
+      image: PROJECT_IMAGES.cajnice,
       number: t('cajnice.number'),
       description: t('cajnice.shortDescription'),
     },
@@ -62,7 +63,7 @@ export default function ProjectsPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-primary-500 text-cream-100 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/yellow-excavator-digging-rocks-at-the-quarry-doin-2025-01-29-03-01-59-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.projects})` }}
         />
         <div className="relative z-10 container text-center">
           <AnimatedSection>

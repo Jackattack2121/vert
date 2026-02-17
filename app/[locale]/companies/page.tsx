@@ -5,6 +5,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import { Link } from '@/i18n/navigation'
 import { HiArrowRight } from 'react-icons/hi'
+import { HERO_IMAGES, COMPANY_CARD_IMAGES } from '@/lib/images'
 
 export default function CompaniesPage() {
   const t = useTranslations('companies')
@@ -16,21 +17,21 @@ export default function CompaniesPage() {
       name: t('company1Name'),
       industry: t('company1Industry'),
       description: t('company1Description'),
-      image: '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg'
+      image: COMPANY_CARD_IMAGES.company1
     },
     {
       id: 2,
       name: t('company2Name'),
       industry: t('company2Industry'),
       description: t('company2Description'),
-      image: '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg'
+      image: COMPANY_CARD_IMAGES.company2
     },
     {
       id: 3,
       name: t('company3Name'),
       industry: t('company3Industry'),
       description: t('company3Description'),
-      image: '/images/aerial-view-over-the-sand-pit-2025-10-13-02-21-23-utc.jpg'
+      image: COMPANY_CARD_IMAGES.company3
     }
   ]
 
@@ -40,7 +41,7 @@ export default function CompaniesPage() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/the-truck-transports-the-minerals-from-the-top-vie-2025-10-16-12-14-08-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.companies})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

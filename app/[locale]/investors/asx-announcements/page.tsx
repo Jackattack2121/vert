@@ -3,6 +3,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection'
 import NewsCard from '@/components/ui/NewsCard'
 import EmptyState from '@/components/ui/EmptyState'
 import { HiOutlineDocumentText } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 const companyASXCode = 'YUG'
 
@@ -35,7 +36,7 @@ export default async function ASXAnnouncements() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.asxAnnouncements})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

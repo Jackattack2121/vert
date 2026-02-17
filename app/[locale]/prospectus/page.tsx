@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { HiOutlineDownload } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function ProspectusPage() {
   const t = useTranslations('prospectus')
@@ -14,7 +15,7 @@ export default function ProspectusPage() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/hero-mining-1.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.prospectus})` }}
         />
 
         {/* Blue Overlay */}

@@ -3,6 +3,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection'
 import NewsCard from '@/components/ui/NewsCard'
 import EmptyState from '@/components/ui/EmptyState'
 import { HiOutlineDocumentText } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 async function getPresentations() {
   try {
@@ -33,7 +34,7 @@ export default async function Presentations() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.presentations})` }}
         />
 
         {/* Overlay */}

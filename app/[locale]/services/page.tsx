@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import { HiArrowRight } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function ServicesPage() {
   const t = useTranslations('services')
@@ -14,7 +15,7 @@ export default function ServicesPage() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/165-Hindley-10.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.services})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button'
 import SplitSection from '@/components/ui/SplitSection'
 import StatsBar from '@/components/ui/StatsBar'
 import { HiOutlineCheckCircle } from 'react-icons/hi'
+import { LOGO, HERO_IMAGES, SECTION_IMAGES } from '@/lib/images'
 
 export default function WhyYugoMetals() {
   const t = useTranslations('company.about')
@@ -62,7 +63,7 @@ export default function WhyYugoMetals() {
         <div className="bg-primary-500 flex items-center justify-center p-12">
           <div className="w-full max-w-sm">
             <Image
-              src="/vert-logo.svg"
+              src={LOGO.main}
               alt="Vert Capital"
               width={400}
               height={160}
@@ -75,7 +76,7 @@ export default function WhyYugoMetals() {
           {/* Background Image with fade */}
           <div
             className="absolute inset-0 bg-cover bg-center opacity-20"
-            style={{ backgroundImage: 'url(/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg)' }}
+            style={{ backgroundImage: `url(${HERO_IMAGES.whyYugoMetals})` }}
           />
 
           {/* Blue Overlay */}
@@ -116,7 +117,7 @@ export default function WhyYugoMetals() {
         rightContent={
           <div className="relative overflow-hidden h-full">
             <Image
-              src="/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg"
+              src={SECTION_IMAGES.whyYugoBosnia}
               alt="Bosnia and Herzegovina"
               fill
               className="object-cover"
@@ -190,7 +191,7 @@ export default function WhyYugoMetals() {
         rightContent={
           <div className="relative overflow-hidden h-full">
             <Image
-              src="/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg"
+              src={SECTION_IMAGES.whyYugoMining}
               alt="Exploration Program"
               fill
               className="object-cover"

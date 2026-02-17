@@ -5,6 +5,7 @@ import SplitSection from '@/components/ui/SplitSection';
 import StatsBar from '@/components/ui/StatsBar';
 import Button from '@/components/ui/Button';
 import { Link } from '@/i18n/navigation';
+import { PROJECT_IMAGES } from '@/lib/images';
 
 export async function generateStaticParams() {
   return [
@@ -40,19 +41,11 @@ async function getProjectData(slug: string, locale: string) {
   const t = await getTranslations({ locale, namespace: `projects.${slug}` });
   const tGeneral = await getTranslations({ locale, namespace: 'projects' });
   
-  const heroImages: Record<string, string> = {
-    'doboj': '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg',
-    'jezero': '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg',
-    'sockovac': '/images/the-truck-transports-the-minerals-from-the-top-vie-2025-10-16-12-14-08-utc.jpg',
-    'sinjakovo': '/images/green-dense-forests-surround-old-mining-factory-wi-2025-08-28-11-53-12-utc.jpg',
-    'cajnice': '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
-  };
-
   return {
     title: t('title'),
     subtitle: t('subtitle'),
     description: t('description'),
-    heroImage: heroImages[slug],
+    heroImage: PROJECT_IMAGES[slug as keyof typeof PROJECT_IMAGES] || PROJECT_IMAGES.doboj,
     commodityBadge: t('commodityBadge'),
     number: t('number'),
     overview: {

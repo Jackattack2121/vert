@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function ShareInformation() {
   const t = useTranslations('investors.shareInfo')
@@ -12,7 +13,7 @@ export default function ShareInformation() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.shareInformation})` }}
         />
 
         {/* Overlay */}

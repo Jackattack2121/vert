@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker, HiOutlinePaperAirplane } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function InvestorContact() {
   const t = useTranslations('investors.contact')
@@ -37,7 +38,7 @@ export default function InvestorContact() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.investorContact})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

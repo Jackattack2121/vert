@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { HiOutlineMail, HiOutlineExternalLink } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function BoardOfDirectors() {
   const t = useTranslations('company.board')
@@ -31,7 +32,7 @@ export default function BoardOfDirectors() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.boardOfDirectors})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

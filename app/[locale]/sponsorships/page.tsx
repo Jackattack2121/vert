@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
+import { HERO_IMAGES, SPONSORSHIP_IMAGES } from '@/lib/images'
 
 export default function SponsorshipsPage() {
   const t = useTranslations('sponsorships')
@@ -14,21 +15,21 @@ export default function SponsorshipsPage() {
       name: t('sponsorship1Name'),
       category: t('sponsorship1Category'),
       description: t('sponsorship1Description'),
-      image: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg'
+      image: SPONSORSHIP_IMAGES.sponsorship1
     },
     {
       id: 2,
       name: t('sponsorship2Name'),
       category: t('sponsorship2Category'),
       description: t('sponsorship2Description'),
-      image: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg'
+      image: SPONSORSHIP_IMAGES.sponsorship2
     },
     {
       id: 3,
       name: t('sponsorship3Name'),
       category: t('sponsorship3Category'),
       description: t('sponsorship3Description'),
-      image: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg'
+      image: SPONSORSHIP_IMAGES.sponsorship3
     }
   ]
 
@@ -38,7 +39,7 @@ export default function SponsorshipsPage() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/aerial-drone-view-of-soca-river-in-slovenia-at-sum-2025-03-25-02-59-48-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.sponsorships})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 

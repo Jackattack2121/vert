@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import EmptyState from '@/components/ui/EmptyState'
 import { HiOutlineDocumentText } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function FactSheetPage() {
   const t = useTranslations('investors.factSheet')
@@ -15,7 +16,7 @@ export default function FactSheetPage() {
         {/* Background Image with fade */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.factSheet})` }}
         />
 
         {/* Overlay */}

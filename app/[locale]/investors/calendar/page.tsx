@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import EmptyState from '@/components/ui/EmptyState'
 import { HiOutlineCalendar } from 'react-icons/hi'
+import { HERO_IMAGES } from '@/lib/images'
 
 export default function CalendarPage() {
   const t = useTranslations('investors.calendar')
@@ -14,7 +15,7 @@ export default function CalendarPage() {
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: 'url(/images/bosnia-and-herzegovina-jablanica-2025-08-28-10-01-46-utc.jpg)' }}
+          style={{ backgroundImage: `url(${HERO_IMAGES.calendar})` }}
         />
         <div className="absolute inset-0 bg-primary-500/70"></div>
 
