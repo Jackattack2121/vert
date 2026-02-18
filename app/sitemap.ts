@@ -11,8 +11,6 @@ const routes = [
   '/companies',
   '/sponsorships',
   '/news',
-  '/investors',
-  '/investors/asx-announcements',
   '/contact',
 ];
 
@@ -22,15 +20,12 @@ const getPriority = (path: string): number => {
   if (path === '/about') return 0.9;
   if (path === '/services') return 0.9;
   if (path === '/companies') return 0.8;
-  if (path.startsWith('/investors')) return 0.7;
   return 0.6;
 };
 
 // Change frequency mapping
 const getChangeFrequency = (path: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' => {
   if (path === '/news') return 'daily';
-  if (path === '/investors/asx-announcements') return 'daily';
-  if (path.startsWith('/investors')) return 'weekly';
   if (path === '') return 'weekly';
   return 'monthly';
 };

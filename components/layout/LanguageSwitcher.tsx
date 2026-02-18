@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
-import { HiGlobeAlt, HiChevronDown } from 'react-icons/hi';
+import { HiChevronDown } from 'react-icons/hi';
 import { cn } from '@/lib/utils';
 
 const languages = [
@@ -69,9 +69,7 @@ export default function LanguageSwitcher({ isSolid = true }: LanguageSwitcherPro
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <HiGlobeAlt className="w-4 h-4" />
-        <span className="hidden md:inline">{currentLanguage.name}</span>
-        <span className="md:hidden">{currentLanguage.code.toUpperCase()}</span>
+        <span className="text-xl leading-none">{currentLanguage.flag}</span>
         <HiChevronDown
           className={cn('w-3.5 h-3.5 transition-transform duration-300', isOpen && 'rotate-180')}
         />

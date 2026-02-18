@@ -274,6 +274,20 @@
       "formNotAvailable": "Contact form is not yet available. Please email us directly at info@vertcapital.com.au"
     }
   },
+  "portal": {
+    "title": "Portail Client",
+    "subtitle": "Accès sécurisé pour les clients de Vert Capital",
+    "disclaimer": "— Confidentiel —",
+    "loginTitle": "Bienvenue",
+    "loginSubtitle": "Entrez votre adresse e-mail et nous vous enverrons un lien de connexion sécurisé.",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "submitButton": "Envoyer le lien de connexion",
+    "sendingButton": "Envoi en cours...",
+    "successMessage": "Vérifiez votre e-mail ! Nous vous avons envoyé un lien de connexion sécurisé qui expirera dans 15 minutes.",
+    "errorMessage": "Impossible d'envoyer le lien de connexion. Veuillez réessayer ou contacter le support.",
+    "helpText": "Besoin d'aide ? Contactez-nous à info@vertcapital.com.au"
+  },
   "footer": {
     "tagline": "Boutique investment and corporate advisory services in Perth, Western Australia",
     "navigation": {

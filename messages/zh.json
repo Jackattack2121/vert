@@ -708,6 +708,20 @@
       "maxLength": "最多允许{max}个字符"
     }
   },
+  "portal": {
+    "title": "客户门户",
+    "subtitle": "Vert Capital客户的安全访问",
+    "disclaimer": "— 机密 —",
+    "loginTitle": "欢迎回来",
+    "loginSubtitle": "输入您的电子邮件地址，我们将向您发送安全登录链接。",
+    "emailLabel": "电子邮件地址",
+    "emailPlaceholder": "your.email@example.com",
+    "submitButton": "发送登录链接",
+    "sendingButton": "发送中...",
+    "successMessage": "请检查您的电子邮件！我们已向您发送一个安全登录链接，该链接将在15分钟后过期。",
+    "errorMessage": "无法发送登录链接。请重试或联系支持人员。",
+    "helpText": "遇到问题？请联系我们：info@vertcapital.com.au"
+  },
   "footer": {
     "tagline": "在欧盟门户的波斯尼亚和黑塞哥维那勘探镍、铜、钴和贵金属。",
     "navigation": {

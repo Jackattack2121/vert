@@ -4,17 +4,17 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, usePathname } from '@/i18n/navigation'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { HiMenu, HiX } from 'react-icons/hi'
+import { HiMenu, HiX, HiOutlineLockClosed } from 'react-icons/hi'
 import { cn } from '@/lib/utils'
 import gsap from 'gsap'
-import ProjectPicker from './ProjectPicker'
 import LanguageSwitcher from './LanguageSwitcher'
+import PortalLoginModal from '@/components/portal/PortalLoginModal'
 import { LOGO } from '@/lib/images'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false)
+  const [portalModalOpen, setPortalModalOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
   const logoRef = useRef<HTMLImageElement>(null)
   const pathname = usePathname()
@@ -24,6 +24,7 @@ export default function Header() {
   const isHomepage = pathname === '/' || pathname === ''
 
   const navigation = [
+    { name: t('servicesLink'), href: '/services' },
     { name: t('aboutLink'), href: '/about' },
     { name: t('companiesLink'), href: '/companies' },
     { name: t('sponsorshipsLink'), href: '/sponsorships' },
@@ -58,52 +59,17 @@ export default function Header() {
     }
   }, [mobileMenuOpen])
 
-  // Animate header background when dropdown opens
-  useEffect(() => {
-    if (headerRef.current) {
-      if (projectsDropdownOpen) {
-        gsap.to(headerRef.current, {
-          backgroundColor: '#0A4D4D',
-          duration: 0.4,
-          ease: 'power3.out',
-        })
-        if (logoRef.current) {
-          gsap.to(logoRef.current, {
-            filter: 'brightness(0) invert(1)',
-            duration: 0.4,
-            ease: 'power3.out',
-          })
-        }
-      } else {
-        const targetBg = scrolled || !isHomepage ? '#FFFFFF' : 'transparent'
-        const shouldInvert = !scrolled && isHomepage
-        gsap.to(headerRef.current, {
-          backgroundColor: targetBg,
-          duration: 0.4,
-          ease: 'power3.out',
-        })
-        if (logoRef.current) {
-          gsap.to(logoRef.current, {
-            filter: shouldInvert ? 'brightness(0) invert(1)' : 'brightness(1) invert(0)',
-            duration: 0.4,
-            ease: 'power3.out',
-          })
-        }
-      }
-    }
-  }, [projectsDropdownOpen, scrolled, isHomepage])
-
   const isSolid = scrolled || !isHomepage
-  const isDarkHeader = projectsDropdownOpen || (!isSolid && isHomepage)
+  const isDarkHeader = !isSolid && isHomepage
 
   return (
     <header
       ref={headerRef}
       className={cn(
         'fixed top-0 left-0 right-0 z-[60] transition-shadow duration-300',
-        isSolid && !projectsDropdownOpen && 'shadow-[0_1px_0_rgba(0,0,0,0.06)]'
+        isSolid && 'shadow-[0_1px_0_rgba(0,0,0,0.06)]'
       )}
-      style={{ backgroundColor: projectsDropdownOpen ? '#0A4D4D' : (isSolid ? '#FFFFFF' : 'transparent') }}
+      style={{ backgroundColor: isSolid ? '#FFFFFF' : 'transparent' }}
     >
       <div className="container">
         <div className="flex items-center justify-between py-5 md:py-6">
@@ -135,49 +101,6 @@ export default function Header() {
             >
               {t('homeLink')}
             </Link>
-            <div
-              className="relative"
-              onMouseEnter={() => setProjectsDropdownOpen(true)}
-              onMouseLeave={() => setProjectsDropdownOpen(false)}
-            >
-              <button
-                className={cn(
-                  'font-sans text-[13px] font-medium tracking-[0.05em] transition-colors duration-300 flex items-center gap-1',
-                  isDarkHeader ? 'text-cream-100 hover:text-accent-gold' : 'text-primary-500 hover:text-accent-gold'
-                )}
-              >
-                {t('servicesLink')}
-                <svg
-                  className={cn('w-3 h-3 transition-transform duration-300', projectsDropdownOpen && 'rotate-180')}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div
-                className={cn(
-                  'absolute left-0 top-full pt-3 transition-all duration-200',
-                  projectsDropdownOpen
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-0 invisible -translate-y-1 pointer-events-none'
-                )}
-              >
-                <div className="w-64 bg-white shadow-elegant-lg rounded-md py-2">
-                  <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
-                    {t('corporateAdvisoryLink')}
-                  </Link>
-                  <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
-                    {t('capitalRaisingLink')}
-                  </Link>
-                  <Link href="/services" className="block px-6 py-3 font-sans text-sm text-primary-500 hover:bg-cream-200 hover:text-accent-gold transition-colors duration-200">
-                    {t('assetManagementLink')}
-                  </Link>
-                </div>
-              </div>
-            </div>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -191,6 +114,18 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+            <button
+              onClick={() => setPortalModalOpen(true)}
+              className={cn(
+                'flex items-center gap-1.5 px-3 py-1.5 rounded-md border text-[13px] font-medium tracking-[0.05em] transition-all duration-300',
+                isDarkHeader
+                  ? 'border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500'
+                  : 'border-primary-500/30 text-primary-500 hover:bg-primary-500 hover:text-white'
+              )}
+            >
+              <HiOutlineLockClosed className="w-3.5 h-3.5" />
+              <span>Login</span>
+            </button>
             <LanguageSwitcher isSolid={!isDarkHeader} />
           </nav>
 
@@ -254,30 +189,16 @@ export default function Header() {
           </div>
 
           <div className="border-t border-cream-100/10 pt-8">
-            <p className="text-xs font-sans tracking-[0.1em] opacity-50 mb-4 uppercase">{t('servicesLink')}</p>
-            <div className="space-y-1">
-              <Link
-                href="/services"
-                className="block py-3 font-sans text-base text-cream-200 hover:text-accent-gold transition-colors duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('corporateAdvisoryLink')}
-              </Link>
-              <Link
-                href="/services"
-                className="block py-3 font-sans text-base text-cream-200 hover:text-accent-gold transition-colors duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('capitalRaisingLink')}
-              </Link>
-              <Link
-                href="/services"
-                className="block py-3 font-sans text-base text-cream-200 hover:text-accent-gold transition-colors duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('assetManagementLink')}
-              </Link>
-            </div>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false)
+                setPortalModalOpen(true)
+              }}
+              className="flex items-center gap-2 px-6 py-3 bg-cream-100/10 hover:bg-cream-100/20 rounded-md text-cream-100 hover:text-accent-gold transition-all duration-300 font-sans text-sm font-medium tracking-[0.05em] w-full"
+            >
+              <HiOutlineLockClosed className="w-4 h-4" />
+              <span>Client Portal Login</span>
+            </button>
           </div>
 
           <div className="border-t border-cream-100/10 pt-8">
@@ -300,6 +221,12 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
+
+      {/* Portal Login Modal */}
+      <PortalLoginModal
+        isOpen={portalModalOpen}
+        onClose={() => setPortalModalOpen(false)}
+      />
     </header>
   )
 }

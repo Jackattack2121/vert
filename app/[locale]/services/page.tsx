@@ -3,8 +3,9 @@
 import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
+import Image from 'next/image'
 import { HiArrowRight } from 'react-icons/hi'
-import { HERO_IMAGES } from '@/lib/images'
+import { HERO_IMAGES, SERVICE_IMAGES } from '@/lib/images'
 
 export default function ServicesPage() {
   const t = useTranslations('services')
@@ -66,8 +67,14 @@ export default function ServicesPage() {
                 </AnimatedSection>
 
                 <AnimatedSection>
-                  <div className="h-96 bg-cream-200 rounded-md flex items-center justify-center">
-                    <p className="font-sans text-sm text-secondary-400">Service Image</p>
+                  <div className="h-96 rounded-md overflow-hidden">
+                    <Image
+                      src={SERVICE_IMAGES.corporateAdvisory}
+                      alt="Corporate Advisory Services"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </AnimatedSection>
               </div>
@@ -77,8 +84,14 @@ export default function ServicesPage() {
             <div className="section-padding">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <AnimatedSection>
-                  <div className="h-96 bg-cream-200 rounded-md flex items-center justify-center lg:order-first">
-                    <p className="font-sans text-sm text-secondary-400">Service Image</p>
+                  <div className="h-96 rounded-md overflow-hidden lg:order-first">
+                    <Image
+                      src={SERVICE_IMAGES.capitalRaising}
+                      alt="Capital Raising Services"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </AnimatedSection>
 
@@ -138,8 +151,14 @@ export default function ServicesPage() {
                 </AnimatedSection>
 
                 <AnimatedSection>
-                  <div className="h-96 bg-cream-200 rounded-md flex items-center justify-center">
-                    <p className="font-sans text-sm text-secondary-400">Service Image</p>
+                  <div className="h-96 rounded-md overflow-hidden">
+                    <Image
+                      src={SERVICE_IMAGES.assetManagement}
+                      alt="Asset Management Services"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </AnimatedSection>
               </div>

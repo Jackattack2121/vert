@@ -41,24 +41,12 @@ export const LOGO = {
 export const HERO_IMAGES = {
   // Homepage — currently no hero image (uses solid teal + dot pattern)
   // If you want a background photo, set a path here and update page.tsx
-  home: '',
+  home: '/images/hero.png',
 
   // About & Corporate
   about: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
   services: '/images/165-Hindley-10.jpg',
   boardOfDirectors: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
-
-  // Investor Pages
-  investors: '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg',
-  shareInformation: '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg',
-  financialReports: '/images/natural-quarry-is-located-near-road-against-backdr-2025-01-29-05-43-49-utc.jpg',
-  presentations: '/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg',
-  asxAnnouncements: '/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg',
-  factSheet: '/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg',
-  prospectus: '/images/hero-mining-1.jpg',
-  calendar: '/images/bosnia-and-herzegovina-jablanica-2025-08-28-10-01-46-utc.jpg',
-  esg: '/images/green-dense-forests-surround-old-mining-factory-wi-2025-08-28-11-53-12-utc.jpg',
-  media: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
 
   // Company Pages
   companies: '/images/the-truck-transports-the-minerals-from-the-top-vie-2025-10-16-12-14-08-utc.jpg',
@@ -68,7 +56,6 @@ export const HERO_IMAGES = {
   // Other Pages
   sponsorships: '/images/aerial-drone-view-of-soca-river-in-slovenia-at-sum-2025-03-25-02-59-48-utc.jpg',
   contact: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
-  investorContact: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
 } as const
 
 // ---------------------------------------------------------------------------
@@ -99,6 +86,15 @@ export const SECTION_IMAGES = {
   whyYugoBosnia: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
   /** Why Yugo Metals — mining/construction photo in split section */
   whyYugoMining: '/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg',
+} as const
+
+// ---------------------------------------------------------------------------
+// SERVICE IMAGES — Used on /services page
+// ---------------------------------------------------------------------------
+export const SERVICE_IMAGES = {
+  corporateAdvisory: '/images/corporateadvisory.jpg',
+  capitalRaising: '/images/capitalraising.jpg',
+  assetManagement: '/images/assetmanage.jpg',
 } as const
 
 // ---------------------------------------------------------------------------
