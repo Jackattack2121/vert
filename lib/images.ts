@@ -54,6 +54,7 @@ export const HERO_IMAGES = {
   whyYugoMetals: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
 
   // Other Pages
+  prospectus: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
   sponsorships: '/images/aerial-drone-view-of-soca-river-in-slovenia-at-sum-2025-03-25-02-59-48-utc.jpg',
   contact: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
 } as const

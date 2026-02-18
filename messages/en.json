@@ -102,6 +102,22 @@
       "subtitle": "Ready to take the next step? Get in touch with our team to explore how we can help you achieve your objectives.",
       "contactButton": "Contact Us",
       "servicesButton": "View Services"
+    },
+    "emailSignup": {
+      "title": "Keep up to date on all announcements from Vert Capital.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    },
+    "investmentOpportunities": {
+      "title": "Investment Opportunities",
+      "stockTitle": "Stock",
+      "stockDescription": "Access equity investment opportunities through our carefully curated portfolio companies.",
+      "fundsTitle": "Funds",
+      "fundsDescription": "Diversified fund investments managed by our experienced team of capital market professionals.",
+      "learnMore": "Learn More"
+    },
+    "newsArticle": {
+      "headline": "News Article Headline"
     }
   },
   "about": {
@@ -287,6 +303,22 @@
     "successMessage": "Check your email! We've sent you a secure login link that will expire in 15 minutes.",
     "errorMessage": "Unable to send login link. Please try again or contact support.",
     "helpText": "Having trouble? Contact us at info@vertcapital.com.au"
+  },
+  "forms": {
+    "contact": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your email",
+      "messagePlaceholder": "Your message",
+      "submitButton": "Send Message",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Failed to send message. Please try again."
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "minLength": "Minimum {min} characters required",
+      "maxLength": "Maximum {max} characters allowed"
+    }
   },
   "footer": {
     "tagline": "Boutique investment and corporate advisory services in Perth, Western Australia",
