@@ -4,6 +4,7 @@ import { usePathname } from '@/i18n/navigation';
 import HeaderWrapper from './HeaderWrapper';
 import Footer from './Footer';
 import SubscribeModal from '@/components/newsletter/SubscribeModal';
+import CoryWidget from '@/components/cory/CoryWidget';
 
 export default function ConditionalLayout({
   children,
@@ -27,6 +28,7 @@ export default function ConditionalLayout({
       <main>{children}</main>
       <Footer />
       <SubscribeModal />
+      <CoryWidget />
     </>
   );
 }

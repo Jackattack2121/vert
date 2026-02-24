@@ -24,6 +24,7 @@
     "fly:open": "flyctl open"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
     "@directus/sdk": "^21.0.0",
     "@gsap/react": "^2.1.1",
     "@tanstack/react-table": "^8.21.3",
