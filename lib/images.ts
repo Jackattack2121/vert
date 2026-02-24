@@ -17,7 +17,7 @@
  */
 
 // ---------------------------------------------------------------------------
-// LOGO — Used in Header, Footer, and Why Yugo Metals page
+// LOGO — Used in Header, Footer, and site-wide
 // ---------------------------------------------------------------------------
 export const LOGO = {
   /** Main logo file (PNG). Used in header and footer. */
@@ -39,58 +39,21 @@ export const LOGO = {
 // HERO IMAGES — Full-width page header backgrounds (1920x1080 recommended)
 // ---------------------------------------------------------------------------
 export const HERO_IMAGES = {
-  // Homepage — currently no hero image (uses solid teal + dot pattern)
-  // If you want a background photo, set a path here and update page.tsx
+  // Homepage — currently no hero image (uses video + teal overlay)
   home: '/images/hero.png',
 
-  // About & Corporate
-  about: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
-  services: '/images/165-Hindley-10.jpg',
-  boardOfDirectors: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
+  // About page
+  about: '/images/165-Hindley-10.jpg',
 
-  // Company Pages
-  companies: '/images/the-truck-transports-the-minerals-from-the-top-vie-2025-10-16-12-14-08-utc.jpg',
-  projects: '/images/yellow-excavator-digging-rocks-at-the-quarry-doin-2025-01-29-03-01-59-utc.jpg',
-  whyYugoMetals: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
+  // Portfolio page (reuses companies hero)
+  portfolio: '/images/aerial-drone-view-of-soca-river-in-slovenia-at-sum-2025-03-25-02-59-48-utc.jpg',
 
-  // Other Pages
-  prospectus: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
-  sponsorships: '/images/aerial-drone-view-of-soca-river-in-slovenia-at-sum-2025-03-25-02-59-48-utc.jpg',
+  // Contact page
   contact: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
 } as const
 
 // ---------------------------------------------------------------------------
-// PROJECT IMAGES — Used on /projects listing, /projects/[slug], and ProjectPicker
-// ---------------------------------------------------------------------------
-export const PROJECT_IMAGES = {
-  doboj: '/images/open-pit-mine-with-machines-2024-09-16-10-43-35-utc.jpg',
-  jezero: '/images/flying-over-open-pit-gold-mine-quarry-in-rosia-m-2025-03-09-07-21-03-utc.jpg',
-  sockovac: '/images/aerial-view-over-the-sand-pit-2025-10-13-02-21-23-utc.jpg',
-  sinjakovo: '/images/yellow-excavator-digging-rocks-at-the-quarry-doin-2025-01-29-03-01-59-utc.jpg',
-  cajnice: '/images/natural-quarry-is-located-near-road-against-backdr-2025-01-29-05-43-49-utc.jpg',
-} as const
-
-// ---------------------------------------------------------------------------
-// COMPANY PAGE IMAGES — Used in CompanyPageLayout.tsx for /company/[slug] pages
-// ---------------------------------------------------------------------------
-export const COMPANY_PAGE_IMAGES = {
-  corporateDirectory: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
-  corporateGovernance: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
-  corporateResponsibility: '/images/green-dense-forests-surround-old-mining-factory-wi-2025-08-28-11-53-12-utc.jpg',
-} as const
-
-// ---------------------------------------------------------------------------
-// SECTION IMAGES — Inline content images (1200x800 recommended)
-// ---------------------------------------------------------------------------
-export const SECTION_IMAGES = {
-  /** Why Yugo Metals — Bosnia nature photo in split section */
-  whyYugoBosnia: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
-  /** Why Yugo Metals — mining/construction photo in split section */
-  whyYugoMining: '/images/aerial-view-motor-grader-civil-at-construction-sit-2025-07-08-16-02-40-utc.jpg',
-} as const
-
-// ---------------------------------------------------------------------------
-// SERVICE IMAGES — Used on /services page
+// SERVICE IMAGES — Used on About page services section
 // ---------------------------------------------------------------------------
 export const SERVICE_IMAGES = {
   corporateAdvisory: '/images/corporateadvisory.jpg',
@@ -99,16 +62,7 @@ export const SERVICE_IMAGES = {
 } as const
 
 // ---------------------------------------------------------------------------
-// SPONSORSHIP CARD IMAGES
-// ---------------------------------------------------------------------------
-export const SPONSORSHIP_IMAGES = {
-  sponsorship1: '/images/beautiful-nature-of-bosnia-and-herzegovina-travel-2025-08-29-06-16-13-utc.jpg',
-  sponsorship2: '/images/lush-mountain-forest-in-bosnia-aerial-shot-2025-09-09-00-26-14-utc.jpg',
-  sponsorship3: '/images/three-contemporary-builders-in-uniform-2025-03-16-04-36-05-utc.jpg',
-} as const
-
-// ---------------------------------------------------------------------------
-// COMPANY CARD IMAGES — Used on /companies listing page
+// COMPANY CARD IMAGES — Used on Portfolio page company cards
 // ---------------------------------------------------------------------------
 export const COMPANY_CARD_IMAGES = {
   meteoricResources: '/images/companies/imgi_5_Logo-Meteoric-Resources-Ltd-MEI.png',

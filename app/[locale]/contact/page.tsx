@@ -5,10 +5,10 @@ import { useTranslations } from 'next-intl'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import { HERO_IMAGES } from '@/lib/images'
+import { FaLinkedin } from 'react-icons/fa'
 
 export default function Contact() {
   const t = useTranslations('contact')
-  const tForms = useTranslations('forms.contact')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,22 +16,69 @@ export default function Contact() {
     subject: '',
     message: '',
   })
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [submitted, setSubmitted] = useState(false)
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {}
+
+    if (!formData.name.trim()) newErrors.name = t('validation.nameRequired')
+    if (!formData.email.trim()) {
+      newErrors.email = t('validation.emailRequired')
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = t('validation.emailInvalid')
+    }
+    if (!formData.subject) newErrors.subject = t('validation.subjectRequired')
+    if (!formData.message.trim()) {
+      newErrors.message = t('validation.messageRequired')
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = t('validation.messageMinLength')
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission endpoint not configured
+
+    if (!validate()) return
+
+    const subjectMap: Record<string, string> = {
+      general: 'General Enquiry',
+      investor: 'Investor Relations',
+      media: 'Media Enquiry',
+      partnership: 'Partnership Opportunity',
+    }
+
+    const subject = `${subjectMap[formData.subject] || formData.subject} - ${formData.name}`
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      formData.phone ? `Phone: ${formData.phone}` : '',
+      '',
+      formData.message,
+    ].filter(Boolean).join('\n')
+
+    window.location.href = `mailto:info@vertcapital.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setSubmitted(true)
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev }
+        delete next[name]
+        return next
+      })
+    }
   }
 
   return (
     <>
-      {/* Hero Section - Montfort-style deep teal */}
+      {/* Hero Section */}
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
@@ -54,7 +101,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Section - Montfort clean aesthetic */}
+      {/* Contact Section */}
       <section className="section-padding bg-cream-100">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -64,7 +111,14 @@ export default function Contact() {
                 {t('formTitle')}
               </h2>
               <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-10"></div>
-              <form onSubmit={handleSubmit} className="space-y-6">
+
+              {submitted && (
+                <div className="mb-6 p-4 bg-accent-gold/10 border border-accent-gold/20 rounded-md">
+                  <p className="font-sans text-sm text-primary-500">{t('formSuccess')}</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div>
                   <label htmlFor="name" className="block font-sans text-xs tracking-[0.1em] uppercase text-secondary-500 mb-2">
                     {t('nameLabel')}
@@ -75,11 +129,11 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
                     className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
                                font-sans text-primary-500 focus:border-accent-gold focus:outline-none
                                transition-colors duration-300 text-base"
                   />
+                  {errors.name && <p className="mt-1 font-sans text-xs text-red-500">{errors.name}</p>}
                 </div>
 
                 <div>
@@ -92,11 +146,11 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
                     className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
                                font-sans text-primary-500 focus:border-accent-gold focus:outline-none
                                transition-colors duration-300 text-base"
                   />
+                  {errors.email && <p className="mt-1 font-sans text-xs text-red-500">{errors.email}</p>}
                 </div>
 
                 <div>
@@ -124,7 +178,6 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    required
                     className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
                                font-sans text-primary-500 focus:border-accent-gold focus:outline-none
                                transition-colors duration-300 text-base appearance-none cursor-pointer"
@@ -135,6 +188,7 @@ export default function Contact() {
                     <option value="media">{t('subjectMedia')}</option>
                     <option value="partnership">{t('subjectPartnership')}</option>
                   </select>
+                  {errors.subject && <p className="mt-1 font-sans text-xs text-red-500">{errors.subject}</p>}
                 </div>
 
                 <div>
@@ -146,12 +200,12 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={5}
                     className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-500/20
                                font-sans text-primary-500 focus:border-accent-gold focus:outline-none
                                transition-colors duration-300 resize-none text-base"
                   />
+                  {errors.message && <p className="mt-1 font-sans text-xs text-red-500">{errors.message}</p>}
                 </div>
 
                 <div className="pt-4">
@@ -170,7 +224,6 @@ export default function Contact() {
               <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-10"></div>
 
               <div className="space-y-6">
-                {/* Registered Office */}
                 <div className="bg-white rounded-md p-8 shadow-elegant">
                   <h3 className="font-serif text-lg font-normal text-primary-500 mb-4">
                     {t('registeredOffice')}
@@ -181,7 +234,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Phone & Email */}
                 <div className="bg-white rounded-md p-8 shadow-elegant">
                   <h3 className="font-serif text-lg font-normal text-primary-500 mb-4">
                     {t('phoneEmail')}
@@ -192,7 +244,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Business Hours */}
                 <div className="bg-white rounded-md p-8 shadow-elegant">
                   <h3 className="font-serif text-lg font-normal text-primary-500 mb-4">
                     {t('businessHours')}
@@ -202,21 +253,18 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Social Media */}
                 <div className="bg-white rounded-md p-8 shadow-elegant">
                   <h3 className="font-serif text-lg font-normal text-primary-500 mb-4">
                     {t('followUs')}
                   </h3>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-accent-gold hover:text-accent-goldDark transition-colors duration-300">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                      </svg>
-                    </a>
-                    <a href="#" className="text-accent-gold hover:text-accent-goldDark transition-colors duration-300">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                      </svg>
+                    <a
+                      href="https://au.linkedin.com/company/vert-capital-australia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent-gold hover:text-accent-goldDark transition-colors duration-300"
+                    >
+                      <FaLinkedin className="w-5 h-5" />
                     </a>
                   </div>
                 </div>

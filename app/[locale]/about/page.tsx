@@ -1,16 +1,21 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
-import { HERO_IMAGES } from '@/lib/images'
+import StatsBar from '@/components/ui/StatsBar'
+import { HERO_IMAGES, SERVICE_IMAGES } from '@/lib/images'
+import { HiArrowRight } from 'react-icons/hi'
+import { FaLinkedin } from 'react-icons/fa'
 
 export default function AboutPage() {
   const t = useTranslations('about')
+  const tStats = useTranslations('homepage.stats')
 
   return (
     <>
-      {/* Hero Section - Montfort-style deep teal */}
+      {/* Hero Section */}
       <section className="relative bg-primary-500 py-40 md:py-48 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
@@ -32,7 +37,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Content - Montfort-style alternating sections */}
+      {/* Company Story Section */}
       <section className="section-padding bg-cream-100">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -40,8 +45,10 @@ export default function AboutPage() {
               <div>
                 <h2 className="font-serif font-light text-display text-primary-500 mb-2">{t('introTitle')}</h2>
                 <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-8"></div>
-                <div className="font-sans text-base lg:text-lg text-secondary-500 leading-relaxed">
-                  <p>{t('introDescription')}</p>
+                <div className="space-y-6 font-sans text-base lg:text-lg text-secondary-500 leading-relaxed">
+                  <p>{t('introDescription1')}</p>
+                  <p>{t('introDescription2')}</p>
+                  <p>{t('introDescription3')}</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -73,7 +80,191 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section - Montfort-style cream background */}
+      {/* Stats Bar */}
+      <section>
+        <StatsBar
+          stats={[
+            { value: tStats('stat1Value'), label: tStats('stat1Label'), sublabel: tStats('stat1Sublabel') },
+            { value: tStats('stat2Value'), label: tStats('stat2Label'), sublabel: tStats('stat2Sublabel') },
+            { value: tStats('stat3Value'), label: tStats('stat3Label'), sublabel: tStats('stat3Sublabel') },
+            { value: tStats('stat4Value'), label: tStats('stat4Label'), sublabel: tStats('stat4Sublabel') },
+          ]}
+          background="teal"
+        />
+      </section>
+
+      {/* Services Section */}
+      <section id="our-services" className="bg-white">
+        <div className="container">
+          <div className="section-padding">
+            <AnimatedSection>
+              <div className="mb-16">
+                <h2 className="font-serif font-light text-display text-primary-500 mb-2">{t('servicesTitle')}</h2>
+                <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-8"></div>
+                <p className="font-sans text-lg text-secondary-500 max-w-3xl leading-relaxed">
+                  {t('servicesSubtitle')}
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <div className="divide-y divide-primary-500/10">
+            {/* Corporate Advisory */}
+            <div id="corporate-advisory" className="section-padding scroll-mt-24">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <AnimatedSection>
+                  <div>
+                    <h3 className="font-serif font-light text-display text-primary-500 mb-6">{t('service1Title')}</h3>
+                    <p className="font-sans text-base lg:text-lg text-secondary-500 leading-relaxed mb-8">
+                      {t('service1Description')}
+                    </p>
+                    <ul className="space-y-4 mb-10">
+                      {[1, 2, 3, 4].map((num) => (
+                        <li key={num} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-accent-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-accent-gold"></div>
+                          </div>
+                          <span className="font-sans text-secondary-500">{t(`service1Feature${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection>
+                  <div className="h-96 rounded-md overflow-hidden">
+                    <Image
+                      src={SERVICE_IMAGES.corporateAdvisory}
+                      alt={t('service1Title')}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </AnimatedSection>
+              </div>
+            </div>
+
+            {/* Capital Raising */}
+            <div id="capital-raising" className="section-padding scroll-mt-24">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <AnimatedSection>
+                  <div className="h-96 rounded-md overflow-hidden lg:order-first">
+                    <Image
+                      src={SERVICE_IMAGES.capitalRaising}
+                      alt={t('service2Title')}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection>
+                  <div>
+                    <h3 className="font-serif font-light text-display text-primary-500 mb-6">{t('service2Title')}</h3>
+                    <p className="font-sans text-base lg:text-lg text-secondary-500 leading-relaxed mb-8">
+                      {t('service2Description')}
+                    </p>
+                    <ul className="space-y-4 mb-10">
+                      {[1, 2, 3, 4].map((num) => (
+                        <li key={num} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-accent-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-accent-gold"></div>
+                          </div>
+                          <span className="font-sans text-secondary-500">{t(`service2Feature${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimatedSection>
+              </div>
+            </div>
+
+            {/* Asset Management */}
+            <div id="asset-management" className="section-padding scroll-mt-24">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <AnimatedSection>
+                  <div>
+                    <h3 className="font-serif font-light text-display text-primary-500 mb-6">{t('service3Title')}</h3>
+                    <p className="font-sans text-base lg:text-lg text-secondary-500 leading-relaxed mb-8">
+                      {t('service3Description')}
+                    </p>
+                    <ul className="space-y-4 mb-10">
+                      {[1, 2, 3, 4].map((num) => (
+                        <li key={num} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-accent-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-accent-gold"></div>
+                          </div>
+                          <span className="font-sans text-secondary-500">{t(`service3Feature${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection>
+                  <div className="h-96 rounded-md overflow-hidden">
+                    <Image
+                      src={SERVICE_IMAGES.assetManagement}
+                      alt={t('service3Title')}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </AnimatedSection>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="our-team" className="section-padding bg-cream-100">
+        <div className="container">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-2">{t('teamTitle')}</h2>
+              <div className="w-16 h-0.5 bg-accent-gold mt-4 mx-auto mb-8"></div>
+              <p className="font-sans text-lg text-secondary-500 max-w-3xl mx-auto leading-relaxed">
+                {t('teamSubtitle')}
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[1, 2].map((num) => (
+              <AnimatedSection key={num}>
+                <div className="bg-white rounded-md p-10 shadow-elegant hover:-translate-y-1 hover:shadow-elegant-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-primary-500/10 rounded-full flex items-center justify-center mb-6">
+                    <span className="font-serif text-2xl text-primary-500">
+                      {t(`team${num}Name`).split(' ').map((n: string) => n[0]).join('')}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-xl font-normal text-primary-500 mb-1">
+                    {t(`team${num}Name`)}
+                  </h3>
+                  <p className="font-sans text-sm text-accent-gold tracking-wide mb-4">
+                    {t(`team${num}Role`)}
+                  </p>
+                  <p className="font-sans text-secondary-500 leading-relaxed mb-6">
+                    {t(`team${num}Bio`)}
+                  </p>
+                  <a
+                    href="https://au.linkedin.com/company/vert-capital-australia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent-gold hover:text-accent-goldDark transition-colors duration-300"
+                  >
+                    <FaLinkedin className="w-4 h-4" />
+                    <span className="font-sans text-sm">LinkedIn</span>
+                  </a>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
       <section className="section-padding bg-white">
         <div className="container">
           <AnimatedSection>
@@ -106,17 +297,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Regulatory Section */}
+      <section id="regulatory" className="section-padding bg-cream-200">
+        <div className="container">
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif font-light text-display text-primary-500 mb-2">{t('regulatoryTitle')}</h2>
+              <div className="w-16 h-0.5 bg-accent-gold mt-4 mb-8"></div>
+              <p className="font-sans text-base text-secondary-500 leading-relaxed mb-8">
+                {t('regulatoryDescription')}
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <span className="font-sans text-sm text-secondary-400">{t('regulatoryFSG')}</span>
+                <span className="font-sans text-sm text-secondary-400">{t('regulatoryDisclosure')}</span>
+                <span className="font-sans text-sm text-secondary-400">{t('regulatoryPrivacy')}</span>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding bg-primary-500 text-cream-100">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
-              <h2 className="font-serif font-light text-display mb-6">Get in Touch</h2>
+              <h2 className="font-serif font-light text-display mb-6">{t('ctaTitle')}</h2>
               <p className="font-sans text-lg opacity-80 mb-10 leading-relaxed">
-                Interested in learning more about Vert Capital and our portfolio of companies?
+                {t('ctaDescription')}
               </p>
               <Button href="/contact" variant="gold">
-                Contact Us
+                {t('ctaButton')}
               </Button>
             </AnimatedSection>
           </div>

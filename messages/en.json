@@ -12,25 +12,17 @@
     "header": {
       "homeLink": "Home",
       "aboutLink": "About",
-      "servicesLink": "Services",
-      "corporateAdvisoryLink": "Corporate Advisory",
-      "capitalRaisingLink": "Capital Raising",
-      "assetManagementLink": "Asset Management",
-      "companiesLink": "Companies",
-      "sponsorshipsLink": "Sponsorships",
+      "portfolioLink": "Portfolio",
       "newsLink": "News",
-      "investorsLink": "Investors",
       "contactLink": "Contact"
     },
     "footer": {
-      "servicesTitle": "Services",
-      "companyTitle": "Company",
-      "resourcesTitle": "Resources",
+      "whatWeDoTitle": "What We Do",
+      "exploreTitle": "Explore",
       "contactTitle": "Contact"
     },
     "mobileMenu": {
-      "navigationTitle": "Navigation",
-      "servicesTitle": "Services"
+      "navigationTitle": "Navigation"
     }
   },
   "homepage": {
@@ -43,14 +35,15 @@
       "rotatingText2": "Capital Raising Expertise",
       "rotatingText3": "Asset Management Services",
       "location": "Perth, Western Australia",
-      "cta": "Get in Touch"
+      "cta": "Get in Touch",
+      "ctaSecondary": "Learn More"
     },
     "intro": {
-      "titleLine1": "Specialized",
+      "titleLine1": "Specialised",
       "titleLine2": "Financial Services",
       "titleLine3": "for High Net Worth",
       "titleLine4": "Investors and ASX Companies",
-      "description": "Vert Capital is a boutique investment and corporate advisory firm located in Perth, Western Australia. We specialize in providing investment advisory services to high net worth investors and corporate advisory and capital raising services to both private and ASX listed companies.",
+      "description": "Vert Capital is a boutique investment and corporate advisory firm located in Perth, Western Australia. We specialise in providing investment advisory services to high net worth investors and corporate advisory and capital raising services to both private and ASX listed companies.",
       "cta": "About Vert Capital"
     },
     "stats": {
@@ -62,7 +55,7 @@
       "stat2Sublabel": "Served",
       "stat3Value": "3",
       "stat3Label": "Core Services",
-      "stat3Sublabel": "Specialized Expertise",
+      "stat3Sublabel": "Specialised Expertise",
       "stat4Value": "$100M+",
       "stat4Label": "Capital",
       "stat4Sublabel": "Raised"
@@ -72,11 +65,14 @@
       "titleLine2": "Services",
       "subtitle": "Comprehensive financial solutions tailored to your needs",
       "service1Title": "Corporate Advisory",
-      "service1Description": "Strategic advisory services for mergers, acquisitions, and corporate restructuring.",
+      "service1Description": "Strategic guidance on ASX compliance, governance, mergers and acquisitions, and corporate restructuring for listed and private companies.",
+      "service1Link": "Learn More",
       "service2Title": "Capital Raising",
-      "service2Description": "Expert guidance in raising capital for growth and expansion initiatives.",
+      "service2Description": "End-to-end capital raising support including IPOs, placements, rights issues, and investor roadshows for growth-stage companies.",
+      "service2Link": "Learn More",
       "service3Title": "Asset Management",
-      "service3Description": "Professional investment management services for high net worth individuals.",
+      "service3Description": "Tailored investment management for high net worth individuals, with a focus on ASX equities and alternative assets.",
+      "service3Link": "Learn More",
       "viewAllServices": "View All Services"
     },
     "aboutSection": {
@@ -86,27 +82,24 @@
       "learnMore": "Learn More About Us"
     },
     "companiesSection": {
-      "titleLine1": "Our",
+      "titleLine1": "Portfolio",
       "titleLine2": "Companies",
-      "subtitle": "Portfolio companies and client partnerships",
-      "viewAllCompanies": "View All Companies"
+      "subtitle": "We work alongside ASX-listed companies across resources, technology, and emerging sectors — providing corporate advisory and capital raising support to help them grow.",
+      "viewAllCompanies": "View Portfolio"
     },
     "newsSection": {
       "titleLine1": "Latest",
       "titleLine2": "News",
-      "viewAllNews": "View All News"
+      "viewAllNews": "View All News",
+      "emptyState": "Stay tuned for the latest news and market insights from Vert Capital.",
+      "subscribeButton": "Subscribe for Updates"
     },
     "ctaSection": {
       "titleLine1": "Let's Discuss",
       "titleLine2": "Your Financial Goals",
       "subtitle": "Ready to take the next step? Get in touch with our team to explore how we can help you achieve your objectives.",
       "contactButton": "Contact Us",
-      "servicesButton": "View Services"
-    },
-    "emailSignup": {
-      "title": "Keep up to date on all announcements from Vert Capital.",
-      "placeholder": "Enter your email",
-      "button": "Subscribe"
+      "servicesButton": "Learn More"
     },
     "investmentOpportunities": {
       "title": "Investment Opportunities",
@@ -115,16 +108,15 @@
       "fundsTitle": "Funds",
       "fundsDescription": "Diversified fund investments managed by our experienced team of capital market professionals.",
       "learnMore": "Learn More"
-    },
-    "newsArticle": {
-      "headline": "News Article Headline"
     }
   },
   "about": {
     "heroTitle": "About Vert Capital",
     "heroSubtitle": "Boutique investment and corporate advisory excellence in Perth, Western Australia",
     "introTitle": "Who We Are",
-    "introDescription": "Vert Capital is a boutique investment and corporate advisory firm specializing in providing high-quality financial services to discerning clients. Based in Perth, Western Australia, we offer corporate advisory, capital raising, and asset management services to high net worth investors and both private and ASX listed companies.",
+    "introDescription1": "Vert Capital is a Perth-based boutique investment and corporate advisory firm. We specialise in providing personalised corporate advisory, capital raising, and asset management services to high net worth investors and both private and ASX-listed companies.",
+    "introDescription2": "Founded on the principle that every client deserves institutional-quality advice delivered with a personal touch, our team brings over 15 years of experience across financial markets, corporate strategy, and investment management.",
+    "introDescription3": "As a Corporate Authorised Representative of Barclay Wells Ltd (AFSL No. 235070), we operate within a robust regulatory framework while maintaining the agility and client focus that defines a true boutique firm.",
     "companyInfoTitle": "Company Information",
     "companyName": "Company Name",
     "companyNameValue": "Vert Capital Pty Ltd",
@@ -134,6 +126,34 @@
     "afslValue": "Corporate Authorised Representative of Barclay Wells Ltd (AFSL No. 235070)",
     "location": "Location",
     "locationValue": "Perth, Western Australia",
+    "servicesTitle": "Our Services",
+    "servicesSubtitle": "Comprehensive financial solutions tailored to your unique needs",
+    "service1Title": "Corporate Advisory",
+    "service1Description": "Strategic corporate advisory services including mergers and acquisitions, corporate restructuring, ASX compliance, and strategic planning for businesses seeking to grow, optimise, or exit.",
+    "service1Feature1": "Mergers & Acquisitions",
+    "service1Feature2": "Corporate Restructuring",
+    "service1Feature3": "ASX Compliance & Governance",
+    "service1Feature4": "Strategic Planning",
+    "service2Title": "Capital Raising",
+    "service2Description": "Expert guidance and execution support for capital raising initiatives, helping companies access the funding they need to achieve their growth objectives.",
+    "service2Feature1": "Equity Capital Markets",
+    "service2Feature2": "IPO & Listing Support",
+    "service2Feature3": "Placements & Rights Issues",
+    "service2Feature4": "Investor Relations & Roadshows",
+    "service3Title": "Asset Management",
+    "service3Description": "Professional investment management services for high net worth individuals, delivering tailored investment strategies aligned with your financial goals and risk appetite.",
+    "service3Feature1": "Portfolio Management",
+    "service3Feature2": "Investment Strategy",
+    "service3Feature3": "Risk Management",
+    "service3Feature4": "Wealth Preservation",
+    "teamTitle": "Our Team",
+    "teamSubtitle": "Experienced professionals dedicated to your success",
+    "team1Name": "Petar Tomasevic",
+    "team1Role": "Managing Director",
+    "team1Bio": "Petar is the founder and Managing Director of Vert Capital. With extensive experience in corporate advisory, capital markets, and investment management, he leads the firm's strategic direction and client relationships.",
+    "team2Name": "Laurie Trettel",
+    "team2Role": "Head of Corporate Advisory",
+    "team2Bio": "Laurie heads our Corporate Advisory division, bringing deep expertise in ASX compliance, corporate governance, mergers and acquisitions, and strategic planning for listed and private companies.",
     "valuesTitle": "Our Values",
     "valuesSubtitle": "The principles that guide everything we do",
     "value1Title": "Integrity",
@@ -141,78 +161,66 @@
     "value2Title": "Excellence",
     "value2Description": "We strive for excellence in every aspect of our service delivery.",
     "value3Title": "Client Focus",
-    "value3Description": "Your success is our success. We put our clients' interests first, always."
-  },
-  "services": {
-    "heroTitle": "Our Services",
-    "heroSubtitle": "Comprehensive financial solutions tailored to your unique needs",
-    "service1Category": "Advisory",
-    "service1Title": "Corporate Advisory",
-    "service1Description": "Strategic corporate advisory services including mergers and acquisitions, corporate restructuring, and strategic planning for businesses seeking to grow, optimize, or exit.",
-    "service1Feature1": "Mergers & Acquisitions",
-    "service1Feature2": "Corporate Restructuring",
-    "service1Feature3": "Strategic Planning",
-    "service1Feature4": "Transaction Support",
-    "service2Category": "Capital",
-    "service2Title": "Capital Raising",
-    "service2Description": "Expert guidance and execution support for capital raising initiatives, helping companies access the funding they need to achieve their growth objectives.",
-    "service2Feature1": "Equity Capital Markets",
-    "service2Feature2": "Debt Financing",
-    "service2Feature3": "IPO & Listing Support",
-    "service2Feature4": "Investor Relations",
-    "service3Category": "Management",
-    "service3Title": "Asset Management",
-    "service3Description": "Professional investment management services for high net worth individuals, delivering tailored investment strategies aligned with your financial goals and risk appetite.",
-    "service3Feature1": "Portfolio Management",
-    "service3Feature2": "Investment Strategy",
-    "service3Feature3": "Risk Management",
-    "service3Feature4": "Wealth Preservation",
-    "learnMore": "Learn More",
-    "ctaTitle": "Ready to Get Started?",
-    "ctaDescription": "Contact us today to discuss how our services can help you achieve your financial objectives.",
+    "value3Description": "Your success is our success. We put our clients' interests first, always.",
+    "regulatoryTitle": "Regulatory Information",
+    "regulatoryDescription": "Vert Capital Pty Ltd (CAR No. 1278768) is a Corporate Authorised Representative of Barclay Wells Ltd, which holds Australian Financial Services Licence No. 235070.",
+    "regulatoryFSG": "Financial Services Guide",
+    "regulatoryDisclosure": "Disclosure Policy",
+    "regulatoryPrivacy": "Privacy Policy",
+    "ctaTitle": "Ready to Discuss Your Goals?",
+    "ctaDescription": "Get in touch with our team to explore how we can help you achieve your financial objectives.",
     "ctaButton": "Contact Us"
   },
-  "companies": {
-    "heroTitle": "Our Companies",
-    "heroSubtitle": "Portfolio companies and strategic partnerships",
-    "portfolioTitle": "Our Portfolio",
-    "portfolioSubtitle": "Companies we work with and invest in across diverse sectors",
-    "company1Name": "Growth Tech Ventures",
-    "company1Industry": "Technology",
-    "company1Description": "Innovative technology solutions for enterprise clients",
-    "company2Name": "Resource Capital Partners",
-    "company2Industry": "Resources",
-    "company2Description": "Strategic investments in resource sector opportunities",
-    "company3Name": "Healthcare Innovations",
-    "company3Industry": "Healthcare",
-    "company3Description": "Advancing healthcare through innovation and investment",
-    "learnMore": "Learn More",
-    "ctaTitle": "Interested in Our Portfolio?",
-    "ctaDescription": "Connect with us to learn more about our portfolio companies and investment approach.",
+  "portfolio": {
+    "heroTitle": "Portfolio & Community",
+    "heroSubtitle": "Our portfolio companies and community partnerships",
+    "companiesTitle": "Portfolio Companies",
+    "companiesSubtitle": "We provide corporate advisory and capital raising services to a select group of ASX-listed companies across resources, technology, and emerging sectors.",
+    "company1Name": "Meteoric Resources Ltd",
+    "company1Ticker": "ASX: MEI",
+    "company1Sector": "Mining & Resources",
+    "company1Description": "Exploring and developing mineral resources with a focus on sustainable mining practices.",
+    "company2Name": "TechGen Metals Ltd",
+    "company2Ticker": "ASX: TG1",
+    "company2Sector": "Mining & Resources",
+    "company2Description": "Advancing technology metals projects for the future of sustainable energy and infrastructure.",
+    "company3Name": "Province Resources Ltd",
+    "company3Ticker": "ASX: PRL",
+    "company3Sector": "Mining & Resources",
+    "company3Description": "Developing green hydrogen and helium projects with a commitment to clean energy solutions.",
+    "company4Name": "Peak Minerals Ltd",
+    "company4Ticker": "ASX: PUA",
+    "company4Sector": "Mining & Resources",
+    "company4Description": "Exploring high-grade mineral deposits with a focus on copper and precious metals.",
+    "company5Name": "MSM Corporation International",
+    "company5Ticker": "ASX: MSM",
+    "company5Sector": "Mining & Resources",
+    "company5Description": "International mining corporation specialising in strategic mineral development and partnerships.",
+    "company6Name": "Raiden Resources Ltd",
+    "company6Ticker": "ASX: RDN",
+    "company6Sector": "Mining & Resources",
+    "company6Description": "Exploring battery metals and critical minerals for the renewable energy transition.",
+    "company7Name": "Minbos Resources Ltd",
+    "company7Ticker": "ASX: MNB",
+    "company7Sector": "Mining & Resources",
+    "company7Description": "Developing phosphate projects to support agricultural growth and food security in Africa.",
+    "company8Name": "Ragusa Minerals Ltd",
+    "company8Ticker": "ASX: RAS",
+    "company8Sector": "Mining & Resources",
+    "company8Description": "Exploring and developing gold and base metal projects with proven geological potential.",
+    "sponsorshipsTitle": "Community & Sponsorships",
+    "sponsorshipsSubtitle": "Vert Capital is proud to support local sporting organisations and community initiatives across Western Australia.",
+    "sponsorship1Name": "Fremantle Water Polo",
+    "sponsorship1Category": "Water Polo",
+    "sponsorship2Name": "Perth Wildcats",
+    "sponsorship2Category": "Basketball",
+    "sponsorship3Name": "East Fremantle FC",
+    "sponsorship3Category": "Football",
+    "sponsorship4Name": "Melville Water Polo",
+    "sponsorship4Category": "Water Polo",
+    "ctaTitle": "Interested in Working with Vert Capital?",
+    "ctaDescription": "Whether you're seeking corporate advisory, capital raising support, or investment management, we'd love to hear from you.",
     "ctaButton": "Get in Touch"
-  },
-  "sponsorships": {
-    "heroTitle": "Our Sponsorships",
-    "heroSubtitle": "Supporting our community through strategic partnerships",
-    "commitmentTitle": "Our Commitment",
-    "commitmentDescription": "At Vert Capital, we believe in giving back to the community. Our sponsorship program supports organizations and initiatives that align with our values and contribute to the growth and development of Western Australia.",
-    "sponsorship1Name": "Business Innovation Awards",
-    "sponsorship1Category": "Business",
-    "sponsorship1Description": "Supporting excellence in business innovation and entrepreneurship",
-    "sponsorship2Name": "Community Development Fund",
-    "sponsorship2Category": "Community",
-    "sponsorship2Description": "Investing in local community development initiatives",
-    "sponsorship3Name": "Education Excellence Program",
-    "sponsorship3Category": "Education",
-    "sponsorship3Description": "Promoting educational excellence and opportunity",
-    "valuesTitle": "Why We Sponsor",
-    "valuesSubtitle": "Our approach to community engagement",
-    "value1Title": "Community Impact",
-    "value1Description": "Creating positive change in the communities where we operate",
-    "value2Title": "Strategic Alignment",
-    "value2Description": "Supporting initiatives that align with our corporate values",
-    "value3Title": "Long-term Partnership",
-    "value3Description": "Building lasting relationships with community organizations"
   },
   "news": {
     "heroTitle": "Latest News",
@@ -220,15 +228,6 @@
     "loading": "Loading news...",
     "readMore": "Read More",
     "noNews": "No news articles available at this time.",
-    "news1Title": "Vert Capital Announces New Strategic Partnership",
-    "news1Category": "Company News",
-    "news1Excerpt": "We are pleased to announce a new strategic partnership that will enhance our service offerings to clients.",
-    "news2Title": "Market Insights: Q1 2026 Review",
-    "news2Category": "Market Update",
-    "news2Excerpt": "Our quarterly market review providing insights and analysis on current market conditions.",
-    "news3Title": "Vert Capital Expands Advisory Team",
-    "news3Category": "Team News",
-    "news3Excerpt": "We welcome new senior advisors to our growing team, bringing additional expertise and experience.",
     "newsletterTitle": "Stay Informed",
     "newsletterDescription": "Subscribe to our newsletter for the latest news, market insights, and updates from Vert Capital.",
     "newsletterPlaceholder": "Enter your email",
@@ -244,12 +243,13 @@
     "phoneLabel": "Phone",
     "subjectLabel": "Subject",
     "subjectPlaceholder": "Please select a subject",
-    "subjectGeneral": "General Inquiry",
+    "subjectGeneral": "General Enquiry",
     "subjectInvestor": "Investor Relations",
-    "subjectMedia": "Media Inquiry",
+    "subjectMedia": "Media Enquiry",
     "subjectPartnership": "Partnership Opportunity",
     "messageLabel": "Message",
     "sendButton": "Send Message",
+    "sendingButton": "Sending...",
     "contactInfo": "Contact Information",
     "registeredOffice": "Registered Office",
     "phoneEmail": "Phone & Email",
@@ -257,18 +257,25 @@
     "email": "Email",
     "businessHours": "Business Hours",
     "businessHoursValue": "Monday - Friday, 9:00 AM - 5:00 PM AWST",
-    "followUs": "Follow Us",
+    "followUs": "Connect with Us",
     "heroTitle": "Contact Us",
     "heroSubtitle": "Get in touch with our team",
-    "formNotAvailable": "Contact form is not yet available. Please email us directly at info@vertcapital.com.au",
-    "formSuccess": "Thank you for your message. We'll get back to you soon.",
-    "formError": "There was an error sending your message. Please try again.",
+    "formSuccess": "Thank you for your message. Your default email client will open to send your enquiry.",
+    "formError": "There was an error preparing your message. Please email us directly at info@vertcapital.com.au",
     "officeTitle": "Our Office",
     "officeAddress": "Perth, Western Australia",
     "emailTitle": "Email",
     "emailValue": "info@vertcapital.com.au",
     "phoneTitle": "Phone",
-    "phoneValue": "+61 8 9481 0389"
+    "phoneValue": "+61 8 9481 0389",
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Please select a subject",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters"
+    }
   },
   "investors": {
     "centre": {
@@ -280,19 +287,12 @@
       "viewOnAsx": "View on ASX",
       "latestAnnouncementsTitle": "Latest Announcements",
       "viewAllAnnouncements": "View All Announcements"
-    },
-    "contact": {
-      "heroTitle": "Contact Us",
-      "heroSubtitle": "Get in touch with Vert Capital",
-      "emailTitle": "Email",
-      "phoneTitle": "Phone",
-      "locationTitle": "Location",
-      "formNotAvailable": "Contact form is not yet available. Please email us directly at info@vertcapital.com.au"
     }
   },
   "portal": {
     "title": "Client Portal",
     "subtitle": "Secure access for Vert Capital clients",
+    "description": "For portal access, please contact us at info@vertcapital.com.au or call +61 8 9481 0389.",
     "disclaimer": "— Confidential —",
     "loginTitle": "Welcome Back",
     "loginSubtitle": "Enter your email address and we'll send you a secure login link.",
@@ -302,7 +302,9 @@
     "sendingButton": "Sending...",
     "successMessage": "Check your email! We've sent you a secure login link that will expire in 15 minutes.",
     "errorMessage": "Unable to send login link. Please try again or contact support.",
-    "helpText": "Having trouble? Contact us at info@vertcapital.com.au"
+    "helpText": "Having trouble? Contact us at info@vertcapital.com.au",
+    "loginButton": "Access Portal",
+    "contactButton": "Contact Us"
   },
   "forms": {
     "contact": {
@@ -320,12 +322,17 @@
       "maxLength": "Maximum {max} characters allowed"
     }
   },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "homeButton": "Go to Homepage",
+    "contactButton": "Contact Us"
+  },
   "footer": {
-    "tagline": "Boutique investment and corporate advisory services in Perth, Western Australia",
+    "tagline": "Boutique investment and corporate advisory services in Perth, Western Australia.",
     "navigation": {
-      "servicesTitle": "Services",
-      "companyTitle": "Company",
-      "resourcesTitle": "Resources",
+      "whatWeDoTitle": "What We Do",
+      "exploreTitle": "Explore",
       "contactTitle": "Contact"
     },
     "services": {
@@ -333,14 +340,10 @@
       "capitalRaising": "Capital Raising",
       "assetManagement": "Asset Management"
     },
-    "company": {
-      "about": "About",
-      "companies": "Companies",
-      "sponsorships": "Sponsorships"
-    },
-    "resources": {
-      "news": "News",
-      "contact": "Contact"
+    "explore": {
+      "about": "About Us",
+      "portfolio": "Portfolio",
+      "news": "News"
     },
     "location": {
       "city": "Perth, Western Australia",
@@ -348,9 +351,12 @@
     },
     "newsletter": {
       "title": "Stay Connected",
-      "subtitle": "Subscribe to receive updates and insights from Vert Capital",
+      "subtitle": "Subscribe to receive updates and insights from Vert Capital.",
       "placeholder": "Enter your email address",
-      "button": "Subscribe"
+      "button": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "duplicate": "This email is already subscribed.",
+      "error": "Unable to subscribe. Please try again later."
     },
     "social": {
       "linkedin": "LinkedIn",
@@ -362,37 +368,48 @@
       "financialServicesGuide": "Financial Services Guide",
       "privacyPolicy": "Privacy Policy"
     },
-    "copyright": "© {year} Vert Capital Pty Ltd. All Rights Reserved.",
-    "disclaimer": "Vert Capital Pty Ltd (CAR No. 1278768) is a corporate authorised representative of Barclay Wells Ltd (AFSL No. 235070)"
+    "copyright": "\u00a9 {year} Vert Capital Pty Ltd. All Rights Reserved.",
+    "disclaimer": "Vert Capital Pty Ltd (CAR No. 1278768) is a Corporate Authorised Representative of Barclay Wells Ltd (AFSL No. 235070).",
+    "generalAdviceWarning": "General Advice Warning: The information on this website is general in nature and does not take into account your personal objectives, financial situation, or needs. You should consider whether the information is appropriate to your needs, and where appropriate, seek professional advice from a financial adviser."
+  },
+  "subscribeModal": {
+    "title": "Stay Ahead\nof the Market",
+    "subtitle": "Join our mailing list for exclusive insights, market updates, and investment opportunities delivered directly to your inbox.",
+    "tagline": "Vert Capital Insights",
+    "formLabel": "Newsletter",
+    "formTitle": "Get the Inside Track",
+    "formDescription": "Be the first to receive our market commentary, portfolio updates, and exclusive insights from our advisory team.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "your.email@example.com",
+    "submitButton": "Subscribe",
+    "submitting": "Subscribing...",
+    "successTitle": "Welcome Aboard",
+    "successMessage": "Thank you for subscribing. You'll receive our next update directly to your inbox.",
+    "duplicateMessage": "You're already subscribed. We'll keep you updated.",
+    "errorMessage": "Something went wrong. Please try again.",
+    "privacyNote": "We respect your privacy. Unsubscribe at any time. No spam, ever.",
+    "noThanks": "No thanks, maybe later"
   },
   "metadata": {
     "homepage": {
-      "title": "Vert Capital - Boutique Investment & Corporate Advisory",
-      "description": "Vert Capital is a Perth-based boutique investment and corporate advisory firm specializing in corporate advisory, capital raising, and asset management services."
+      "title": "Vert Capital \u2014 Boutique Investment & Corporate Advisory | Perth, WA",
+      "description": "Vert Capital is a Perth-based boutique investment and corporate advisory firm specialising in corporate advisory, capital raising, and asset management for ASX-listed companies and high net worth investors."
     },
     "about": {
-      "title": "About Us - Vert Capital",
-      "description": "Learn about Vert Capital, a boutique investment and corporate advisory firm providing specialized services to high net worth investors and ASX listed companies."
+      "title": "About Us \u2014 Vert Capital | Perth Corporate Advisory",
+      "description": "Meet the Vert Capital team. Over 15 years of experience in corporate advisory, capital raising, and asset management for ASX-listed companies and high net worth investors in Perth, WA."
     },
-    "services": {
-      "title": "Our Services - Vert Capital",
-      "description": "Discover our comprehensive range of services including corporate advisory, capital raising, and asset management for discerning clients."
-    },
-    "companies": {
-      "title": "Our Companies - Vert Capital",
-      "description": "Explore the portfolio companies and strategic partnerships that Vert Capital works with across diverse sectors."
-    },
-    "sponsorships": {
-      "title": "Sponsorships - Vert Capital",
-      "description": "Learn about Vert Capital's commitment to supporting our community through strategic sponsorships and partnerships."
+    "portfolio": {
+      "title": "Portfolio & Community \u2014 Vert Capital",
+      "description": "Explore Vert Capital's portfolio of ASX-listed client companies and community sponsorships across Western Australia, including resources, technology, and emerging sectors."
     },
     "news": {
-      "title": "News & Insights - Vert Capital",
-      "description": "Stay updated with the latest news, market insights, and updates from Vert Capital."
+      "title": "News & Insights \u2014 Vert Capital",
+      "description": "Stay updated with the latest news, market insights, and corporate advisory updates from Vert Capital in Perth, Western Australia."
     },
     "contact": {
-      "title": "Contact Us - Vert Capital",
-      "description": "Get in touch with our team to discuss how Vert Capital can help you achieve your financial objectives."
+      "title": "Contact Us \u2014 Vert Capital | Perth, Western Australia",
+      "description": "Get in touch with Vert Capital's team in Perth to discuss corporate advisory, capital raising, or asset management services tailored to your needs."
     }
   }
 }

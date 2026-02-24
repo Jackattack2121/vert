@@ -37,14 +37,13 @@ export default function HomePage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Parallax scroll — writes directly to DOM to avoid re-renders
+  // Parallax scroll
   useEffect(() => {
     const handleScroll = () => {
       if (!fullbleedRef.current || !parallaxImgRef.current) return
       const rect = fullbleedRef.current.getBoundingClientRect()
       const viewH = window.innerHeight
       if (rect.bottom < 0 || rect.top > viewH) return
-      // progress: 0 when section bottom enters viewport, 1 when top leaves
       const progress = (viewH - rect.top) / (viewH + rect.height)
       const offset = (progress - 0.5) * 160
       parallaxImgRef.current.style.transform = `translateY(${offset}px)`
@@ -56,9 +55,8 @@ export default function HomePage() {
 
   return (
     <main>
-      {/* Hero Section - Montfort-style with video background */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-end pb-32 overflow-hidden">
-        {/* Full-cover background video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/hero_lrg.mp4"
@@ -67,16 +65,11 @@ export default function HomePage() {
           muted
           playsInline
         />
-
-        {/* Semi-transparent primary colour overlay */}
         <div className="absolute inset-0 bg-primary-500/70" />
-
-        {/* Subtle geometric pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(250,249,246,0.8) 1px, transparent 0)', backgroundSize: '48px 48px' }}></div>
         </div>
 
-        {/* Content aligned left, Montfort style */}
         <div className="container relative z-10 text-cream-100">
           <AnimatedSection>
             <div className="max-w-3xl">
@@ -100,15 +93,14 @@ export default function HomePage() {
                 <Button href="/contact" variant="gold">
                   {t('hero.cta')}
                 </Button>
-                <Button href="/services" variant="outline" className="border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500 hover:border-cream-100">
-                  View Services
+                <Button href="/about" variant="outline" className="border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500 hover:border-cream-100">
+                  {t('hero.ctaSecondary')}
                 </Button>
               </div>
             </div>
           </AnimatedSection>
         </div>
 
-        {/* Scroll indicator - minimal Montfort style */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="w-5 h-8 border border-cream-100/30 rounded-full flex items-start justify-center p-1.5">
             <div className="w-0.5 h-2 bg-cream-100/50 rounded-full animate-bounce"></div>
@@ -116,32 +108,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Email Signup Bar - Montfort-style cream section */}
-      <section className="bg-cream-200 py-12 lg:py-16">
-        <div className="container">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <p className="font-serif font-light text-xl lg:text-2xl text-primary-500">
-              Keep up to date on all announcements from Vert Capital.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-5 py-3 bg-white border border-primary-500/20 rounded-md font-sans text-sm text-primary-500
-                           placeholder:text-secondary-400 focus:border-accent-gold focus:outline-none
-                           transition-colors duration-300 w-full sm:w-72"
-              />
-              <button className="px-8 py-3 bg-primary-500 text-cream-100 font-sans font-medium text-sm
-                                 tracking-wide rounded-md transition-all duration-300
-                                 hover:bg-primary-600 hover:scale-[1.02] whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values Section - Montfort style with cream background */}
+      {/* Services Section */}
       <section className="section-padding bg-cream-100">
         <div className="container">
           <AnimatedSection>
@@ -154,7 +121,6 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left: Illustration placeholder */}
             <AnimatedSection>
               <div className="rounded-lg aspect-[4/3] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -166,7 +132,6 @@ export default function HomePage() {
               </div>
             </AnimatedSection>
 
-            {/* Right: Value propositions grid */}
             <div className="grid sm:grid-cols-2 gap-10">
               {[1, 2, 3].map((num) => (
                 <AnimatedSection key={num}>
@@ -182,9 +147,15 @@ export default function HomePage() {
                     <h3 className="font-serif text-lg font-normal text-primary-500 mb-2">
                       {t(`servicesSection.service${num}Title`)}
                     </h3>
-                    <p className="font-sans text-sm text-secondary-500 leading-relaxed">
+                    <p className="font-sans text-sm text-secondary-500 leading-relaxed mb-3">
                       {t(`servicesSection.service${num}Description`)}
                     </p>
+                    <Link
+                      href={`/about#${num === 1 ? 'corporate-advisory' : num === 2 ? 'capital-raising' : 'asset-management'}`}
+                      className="inline-flex items-center gap-2 font-sans text-xs font-medium text-accent-gold tracking-wide hover:gap-3 transition-all duration-300"
+                    >
+                      {t(`servicesSection.service${num}Link`)} <HiArrowRight className="w-3 h-3" />
+                    </Link>
                   </div>
                 </AnimatedSection>
               ))}
@@ -193,7 +164,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Our Model Section - Montfort-style split layout */}
+      {/* About Section */}
       <section className="section-padding bg-white">
         <div className="container">
           <AnimatedSection>
@@ -216,14 +187,11 @@ export default function HomePage() {
 
             <AnimatedSection>
               <div>
-                <p className="font-sans text-base lg:text-lg text-secondary-500 leading-relaxed mb-8">
-                  {t('intro.description')}
-                </p>
                 <p className="font-sans text-base lg:text-lg text-secondary-500 leading-relaxed mb-10">
                   {t('aboutSection.description')}
                 </p>
                 <Button href="/about" variant="primary">
-                  {t('intro.cta')}
+                  {t('aboutSection.learnMore')}
                 </Button>
               </div>
             </AnimatedSection>
@@ -231,38 +199,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section - Montfort style with serif numbers */}
+      {/* Stats Section */}
       <section>
         <StatsBar
           stats={[
-            {
-              value: t('stats.stat1Value'),
-              label: t('stats.stat1Label'),
-              sublabel: t('stats.stat1Sublabel'),
-            },
-            {
-              value: t('stats.stat2Value'),
-              label: t('stats.stat2Label'),
-              sublabel: t('stats.stat2Sublabel'),
-            },
-            {
-              value: t('stats.stat3Value'),
-              label: t('stats.stat3Label'),
-              sublabel: t('stats.stat3Sublabel'),
-            },
-            {
-              value: t('stats.stat4Value'),
-              label: t('stats.stat4Label'),
-              sublabel: t('stats.stat4Sublabel'),
-            },
+            { value: t('stats.stat1Value'), label: t('stats.stat1Label'), sublabel: t('stats.stat1Sublabel') },
+            { value: t('stats.stat2Value'), label: t('stats.stat2Label'), sublabel: t('stats.stat2Sublabel') },
+            { value: t('stats.stat3Value'), label: t('stats.stat3Label'), sublabel: t('stats.stat3Sublabel') },
+            { value: t('stats.stat4Value'), label: t('stats.stat4Label'), sublabel: t('stats.stat4Sublabel') },
           ]}
           background="teal"
         />
       </section>
 
-      {/* Full-bleed Image Section - Montfort style with parallax */}
+      {/* Full-bleed Image Section */}
       <section ref={fullbleedRef} className="relative max-h-[600px] h-[60vw] overflow-hidden">
-        {/* Parallax image — oversized vertically so there is room to travel */}
         <div
           ref={parallaxImgRef}
           className="absolute inset-x-0 w-full"
@@ -276,13 +227,11 @@ export default function HomePage() {
             draggable={false}
           />
         </div>
-        {/* Semi-transparent primary tint — much softer than the hero */}
         <div className="absolute inset-0 bg-primary-500/20 pointer-events-none" />
-        {/* Subtle top/bottom vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/15 pointer-events-none" />
       </section>
 
-      {/* Our Companies Section - Montfort style cream background */}
+      {/* Portfolio Companies Section */}
       <section className="section-padding bg-cream-200">
         <div className="container">
           <AnimatedSection>
@@ -302,21 +251,24 @@ export default function HomePage() {
             </AnimatedSection>
             <AnimatedSection>
               <div className="flex justify-end">
-                <Button href="/companies" variant="secondary">
+                <Button href="/portfolio" variant="secondary">
                   {t('companiesSection.viewAllCompanies')}
                 </Button>
               </div>
             </AnimatedSection>
           </div>
 
-          {/* Company logos grid - clean Montfort style */}
           <AnimatedSection>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
+                { src: '/images/companies/imgi_5_Logo-Meteoric-Resources-Ltd-MEI.png', alt: 'Meteoric Resources Ltd' },
+                { src: '/images/companies/imgi_6_Logo-TechGen-Metals-Ltd-TG1-2.png', alt: 'TechGen Metals Ltd' },
+                { src: '/images/companies/imgi_7_Logo-Province-Resources-Ltd-PRL-1.png', alt: 'Province Resources Ltd' },
+                { src: '/images/companies/imgi_8_Logo-Peak-Minerals-Ltd-PUA.png', alt: 'Peak Minerals Ltd' },
                 { src: '/images/companies/imgi_9_Logo-MSM-Corporation-International-MSM-1.png', alt: 'MSM Corporation International' },
                 { src: '/images/companies/imgi_10_Logo-Raiden-Resources-Ltd-RDN-1.png', alt: 'Raiden Resources Ltd' },
                 { src: '/images/companies/imgi_11_Logo-Minbos-Resources-Ltd-MNB-1.png', alt: 'Minbos Resources Ltd' },
-                { src: '/images/companies/imgi_7_Logo-Province-Resources-Ltd-PRL-1.png', alt: 'Province Resources Ltd' },
+                { src: '/images/companies/imgi_12_Logo-Ragusa-Minerals-Ltd-RAS.png', alt: 'Ragusa Minerals Ltd' },
               ].map((company) => (
                 <div key={company.src} className="bg-white rounded-md p-8 flex items-center justify-center h-32 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-elegant transition-shadow duration-300">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -328,13 +280,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Investment Opportunities - Montfort split card style */}
+      {/* Investment Opportunities */}
       <section className="section-padding bg-white">
         <div className="container">
           <AnimatedSection>
             <div className="mb-16 text-right">
               <h2 className="font-serif font-light text-display text-primary-500">
-                Investment Opportunities
+                {t('investmentOpportunities.title')}
               </h2>
               <div className="w-16 h-0.5 bg-accent-gold mt-4 ml-auto"></div>
             </div>
@@ -348,12 +300,12 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl lg:text-3xl font-light text-primary-500 mb-4">Stock</h3>
+                <h3 className="font-serif text-2xl lg:text-3xl font-light text-primary-500 mb-4">{t('investmentOpportunities.stockTitle')}</h3>
                 <p className="font-sans text-secondary-500 leading-relaxed mb-8">
-                  Access equity investment opportunities through our carefully curated portfolio companies.
+                  {t('investmentOpportunities.stockDescription')}
                 </p>
-                <Link href="/portal" className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
-                  Learn More <HiArrowRight className="w-4 h-4" />
+                <Link href="/portfolio" className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
+                  {t('investmentOpportunities.learnMore')} <HiArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </AnimatedSection>
@@ -365,12 +317,12 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl lg:text-3xl font-light text-primary-500 mb-4">Funds</h3>
+                <h3 className="font-serif text-2xl lg:text-3xl font-light text-primary-500 mb-4">{t('investmentOpportunities.fundsTitle')}</h3>
                 <p className="font-sans text-secondary-500 leading-relaxed mb-8">
-                  Diversified fund investments managed by our experienced team of capital market professionals.
+                  {t('investmentOpportunities.fundsDescription')}
                 </p>
-                <Link href="/portal" className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
-                  Learn More <HiArrowRight className="w-4 h-4" />
+                <Link href="/contact" className="inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide group-hover:gap-4 transition-all duration-300">
+                  {t('investmentOpportunities.learnMore')} <HiArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </AnimatedSection>
@@ -378,60 +330,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest News Section - Montfort clean list style */}
+      {/* News Section — Empty State */}
       <section className="section-padding bg-cream-100">
         <div className="container">
           <AnimatedSection>
-            <div className="flex items-center justify-between mb-16">
-              <div>
-                <h2 className="font-serif font-light text-display text-primary-500">
-                  {t('newsSection.titleLine1')} {t('newsSection.titleLine2')}
-                </h2>
-                <div className="w-16 h-0.5 bg-accent-gold mt-4"></div>
-              </div>
-              <Link href="/news" className="hidden md:inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-gold tracking-wide hover:gap-4 transition-all duration-300">
-                View All <HiArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="mb-16">
+              <h2 className="font-serif font-light text-display text-primary-500">
+                {t('newsSection.titleLine1')} {t('newsSection.titleLine2')}
+              </h2>
+              <div className="w-16 h-0.5 bg-accent-gold mt-4"></div>
             </div>
           </AnimatedSection>
 
-          {/* News list - Montfort style with dividers */}
-          <div className="divide-y divide-primary-500/10">
-            {[1, 2, 3, 4].map((num) => (
-              <AnimatedSection key={num}>
-                <article className="group py-6 lg:py-8">
-                  <Link href="/news" className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="font-serif text-lg lg:text-xl font-normal text-primary-500 group-hover:text-accent-gold transition-colors duration-300 mb-1">
-                        News Article Headline {num}
-                      </h3>
-                      <p className="font-sans text-sm text-secondary-400">
-                        Brief excerpt of the latest news from Vert Capital...
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <span className="font-sans text-xs text-secondary-400 whitespace-nowrap">
-                        {num === 1 ? '15 February 2026' : num === 2 ? '10 February 2026' : num === 3 ? '5 February 2026' : '28 January 2026'}
-                      </span>
-                      <HiArrowRight className="w-4 h-4 text-accent-gold opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" />
-                    </div>
-                  </Link>
-                </article>
-              </AnimatedSection>
-            ))}
-          </div>
-
           <AnimatedSection>
-            <div className="text-center mt-12 md:hidden">
+            <div className="text-center py-12">
+              <p className="font-sans text-lg text-secondary-500 leading-relaxed mb-8 max-w-2xl mx-auto">
+                {t('newsSection.emptyState')}
+              </p>
               <Button href="/news" variant="secondary">
-                {t('newsSection.viewAllNews')}
+                {t('newsSection.subscribeButton')}
               </Button>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* CTA Section - Montfort deep teal */}
+      {/* CTA Section */}
       <section className="section-padding bg-primary-500 text-cream-100">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
@@ -447,7 +371,7 @@ export default function HomePage() {
                 <Button href="/contact" variant="gold">
                   {t('ctaSection.contactButton')}
                 </Button>
-                <Button href="/services" variant="outline" className="border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500 hover:border-cream-100">
+                <Button href="/about" variant="outline" className="border-cream-100/40 text-cream-100 hover:bg-cream-100 hover:text-primary-500 hover:border-cream-100">
                   {t('ctaSection.servicesButton')}
                 </Button>
               </div>

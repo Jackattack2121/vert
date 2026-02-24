@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -9,15 +10,42 @@ import { LOGO } from '@/lib/images'
 
 export default function Footer() {
   const t = useTranslations('footer')
-  const tCompany = useTranslations('footer.company')
-  const tInvestors = useTranslations('footer.investors')
+  const tExplore = useTranslations('footer.explore')
   const tLocation = useTranslations('footer.location')
   const currentYear = new Date().getFullYear()
+
+  const [email, setEmail] = useState('')
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'duplicate' | 'error'>('idle')
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+
+    setNewsletterStatus('loading')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      if (res.ok) {
+        setNewsletterStatus('success')
+        setEmail('')
+      } else if (res.status === 409) {
+        setNewsletterStatus('duplicate')
+      } else {
+        setNewsletterStatus('error')
+      }
+    } catch {
+      setNewsletterStatus('error')
+    }
+  }
 
   return (
     <footer className="bg-primary-500 text-cream-100">
       <div className="container section-padding-small">
-        {/* Newsletter Section - Montfort style top of footer */}
+        {/* Newsletter Section */}
         <div className="mb-16 pb-16 border-b border-cream-100/10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -27,25 +55,42 @@ export default function Footer() {
               </p>
             </div>
             <div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('newsletter.placeholder')}
+                  required
                   className="flex-1 px-5 py-4 bg-cream-100/10 text-cream-100 placeholder:text-cream-300/50
                              border border-cream-100/20 rounded-md font-sans text-sm
                              focus:border-accent-gold focus:outline-none transition-colors duration-300"
                 />
-                <button className="px-8 py-4 bg-accent-gold text-white font-sans font-medium text-sm
-                                   tracking-wide rounded-md transition-all duration-300
-                                   hover:bg-accent-goldDark hover:scale-[1.02] whitespace-nowrap">
+                <button
+                  type="submit"
+                  disabled={newsletterStatus === 'loading'}
+                  className="px-8 py-4 bg-accent-gold text-white font-sans font-medium text-sm
+                             tracking-wide rounded-md transition-all duration-300
+                             hover:bg-accent-goldDark hover:scale-[1.02] whitespace-nowrap
+                             disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   {t('newsletter.button')}
                 </button>
-              </div>
+              </form>
+              {newsletterStatus === 'success' && (
+                <p className="mt-3 font-sans text-sm text-accent-gold">{t('newsletter.success')}</p>
+              )}
+              {newsletterStatus === 'duplicate' && (
+                <p className="mt-3 font-sans text-sm text-cream-200 opacity-80">{t('newsletter.duplicate')}</p>
+              )}
+              {newsletterStatus === 'error' && (
+                <p className="mt-3 font-sans text-sm text-red-400">{t('newsletter.error')}</p>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Main Footer Content - Multi-column Montfort style */}
+        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Logo & Tagline */}
           <div className="lg:col-span-2">
@@ -63,49 +108,49 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Services */}
+          {/* What We Do */}
           <div>
             <h4 className="font-sans text-xs font-medium tracking-[0.1em] uppercase mb-6 text-accent-gold">
-              {t('navigation.servicesTitle')}
+              {t('navigation.whatWeDoTitle')}
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/services" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
+                <Link href="/about#corporate-advisory" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {t('services.corporateAdvisory')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
+                <Link href="/about#capital-raising" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {t('services.capitalRaising')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
+                <Link href="/about#asset-management" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
                   {t('services.assetManagement')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Explore */}
           <div>
             <h4 className="font-sans text-xs font-medium tracking-[0.1em] uppercase mb-6 text-accent-gold">
-              {t('navigation.companyTitle')}
+              {t('navigation.exploreTitle')}
             </h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/about" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
-                  {tCompany('about')}
+                  {tExplore('about')}
                 </Link>
               </li>
               <li>
-                <Link href="/companies" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
-                  {tCompany('companies')}
+                <Link href="/portfolio" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
+                  {tExplore('portfolio')}
                 </Link>
               </li>
               <li>
-                <Link href="/sponsorships" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
-                  {tCompany('sponsorships')}
+                <Link href="/news" className="font-sans text-sm text-cream-200 opacity-80 hover:text-accent-gold hover:opacity-100 transition-colors duration-300">
+                  {tExplore('news')}
                 </Link>
               </li>
             </ul>
@@ -134,30 +179,50 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-cream-100/10 pt-8">
-          <div className="flex items-center gap-6">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cream-200 opacity-60 hover:text-accent-gold hover:opacity-100 transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="mailto:info@vertcapital.com.au"
-              className="text-cream-200 opacity-60 hover:text-accent-gold hover:opacity-100 transition-all duration-300"
-              aria-label="Email"
-            >
-              <HiMail className="w-5 h-5" />
-            </a>
+        <div className="border-t border-cream-100/10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+            <div className="flex items-center gap-6">
+              <a
+                href="https://au.linkedin.com/company/vert-capital-australia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cream-200 opacity-60 hover:text-accent-gold hover:opacity-100 transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:info@vertcapital.com.au"
+                className="text-cream-200 opacity-60 hover:text-accent-gold hover:opacity-100 transition-all duration-300"
+                aria-label="Email"
+              >
+                <HiMail className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="text-center md:text-right">
+              <p className="font-sans text-xs text-cream-200 opacity-50">
+                {t('copyright', { year: currentYear })}
+              </p>
+            </div>
           </div>
-          <div className="text-center md:text-right">
-            <p className="font-sans text-xs text-cream-200 opacity-50">
-              {t('copyright', { year: currentYear })}
-            </p>
+
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
+            <span className="font-sans text-xs text-cream-200 opacity-40">{t('legal.customNotice')}</span>
+            <span className="font-sans text-xs text-cream-200 opacity-40">{t('legal.disclosurePolicy')}</span>
+            <span className="font-sans text-xs text-cream-200 opacity-40">{t('legal.financialServicesGuide')}</span>
+            <span className="font-sans text-xs text-cream-200 opacity-40">{t('legal.privacyPolicy')}</span>
           </div>
+
+          {/* AFSL Disclaimer */}
+          <p className="font-sans text-xs text-cream-200 opacity-40 text-center mb-4">
+            {t('disclaimer')}
+          </p>
+
+          {/* General Advice Warning */}
+          <p className="font-sans text-[11px] text-cream-200 opacity-30 text-center max-w-4xl mx-auto leading-relaxed">
+            {t('generalAdviceWarning')}
+          </p>
         </div>
       </div>
     </footer>

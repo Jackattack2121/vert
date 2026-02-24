@@ -11,10 +11,10 @@ test.describe('Locale Routing', () => {
   test('should access all pages in all locales', async ({ page }) => {
     const testPaths = [
       '',  // home
-      '/investors',
-      '/projects',
+      '/about',
+      '/portfolio',
       '/contact',
-      '/why-yugo-metals',
+      '/news',
     ];
 
     for (const locale of locales) {

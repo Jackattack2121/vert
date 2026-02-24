@@ -110,10 +110,10 @@ test.describe('Language Switcher', () => {
 
   test('should work on all major pages', async ({ page }) => {
     const testPages = [
-      '/investors',
-      '/projects',
+      '/about',
+      '/portfolio',
       '/contact',
-      '/why-yugo-metals',
+      '/news',
     ];
 
     for (const pagePath of testPages) {

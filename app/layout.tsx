@@ -39,7 +39,7 @@ function getLocaleFromHeaders(): string {
   const pathname = headersList.get('x-pathname') || headersList.get('referer') || '';
 
   // Extract locale from pathname (format: /en/page or /de/page)
-  const localeMatch = pathname.match(/\/(en|de|bs|zh|ja|fr|it)(\/|$)/);
+  const localeMatch = pathname.match(/\/(en|fr|zh)(\/|$)/);
 
   // Default to 'en' for admin routes and non-localized paths
   return localeMatch ? localeMatch[1] : 'en';

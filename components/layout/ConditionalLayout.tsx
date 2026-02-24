@@ -3,6 +3,7 @@
 import { usePathname } from '@/i18n/navigation';
 import HeaderWrapper from './HeaderWrapper';
 import Footer from './Footer';
+import SubscribeModal from '@/components/newsletter/SubscribeModal';
 
 export default function ConditionalLayout({
   children,
@@ -10,7 +11,7 @@ export default function ConditionalLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  
+
   // Check if we're in the admin area
   const isAdminRoute = pathname?.startsWith('/admin');
 
@@ -25,6 +26,7 @@ export default function ConditionalLayout({
       <HeaderWrapper />
       <main>{children}</main>
       <Footer />
+      <SubscribeModal />
     </>
   );
 }

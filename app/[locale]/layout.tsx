@@ -20,18 +20,14 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('description'),
-    keywords: 'investment advisory, corporate advisory, capital raising, asset management, Vert Capital, Perth, Western Australia, financial services, boutique investment',
+    keywords: 'investment advisory, corporate advisory, capital raising, asset management, Vert Capital, Perth, Western Australia, financial services, boutique investment, ASX',
     metadataBase: new URL('https://vertcapital.com.au'),
     alternates: {
       canonical: `/${locale}`,
       languages: {
         'en': '/en',
-        'de': '/de',
-        'bs': '/bs',
-        'zh': '/zh',
-        'ja': '/ja',
         'fr': '/fr',
-        'it': '/it',
+        'zh': '/zh',
         'x-default': '/en',
       },
     },
@@ -42,6 +38,14 @@ export async function generateMetadata({
       siteName: 'Vert Capital',
       locale: locale,
       type: 'website',
+      images: [
+        {
+          url: '/images/vert_logo.png',
+          width: 400,
+          height: 400,
+          alt: 'Vert Capital',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -63,13 +67,36 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages({ locale });
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FinancialService',
+    name: 'Vert Capital Pty Ltd',
+    description: 'Boutique investment and corporate advisory firm specialising in corporate advisory, capital raising, and asset management.',
+    url: 'https://vertcapital.com.au',
+    telephone: '+61 8 9481 0389',
+    email: 'info@vertcapital.com.au',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Subiaco',
+      addressRegion: 'WA',
+      postalCode: '6008',
+      addressCountry: 'AU',
+    },
+    areaServed: 'Australia',
+    sameAs: [
+      'https://au.linkedin.com/company/vert-capital-australia',
+    ],
+  };
 
   return (
     <NextIntlClientProvider messages={messages}>
       <SessionProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <ConditionalLayout>{children}</ConditionalLayout>
       </SessionProvider>
     </NextIntlClientProvider>

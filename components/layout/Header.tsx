@@ -24,10 +24,8 @@ export default function Header() {
   const isHomepage = pathname === '/' || pathname === ''
 
   const navigation = [
-    { name: t('servicesLink'), href: '/services' },
     { name: t('aboutLink'), href: '/about' },
-    { name: t('companiesLink'), href: '/companies' },
-    { name: t('sponsorshipsLink'), href: '/sponsorships' },
+    { name: t('portfolioLink'), href: '/portfolio' },
     { name: t('newsLink'), href: '/news' },
     { name: t('contactLink'), href: '/contact' },
   ]
@@ -89,7 +87,7 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation - Montfort-style clean minimal */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             <Link
               href="/"
@@ -144,7 +142,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu - Montfort-style full-screen overlay */}
+      {/* Mobile Menu */}
       <div className="mobile-menu fixed top-0 right-0 bottom-0 w-full bg-primary-500 text-cream-100 lg:hidden translate-x-full z-50 overflow-y-auto">
         <div className="flex justify-between items-center p-6 border-b border-cream-100/10">
           <div className="relative h-10 w-auto">

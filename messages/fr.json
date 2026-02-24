@@ -5,32 +5,24 @@
     "readMore": "Lire la suite",
     "learnMore": "En savoir plus",
     "viewAll": "Voir tout",
-    "downloadPdf": "Télécharger le PDF",
+    "downloadPdf": "T\u00e9l\u00e9charger le PDF",
     "backToTop": "Retour en haut"
   },
   "navigation": {
     "header": {
       "homeLink": "Accueil",
-      "aboutLink": "À propos",
-      "servicesLink": "Services",
-      "corporateAdvisoryLink": "Conseil d'entreprise",
-      "capitalRaisingLink": "Levée de capitaux",
-      "assetManagementLink": "Gestion d'actifs",
-      "companiesLink": "Sociétés",
-      "sponsorshipsLink": "Partenariats",
-      "newsLink": "Actualités",
-      "investorsLink": "Investisseurs",
+      "aboutLink": "\u00c0 propos",
+      "portfolioLink": "Portefeuille",
+      "newsLink": "Actualit\u00e9s",
       "contactLink": "Contact"
     },
     "footer": {
-      "servicesTitle": "Services",
-      "companyTitle": "Société",
-      "resourcesTitle": "Ressources",
+      "whatWeDoTitle": "Nos services",
+      "exploreTitle": "Explorer",
       "contactTitle": "Contact"
     },
     "mobileMenu": {
-      "navigationTitle": "Navigation",
-      "servicesTitle": "Services"
+      "navigationTitle": "Navigation"
     }
   },
   "homepage": {
@@ -40,269 +32,279 @@
       "titleLine3": "d'entreprise",
       "companyName": "VERT CAPITAL",
       "rotatingText1": "Solutions de conseil d'entreprise",
-      "rotatingText2": "Expertise en levée de capitaux",
+      "rotatingText2": "Expertise en lev\u00e9e de capitaux",
       "rotatingText3": "Services de gestion d'actifs",
       "location": "Perth, Australie-Occidentale",
-      "cta": "Nous contacter"
+      "cta": "Nous contacter",
+      "ctaSecondary": "En savoir plus"
     },
     "intro": {
       "titleLine1": "Services financiers",
-      "titleLine2": "spécialisés",
-      "titleLine3": "pour investisseurs fortunés",
-      "titleLine4": "et sociétés ASX",
-      "description": "Vert Capital est une société boutique d'investissement et de conseil d'entreprise située à Perth, en Australie-Occidentale. Nous nous spécialisons dans la fourniture de services de conseil en investissement aux investisseurs fortunés et de services de conseil d'entreprise et de levée de capitaux aux sociétés privées et cotées à l'ASX.",
-      "cta": "À propos de Vert Capital"
+      "titleLine2": "sp\u00e9cialis\u00e9s",
+      "titleLine3": "pour investisseurs fortun\u00e9s",
+      "titleLine4": "et soci\u00e9t\u00e9s ASX",
+      "description": "Vert Capital est une soci\u00e9t\u00e9 boutique d'investissement et de conseil d'entreprise situ\u00e9e \u00e0 Perth, en Australie-Occidentale. Nous nous sp\u00e9cialisons dans la fourniture de services de conseil en investissement aux investisseurs fortun\u00e9s et de services de conseil d'entreprise et de lev\u00e9e de capitaux aux soci\u00e9t\u00e9s priv\u00e9es et cot\u00e9es \u00e0 l'ASX.",
+      "cta": "\u00c0 propos de Vert Capital"
     },
     "stats": {
       "stat1Value": "15+",
-      "stat1Label": "Années",
-      "stat1Sublabel": "D'expérience industrielle",
+      "stat1Label": "Ann\u00e9es",
+      "stat1Sublabel": "D'exp\u00e9rience industrielle",
       "stat2Value": "50+",
       "stat2Label": "Clients",
       "stat2Sublabel": "Servis",
       "stat3Value": "3",
       "stat3Label": "Services principaux",
-      "stat3Sublabel": "Expertise spécialisée",
+      "stat3Sublabel": "Expertise sp\u00e9cialis\u00e9e",
       "stat4Value": "$100M+",
       "stat4Label": "Capital",
-      "stat4Sublabel": "Levé"
+      "stat4Sublabel": "Lev\u00e9"
     },
     "servicesSection": {
       "titleLine1": "Nos",
       "titleLine2": "Services",
-      "subtitle": "Solutions financières complètes adaptées à vos besoins",
+      "subtitle": "Solutions financi\u00e8res compl\u00e8tes adapt\u00e9es \u00e0 vos besoins",
       "service1Title": "Conseil d'entreprise",
-      "service1Description": "Services de conseil stratégique pour fusions, acquisitions et restructurations d'entreprise.",
-      "service2Title": "Levée de capitaux",
-      "service2Description": "Conseils d'experts pour la levée de capitaux pour les initiatives de croissance et d'expansion.",
+      "service1Description": "Conseils strat\u00e9giques sur la conformit\u00e9 ASX, la gouvernance, les fusions et acquisitions, et la restructuration d'entreprise pour les soci\u00e9t\u00e9s cot\u00e9es et priv\u00e9es.",
+      "service1Link": "En savoir plus",
+      "service2Title": "Lev\u00e9e de capitaux",
+      "service2Description": "Accompagnement complet en lev\u00e9e de capitaux, incluant les IPO, placements, \u00e9missions de droits et tourn\u00e9es d'investisseurs pour les entreprises en croissance.",
+      "service2Link": "En savoir plus",
       "service3Title": "Gestion d'actifs",
-      "service3Description": "Services professionnels de gestion d'investissements pour personnes fortunées.",
+      "service3Description": "Gestion d'investissements sur mesure pour les personnes fortun\u00e9es, avec un accent sur les actions ASX et les actifs alternatifs.",
+      "service3Link": "En savoir plus",
       "viewAllServices": "Voir tous les services"
     },
     "aboutSection": {
-      "titleLine1": "À propos de",
+      "titleLine1": "\u00c0 propos de",
       "titleLine2": "Vert Capital",
-      "description": "Nous sommes une société boutique d'investissement et de conseil d'entreprise engagée à fournir des résultats exceptionnels à nos clients. Notre équipe apporte une expertise approfondie des marchés financiers, de la stratégie d'entreprise et de la gestion d'investissements.",
+      "description": "Nous sommes une soci\u00e9t\u00e9 boutique d'investissement et de conseil d'entreprise engag\u00e9e \u00e0 fournir des r\u00e9sultats exceptionnels \u00e0 nos clients. Notre \u00e9quipe apporte une expertise approfondie des march\u00e9s financiers, de la strat\u00e9gie d'entreprise et de la gestion d'investissements.",
       "learnMore": "En savoir plus sur nous"
     },
     "companiesSection": {
-      "titleLine1": "Nos",
-      "titleLine2": "Sociétés",
-      "subtitle": "Sociétés de portefeuille et partenariats clients",
-      "viewAllCompanies": "Voir toutes les sociétés"
+      "titleLine1": "Soci\u00e9t\u00e9s",
+      "titleLine2": "du portefeuille",
+      "subtitle": "Nous travaillons aux c\u00f4t\u00e9s de soci\u00e9t\u00e9s cot\u00e9es \u00e0 l'ASX dans les secteurs des ressources, de la technologie et des secteurs \u00e9mergents \u2014 en fournissant des services de conseil d'entreprise et de lev\u00e9e de capitaux pour les aider \u00e0 cro\u00eetre.",
+      "viewAllCompanies": "Voir le portefeuille"
     },
     "newsSection": {
-      "titleLine1": "Dernières",
-      "titleLine2": "Actualités",
-      "viewAllNews": "Voir toutes les actualités"
+      "titleLine1": "Derni\u00e8res",
+      "titleLine2": "Actualit\u00e9s",
+      "viewAllNews": "Voir toutes les actualit\u00e9s",
+      "emptyState": "Restez \u00e0 l'\u00e9coute des derni\u00e8res nouvelles et perspectives du march\u00e9 de Vert Capital.",
+      "subscribeButton": "S'abonner aux mises \u00e0 jour"
     },
     "ctaSection": {
       "titleLine1": "Discutons de",
       "titleLine2": "vos objectifs financiers",
-      "subtitle": "Prêt à passer à l'étape suivante ? Contactez notre équipe pour explorer comment nous pouvons vous aider à atteindre vos objectifs.",
+      "subtitle": "Pr\u00eat \u00e0 passer \u00e0 l'\u00e9tape suivante ? Contactez notre \u00e9quipe pour explorer comment nous pouvons vous aider \u00e0 atteindre vos objectifs.",
       "contactButton": "Nous contacter",
-      "servicesButton": "Voir les services"
-    },
-    "emailSignup": {
-      "title": "Restez informé de toutes les annonces de Vert Capital.",
-      "placeholder": "Entrez votre e-mail",
-      "button": "S'abonner"
+      "servicesButton": "En savoir plus"
     },
     "investmentOpportunities": {
-      "title": "Opportunités d'investissement",
+      "title": "Opportunit\u00e9s d'investissement",
       "stockTitle": "Actions",
-      "stockDescription": "Accédez aux opportunités d'investissement en actions grâce à nos sociétés de portefeuille soigneusement sélectionnées.",
+      "stockDescription": "Acc\u00e9dez aux opportunit\u00e9s d'investissement en actions gr\u00e2ce \u00e0 nos soci\u00e9t\u00e9s de portefeuille soigneusement s\u00e9lectionn\u00e9es.",
       "fundsTitle": "Fonds",
-      "fundsDescription": "Investissements de fonds diversifiés gérés par notre équipe expérimentée de professionnels des marchés de capitaux.",
+      "fundsDescription": "Investissements de fonds diversifi\u00e9s g\u00e9r\u00e9s par notre \u00e9quipe exp\u00e9riment\u00e9e de professionnels des march\u00e9s de capitaux.",
       "learnMore": "En savoir plus"
-    },
-    "newsArticle": {
-      "headline": "Titre de l'article d'actualité"
     }
   },
   "about": {
-    "heroTitle": "À propos de Vert Capital",
-    "heroSubtitle": "Excellence en investissement boutique et conseil d'entreprise à Perth, Australie-Occidentale",
+    "heroTitle": "\u00c0 propos de Vert Capital",
+    "heroSubtitle": "Excellence en investissement boutique et conseil d'entreprise \u00e0 Perth, Australie-Occidentale",
     "introTitle": "Qui nous sommes",
-    "introDescription": "Vert Capital est une société boutique d'investissement et de conseil d'entreprise spécialisée dans la fourniture de services financiers de haute qualité à une clientèle exigeante. Basés à Perth, en Australie-Occidentale, nous offrons des services de conseil d'entreprise, de levée de capitaux et de gestion d'actifs aux investisseurs fortunés et aux sociétés privées et cotées à l'ASX.",
-    "companyInfoTitle": "Informations sur la société",
-    "companyName": "Nom de la société",
+    "introDescription1": "Vert Capital est une soci\u00e9t\u00e9 boutique d'investissement et de conseil d'entreprise bas\u00e9e \u00e0 Perth. Nous nous sp\u00e9cialisons dans la fourniture de services personnalis\u00e9s de conseil d'entreprise, de lev\u00e9e de capitaux et de gestion d'actifs aux investisseurs fortun\u00e9s et aux soci\u00e9t\u00e9s priv\u00e9es et cot\u00e9es \u00e0 l'ASX.",
+    "introDescription2": "Fond\u00e9e sur le principe que chaque client m\u00e9rite des conseils de qualit\u00e9 institutionnelle d\u00e9livr\u00e9s avec une touche personnelle, notre \u00e9quipe apporte plus de 15 ans d'exp\u00e9rience dans les march\u00e9s financiers, la strat\u00e9gie d'entreprise et la gestion d'investissements.",
+    "introDescription3": "En tant que repr\u00e9sentant autoris\u00e9 d'entreprise de Barclay Wells Ltd (AFSL No. 235070), nous op\u00e9rons dans un cadre r\u00e9glementaire solide tout en maintenant l'agilit\u00e9 et l'orientation client qui d\u00e9finissent une v\u00e9ritable soci\u00e9t\u00e9 boutique.",
+    "companyInfoTitle": "Informations sur la soci\u00e9t\u00e9",
+    "companyName": "Nom de la soci\u00e9t\u00e9",
     "companyNameValue": "Vert Capital Pty Ltd",
-    "carNumber": "Numéro CAR",
+    "carNumber": "Num\u00e9ro CAR",
     "carNumberValue": "1278768",
     "afsl": "AFSL",
-    "afslValue": "Représentant autorisé d'entreprise de Barclay Wells Ltd (AFSL No. 235070)",
+    "afslValue": "Repr\u00e9sentant autoris\u00e9 d'entreprise de Barclay Wells Ltd (AFSL No. 235070)",
     "location": "Emplacement",
     "locationValue": "Perth, Australie-Occidentale",
+    "servicesTitle": "Nos services",
+    "servicesSubtitle": "Solutions financi\u00e8res compl\u00e8tes adapt\u00e9es \u00e0 vos besoins uniques",
+    "service1Title": "Conseil d'entreprise",
+    "service1Description": "Services strat\u00e9giques de conseil d'entreprise incluant fusions et acquisitions, restructuration d'entreprise, conformit\u00e9 ASX et planification strat\u00e9gique.",
+    "service1Feature1": "Fusions et acquisitions",
+    "service1Feature2": "Restructuration d'entreprise",
+    "service1Feature3": "Conformit\u00e9 et gouvernance ASX",
+    "service1Feature4": "Planification strat\u00e9gique",
+    "service2Title": "Lev\u00e9e de capitaux",
+    "service2Description": "Conseils d'experts et support d'ex\u00e9cution pour les initiatives de lev\u00e9e de capitaux, aidant les entreprises \u00e0 acc\u00e9der au financement n\u00e9cessaire.",
+    "service2Feature1": "March\u00e9s de capitaux propres",
+    "service2Feature2": "Support IPO et cotation",
+    "service2Feature3": "Placements et \u00e9missions de droits",
+    "service2Feature4": "Relations investisseurs et roadshows",
+    "service3Title": "Gestion d'actifs",
+    "service3Description": "Services professionnels de gestion d'investissements pour personnes fortun\u00e9es, offrant des strat\u00e9gies d'investissement sur mesure.",
+    "service3Feature1": "Gestion de portefeuille",
+    "service3Feature2": "Strat\u00e9gie d'investissement",
+    "service3Feature3": "Gestion des risques",
+    "service3Feature4": "Pr\u00e9servation du patrimoine",
+    "teamTitle": "Notre \u00e9quipe",
+    "teamSubtitle": "Des professionnels exp\u00e9riment\u00e9s d\u00e9di\u00e9s \u00e0 votre r\u00e9ussite",
+    "team1Name": "Petar Tomasevic",
+    "team1Role": "Directeur g\u00e9n\u00e9ral",
+    "team1Bio": "Petar est le fondateur et directeur g\u00e9n\u00e9ral de Vert Capital. Avec une vaste exp\u00e9rience en conseil d'entreprise, march\u00e9s de capitaux et gestion d'investissements, il dirige l'orientation strat\u00e9gique de l'entreprise.",
+    "team2Name": "Laurie Trettel",
+    "team2Role": "Responsable du conseil d'entreprise",
+    "team2Bio": "Laurie dirige notre division de conseil d'entreprise, apportant une expertise approfondie en conformit\u00e9 ASX, gouvernance d'entreprise, fusions et acquisitions.",
     "valuesTitle": "Nos valeurs",
     "valuesSubtitle": "Les principes qui guident tout ce que nous faisons",
-    "value1Title": "Intégrité",
-    "value1Description": "Nous opérons avec les normes éthiques et la transparence les plus élevées dans toutes nos relations.",
+    "value1Title": "Int\u00e9grit\u00e9",
+    "value1Description": "Nous op\u00e9rons avec les normes \u00e9thiques et la transparence les plus \u00e9lev\u00e9es dans toutes nos relations.",
     "value2Title": "Excellence",
     "value2Description": "Nous visons l'excellence dans tous les aspects de notre prestation de services.",
     "value3Title": "Focus client",
-    "value3Description": "Votre succès est notre succès. Nous plaçons toujours les intérêts de nos clients en premier."
-  },
-  "services": {
-    "heroTitle": "Nos services",
-    "heroSubtitle": "Solutions financières complètes adaptées à vos besoins uniques",
-    "service1Category": "Conseil",
-    "service1Title": "Conseil d'entreprise",
-    "service1Description": "Services stratégiques de conseil d'entreprise incluant fusions et acquisitions, restructuration d'entreprise et planification stratégique pour les entreprises cherchant à croître, optimiser ou se retirer.",
-    "service1Feature1": "Fusions et acquisitions",
-    "service1Feature2": "Restructuration d'entreprise",
-    "service1Feature3": "Planification stratégique",
-    "service1Feature4": "Support transactionnel",
-    "service2Category": "Capital",
-    "service2Title": "Levée de capitaux",
-    "service2Description": "Conseils d'experts et support d'exécution pour les initiatives de levée de capitaux, aidant les entreprises à accéder au financement dont elles ont besoin pour atteindre leurs objectifs de croissance.",
-    "service2Feature1": "Marchés de capitaux propres",
-    "service2Feature2": "Financement par emprunt",
-    "service2Feature3": "Support IPO et cotation",
-    "service2Feature4": "Relations investisseurs",
-    "service3Category": "Gestion",
-    "service3Title": "Gestion d'actifs",
-    "service3Description": "Services professionnels de gestion d'investissements pour personnes fortunées, offrant des stratégies d'investissement sur mesure alignées sur vos objectifs financiers et votre appétit pour le risque.",
-    "service3Feature1": "Gestion de portefeuille",
-    "service3Feature2": "Stratégie d'investissement",
-    "service3Feature3": "Gestion des risques",
-    "service3Feature4": "Préservation du patrimoine",
-    "learnMore": "En savoir plus",
-    "ctaTitle": "Prêt à commencer ?",
-    "ctaDescription": "Contactez-nous aujourd'hui pour discuter de la façon dont nos services peuvent vous aider à atteindre vos objectifs financiers.",
+    "value3Description": "Votre succ\u00e8s est notre succ\u00e8s. Nous pla\u00e7ons toujours les int\u00e9r\u00eats de nos clients en premier.",
+    "regulatoryTitle": "Informations r\u00e9glementaires",
+    "regulatoryDescription": "Vert Capital Pty Ltd (CAR No. 1278768) est un repr\u00e9sentant autoris\u00e9 d'entreprise de Barclay Wells Ltd, qui d\u00e9tient la licence australienne de services financiers No. 235070.",
+    "regulatoryFSG": "Guide des services financiers",
+    "regulatoryDisclosure": "Politique de divulgation",
+    "regulatoryPrivacy": "Politique de confidentialit\u00e9",
+    "ctaTitle": "Pr\u00eat \u00e0 discuter de vos objectifs ?",
+    "ctaDescription": "Contactez notre \u00e9quipe pour explorer comment nous pouvons vous aider \u00e0 atteindre vos objectifs financiers.",
     "ctaButton": "Nous contacter"
   },
-  "companies": {
-    "heroTitle": "Nos sociétés",
-    "heroSubtitle": "Sociétés de portefeuille et partenariats stratégiques",
-    "portfolioTitle": "Notre portefeuille",
-    "portfolioSubtitle": "Entreprises avec lesquelles nous travaillons et dans lesquelles nous investissons dans divers secteurs",
-    "company1Name": "Growth Tech Ventures",
-    "company1Industry": "Technologie",
-    "company1Description": "Solutions technologiques innovantes pour clients d'entreprise",
-    "company2Name": "Resource Capital Partners",
-    "company2Industry": "Ressources",
-    "company2Description": "Investissements stratégiques dans les opportunités du secteur des ressources",
-    "company3Name": "Healthcare Innovations",
-    "company3Industry": "Santé",
-    "company3Description": "Faire progresser les soins de santé par l'innovation et l'investissement",
-    "learnMore": "En savoir plus",
-    "ctaTitle": "Intéressé par notre portefeuille ?",
-    "ctaDescription": "Contactez-nous pour en savoir plus sur nos sociétés de portefeuille et notre approche d'investissement.",
+  "portfolio": {
+    "heroTitle": "Portefeuille et communaut\u00e9",
+    "heroSubtitle": "Nos soci\u00e9t\u00e9s de portefeuille et partenariats communautaires",
+    "companiesTitle": "Soci\u00e9t\u00e9s du portefeuille",
+    "companiesSubtitle": "Nous fournissons des services de conseil d'entreprise et de lev\u00e9e de capitaux \u00e0 un groupe s\u00e9lect de soci\u00e9t\u00e9s cot\u00e9es \u00e0 l'ASX dans les secteurs des ressources, de la technologie et des secteurs \u00e9mergents.",
+    "company1Name": "Meteoric Resources Ltd",
+    "company1Ticker": "ASX: MEI",
+    "company1Sector": "Mines et ressources",
+    "company1Description": "Exploration et d\u00e9veloppement de ressources min\u00e9rales ax\u00e9s sur des pratiques mini\u00e8res durables.",
+    "company2Name": "TechGen Metals Ltd",
+    "company2Ticker": "ASX: TG1",
+    "company2Sector": "Mines et ressources",
+    "company2Description": "Avancement de projets de m\u00e9taux technologiques pour l'avenir de l'\u00e9nergie durable et de l'infrastructure.",
+    "company3Name": "Province Resources Ltd",
+    "company3Ticker": "ASX: PRL",
+    "company3Sector": "Mines et ressources",
+    "company3Description": "D\u00e9veloppement de projets d'hydrog\u00e8ne vert et d'h\u00e9lium avec un engagement envers les solutions d'\u00e9nergie propre.",
+    "company4Name": "Peak Minerals Ltd",
+    "company4Ticker": "ASX: PUA",
+    "company4Sector": "Mines et ressources",
+    "company4Description": "Exploration de gisements min\u00e9raux de haute qualit\u00e9 ax\u00e9e sur le cuivre et les m\u00e9taux pr\u00e9cieux.",
+    "company5Name": "MSM Corporation International",
+    "company5Ticker": "ASX: MSM",
+    "company5Sector": "Mines et ressources",
+    "company5Description": "Corporation mini\u00e8re internationale sp\u00e9cialis\u00e9e dans le d\u00e9veloppement strat\u00e9gique de min\u00e9raux.",
+    "company6Name": "Raiden Resources Ltd",
+    "company6Ticker": "ASX: RDN",
+    "company6Sector": "Mines et ressources",
+    "company6Description": "Exploration de m\u00e9taux de batterie et de min\u00e9raux critiques pour la transition \u00e9nerg\u00e9tique renouvelable.",
+    "company7Name": "Minbos Resources Ltd",
+    "company7Ticker": "ASX: MNB",
+    "company7Sector": "Mines et ressources",
+    "company7Description": "D\u00e9veloppement de projets de phosphate pour soutenir la croissance agricole et la s\u00e9curit\u00e9 alimentaire en Afrique.",
+    "company8Name": "Ragusa Minerals Ltd",
+    "company8Ticker": "ASX: RAS",
+    "company8Sector": "Mines et ressources",
+    "company8Description": "Exploration et d\u00e9veloppement de projets auriferes et de m\u00e9taux de base au potentiel g\u00e9ologique prouv\u00e9.",
+    "sponsorshipsTitle": "Communaut\u00e9 et partenariats",
+    "sponsorshipsSubtitle": "Vert Capital est fier de soutenir les organisations sportives locales et les initiatives communautaires \u00e0 travers l'Australie-Occidentale.",
+    "sponsorship1Name": "Fremantle Water Polo",
+    "sponsorship1Category": "Water-polo",
+    "sponsorship2Name": "Perth Wildcats",
+    "sponsorship2Category": "Basketball",
+    "sponsorship3Name": "East Fremantle FC",
+    "sponsorship3Category": "Football",
+    "sponsorship4Name": "Melville Water Polo",
+    "sponsorship4Category": "Water-polo",
+    "ctaTitle": "Int\u00e9ress\u00e9 \u00e0 travailler avec Vert Capital ?",
+    "ctaDescription": "Que vous recherchiez du conseil d'entreprise, un soutien en lev\u00e9e de capitaux ou de la gestion d'investissements, nous serions ravis de vous entendre.",
     "ctaButton": "Nous contacter"
-  },
-  "sponsorships": {
-    "heroTitle": "Nos partenariats",
-    "heroSubtitle": "Soutenir notre communauté par des partenariats stratégiques",
-    "commitmentTitle": "Notre engagement",
-    "commitmentDescription": "Chez Vert Capital, nous croyons qu'il faut redonner à la communauté. Notre programme de parrainage soutient des organisations et des initiatives qui s'alignent sur nos valeurs et contribuent à la croissance et au développement de l'Australie-Occidentale.",
-    "sponsorship1Name": "Prix de l'innovation d'entreprise",
-    "sponsorship1Category": "Affaires",
-    "sponsorship1Description": "Soutenir l'excellence en innovation d'entreprise et entrepreneuriat",
-    "sponsorship2Name": "Fonds de développement communautaire",
-    "sponsorship2Category": "Communauté",
-    "sponsorship2Description": "Investir dans les initiatives de développement communautaire local",
-    "sponsorship3Name": "Programme d'excellence éducative",
-    "sponsorship3Category": "Éducation",
-    "sponsorship3Description": "Promouvoir l'excellence et les opportunités éducatives",
-    "valuesTitle": "Pourquoi nous parrainons",
-    "valuesSubtitle": "Notre approche de l'engagement communautaire",
-    "value1Title": "Impact communautaire",
-    "value1Description": "Créer un changement positif dans les communautés où nous opérons",
-    "value2Title": "Alignement stratégique",
-    "value2Description": "Soutenir des initiatives alignées sur nos valeurs d'entreprise",
-    "value3Title": "Partenariat à long terme",
-    "value3Description": "Construire des relations durables avec les organisations communautaires"
   },
   "news": {
-    "heroTitle": "Dernières actualités",
-    "heroSubtitle": "Restez informé des dernières nouvelles de Vert Capital",
-    "loading": "Chargement des actualités...",
+    "heroTitle": "Derni\u00e8res actualit\u00e9s",
+    "heroSubtitle": "Restez inform\u00e9 des derni\u00e8res nouvelles de Vert Capital",
+    "loading": "Chargement des actualit\u00e9s...",
     "readMore": "Lire la suite",
-    "noNews": "Aucun article d'actualité disponible pour le moment.",
-    "news1Title": "Vert Capital annonce un nouveau partenariat stratégique",
-    "news1Category": "Actualités de l'entreprise",
-    "news1Excerpt": "Nous sommes heureux d'annoncer un nouveau partenariat stratégique qui améliorera notre offre de services aux clients.",
-    "news2Title": "Perspectives du marché : Revue du T1 2026",
-    "news2Category": "Mise à jour du marché",
-    "news2Excerpt": "Notre revue trimestrielle du marché fournissant des perspectives et des analyses sur les conditions actuelles du marché.",
-    "news3Title": "Vert Capital élargit son équipe de conseillers",
-    "news3Category": "Actualités de l'équipe",
-    "news3Excerpt": "Nous accueillons de nouveaux conseillers seniors dans notre équipe en croissance, apportant une expertise et une expérience supplémentaires.",
-    "newsletterTitle": "Restez informé",
-    "newsletterDescription": "Abonnez-vous à notre newsletter pour les dernières nouvelles, perspectives du marché et mises à jour de Vert Capital.",
+    "noNews": "Aucun article d'actualit\u00e9 disponible pour le moment.",
+    "newsletterTitle": "Restez inform\u00e9",
+    "newsletterDescription": "Abonnez-vous \u00e0 notre newsletter pour les derni\u00e8res nouvelles et perspectives de Vert Capital.",
     "newsletterPlaceholder": "Entrez votre e-mail",
     "newsletterButton": "S'abonner"
   },
   "contact": {
-    "titleLine1": "Commençons",
+    "titleLine1": "Commen\u00e7ons",
     "titleLine2": "une conversation",
     "subtitle": "PRENEZ CONTACT",
     "formTitle": "Envoyez-nous un message",
     "nameLabel": "Nom",
     "emailLabel": "E-mail",
-    "phoneLabel": "Téléphone",
+    "phoneLabel": "T\u00e9l\u00e9phone",
     "subjectLabel": "Sujet",
-    "subjectPlaceholder": "Veuillez sélectionner un sujet",
-    "subjectGeneral": "Demande générale",
+    "subjectPlaceholder": "Veuillez s\u00e9lectionner un sujet",
+    "subjectGeneral": "Demande g\u00e9n\u00e9rale",
     "subjectInvestor": "Relations investisseurs",
-    "subjectMedia": "Demande médias",
-    "subjectPartnership": "Opportunité de partenariat",
+    "subjectMedia": "Demande m\u00e9dias",
+    "subjectPartnership": "Opportunit\u00e9 de partenariat",
     "messageLabel": "Message",
     "sendButton": "Envoyer le message",
+    "sendingButton": "Envoi en cours...",
     "contactInfo": "Informations de contact",
-    "registeredOffice": "Bureau enregistré",
-    "phoneEmail": "Téléphone et e-mail",
-    "phone": "Téléphone",
+    "registeredOffice": "Bureau enregistr\u00e9",
+    "phoneEmail": "T\u00e9l\u00e9phone et e-mail",
+    "phone": "T\u00e9l\u00e9phone",
     "email": "E-mail",
     "businessHours": "Heures d'ouverture",
     "businessHoursValue": "Lundi - Vendredi, 9h00 - 17h00 AWST",
     "followUs": "Suivez-nous",
     "heroTitle": "Contactez-nous",
-    "heroSubtitle": "Prenez contact avec notre équipe",
-    "formNotAvailable": "Le formulaire de contact n'est pas encore disponible. Veuillez nous envoyer un e-mail directement à info@vertcapital.com.au",
-    "formSuccess": "Merci pour votre message. Nous vous répondrons bientôt.",
-    "formError": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
+    "heroSubtitle": "Prenez contact avec notre \u00e9quipe",
+    "formSuccess": "Merci pour votre message. Votre client de messagerie par d\u00e9faut s'ouvrira pour envoyer votre demande.",
+    "formError": "Une erreur s'est produite. Veuillez nous envoyer un e-mail directement \u00e0 info@vertcapital.com.au",
     "officeTitle": "Notre bureau",
     "officeAddress": "Perth, Australie-Occidentale",
     "emailTitle": "E-mail",
     "emailValue": "info@vertcapital.com.au",
-    "phoneTitle": "Téléphone",
-    "phoneValue": "+61 8 9481 0389"
+    "phoneTitle": "T\u00e9l\u00e9phone",
+    "phoneValue": "+61 8 9481 0389",
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "emailRequired": "L'e-mail est requis",
+      "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+      "subjectRequired": "Veuillez s\u00e9lectionner un sujet",
+      "messageRequired": "Le message est requis",
+      "messageMinLength": "Le message doit contenir au moins 10 caract\u00e8res"
+    }
   },
   "investors": {
     "centre": {
       "title": "Portail client",
-      "subtitle": "Accédez aux informations et ressources des sociétés clientes",
-      "description": "Consultez les annonces ASX, les informations sur les actions et les rapports de nos sociétés clientes.",
+      "subtitle": "Acc\u00e9dez aux informations et ressources des soci\u00e9t\u00e9s clientes",
+      "description": "Consultez les annonces ASX, les informations sur les actions et les rapports.",
       "asxCode": "Code ASX",
       "stockPrice": "Cours de l'action",
       "viewOnAsx": "Voir sur ASX",
-      "latestAnnouncementsTitle": "Dernières annonces",
+      "latestAnnouncementsTitle": "Derni\u00e8res annonces",
       "viewAllAnnouncements": "Voir toutes les annonces"
-    },
-    "contact": {
-      "heroTitle": "Contactez-nous",
-      "heroSubtitle": "Prenez contact avec Vert Capital",
-      "emailTitle": "E-mail",
-      "phoneTitle": "Téléphone",
-      "locationTitle": "Emplacement",
-      "formNotAvailable": "Le formulaire de contact n'est pas encore disponible. Veuillez nous envoyer un e-mail directement à info@vertcapital.com.au"
     }
   },
   "portal": {
     "title": "Portail Client",
-    "subtitle": "Accès sécurisé pour les clients de Vert Capital",
-    "disclaimer": "— Confidentiel —",
+    "subtitle": "Acc\u00e8s s\u00e9curis\u00e9 pour les clients de Vert Capital",
+    "description": "Pour acc\u00e9der au portail, veuillez nous contacter \u00e0 info@vertcapital.com.au ou appeler le +61 8 9481 0389.",
+    "disclaimer": "\u2014 Confidentiel \u2014",
     "loginTitle": "Bienvenue",
-    "loginSubtitle": "Entrez votre adresse e-mail et nous vous enverrons un lien de connexion sécurisé.",
+    "loginSubtitle": "Entrez votre adresse e-mail et nous vous enverrons un lien de connexion s\u00e9curis\u00e9.",
     "emailLabel": "Adresse e-mail",
     "emailPlaceholder": "votre.email@exemple.com",
     "submitButton": "Envoyer le lien de connexion",
     "sendingButton": "Envoi en cours...",
-    "successMessage": "Vérifiez votre e-mail ! Nous vous avons envoyé un lien de connexion sécurisé qui expirera dans 15 minutes.",
-    "errorMessage": "Impossible d'envoyer le lien de connexion. Veuillez réessayer ou contacter le support.",
-    "helpText": "Besoin d'aide ? Contactez-nous à info@vertcapital.com.au"
+    "successMessage": "V\u00e9rifiez votre e-mail ! Nous vous avons envoy\u00e9 un lien de connexion s\u00e9curis\u00e9 qui expirera dans 15 minutes.",
+    "errorMessage": "Impossible d'envoyer le lien de connexion. Veuillez r\u00e9essayer ou contacter le support.",
+    "helpText": "Besoin d'aide ? Contactez-nous \u00e0 info@vertcapital.com.au",
+    "loginButton": "Acc\u00e9der au portail",
+    "contactButton": "Nous contacter"
   },
   "forms": {
     "contact": {
@@ -310,89 +312,104 @@
       "emailPlaceholder": "Votre e-mail",
       "messagePlaceholder": "Votre message",
       "submitButton": "Envoyer le message",
-      "successMessage": "Message envoyé avec succès !",
-      "errorMessage": "Échec de l'envoi du message. Veuillez réessayer."
+      "successMessage": "Message envoy\u00e9 avec succ\u00e8s !",
+      "errorMessage": "\u00c9chec de l'envoi du message. Veuillez r\u00e9essayer."
     },
     "validation": {
       "required": "Ce champ est obligatoire",
       "invalidEmail": "Veuillez entrer une adresse e-mail valide",
-      "minLength": "Minimum {min} caractères requis",
-      "maxLength": "Maximum {max} caractères autorisés"
+      "minLength": "Minimum {min} caract\u00e8res requis",
+      "maxLength": "Maximum {max} caract\u00e8res autoris\u00e9s"
     }
   },
+  "notFound": {
+    "title": "Page non trouv\u00e9e",
+    "description": "D\u00e9sol\u00e9, la page que vous recherchez n'existe pas ou a \u00e9t\u00e9 d\u00e9plac\u00e9e.",
+    "homeButton": "Aller \u00e0 l'accueil",
+    "contactButton": "Nous contacter"
+  },
   "footer": {
-    "tagline": "Services boutique d'investissement et de conseil d'entreprise à Perth, Australie-Occidentale",
+    "tagline": "Services boutique d'investissement et de conseil d'entreprise \u00e0 Perth, Australie-Occidentale.",
     "navigation": {
-      "servicesTitle": "Services",
-      "companyTitle": "Société",
-      "resourcesTitle": "Ressources",
+      "whatWeDoTitle": "Nos services",
+      "exploreTitle": "Explorer",
       "contactTitle": "Contact"
     },
     "services": {
       "corporateAdvisory": "Conseil d'entreprise",
-      "capitalRaising": "Levée de capitaux",
+      "capitalRaising": "Lev\u00e9e de capitaux",
       "assetManagement": "Gestion d'actifs"
     },
-    "company": {
-      "about": "À propos",
-      "companies": "Sociétés",
-      "sponsorships": "Partenariats"
-    },
-    "resources": {
-      "news": "Actualités",
-      "contact": "Contact"
+    "explore": {
+      "about": "\u00c0 propos",
+      "portfolio": "Portefeuille",
+      "news": "Actualit\u00e9s"
     },
     "location": {
       "city": "Perth, Australie-Occidentale",
       "country": "Australie"
     },
     "newsletter": {
-      "title": "Restez connecté",
-      "subtitle": "Abonnez-vous pour recevoir des mises à jour et des perspectives de Vert Capital",
+      "title": "Restez connect\u00e9",
+      "subtitle": "Abonnez-vous pour recevoir des mises \u00e0 jour et des perspectives de Vert Capital.",
       "placeholder": "Entrez votre adresse e-mail",
-      "button": "S'abonner"
+      "button": "S'abonner",
+      "success": "Merci de votre inscription !",
+      "duplicate": "Cet e-mail est d\u00e9j\u00e0 abonn\u00e9.",
+      "error": "Impossible de s'abonner. Veuillez r\u00e9essayer plus tard."
     },
     "social": {
       "linkedin": "LinkedIn",
       "email": "E-mail"
     },
     "legal": {
-      "customNotice": "Avis personnalisé",
+      "customNotice": "Avis personnalis\u00e9",
       "disclosurePolicy": "Politique de divulgation",
       "financialServicesGuide": "Guide des services financiers",
-      "privacyPolicy": "Politique de confidentialité"
+      "privacyPolicy": "Politique de confidentialit\u00e9"
     },
-    "copyright": "© {year} Vert Capital Pty Ltd. Tous droits réservés.",
-    "disclaimer": "Vert Capital Pty Ltd (CAR No. 1278768) est un représentant autorisé d'entreprise de Barclay Wells Ltd (AFSL No. 235070)"
+    "copyright": "\u00a9 {year} Vert Capital Pty Ltd. Tous droits r\u00e9serv\u00e9s.",
+    "disclaimer": "Vert Capital Pty Ltd (CAR No. 1278768) est un repr\u00e9sentant autoris\u00e9 d'entreprise de Barclay Wells Ltd (AFSL No. 235070).",
+    "generalAdviceWarning": "Avertissement de conseil g\u00e9n\u00e9ral : Les informations sur ce site sont de nature g\u00e9n\u00e9rale et ne tiennent pas compte de vos objectifs personnels, de votre situation financi\u00e8re ou de vos besoins. Vous devriez consid\u00e9rer si les informations sont adapt\u00e9es \u00e0 vos besoins et, le cas \u00e9ch\u00e9ant, demander l'avis professionnel d'un conseiller financier."
+  },
+  "subscribeModal": {
+    "title": "Gardez une longueur\nd'avance sur le march\u00e9",
+    "subtitle": "Rejoignez notre liste de diffusion pour des perspectives exclusives, des mises \u00e0 jour du march\u00e9 et des opportunit\u00e9s d'investissement directement dans votre bo\u00eete de r\u00e9ception.",
+    "tagline": "Perspectives Vert Capital",
+    "formLabel": "Newsletter",
+    "formTitle": "Acc\u00e9dez aux informations privil\u00e9gi\u00e9es",
+    "formDescription": "Soyez le premier \u00e0 recevoir nos commentaires de march\u00e9, mises \u00e0 jour de portefeuille et perspectives exclusives de notre \u00e9quipe de conseil.",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "submitButton": "S'abonner",
+    "submitting": "Inscription en cours...",
+    "successTitle": "Bienvenue",
+    "successMessage": "Merci de votre inscription. Vous recevrez notre prochaine mise \u00e0 jour directement dans votre bo\u00eete de r\u00e9ception.",
+    "duplicateMessage": "Vous \u00eates d\u00e9j\u00e0 abonn\u00e9. Nous vous tiendrons inform\u00e9.",
+    "errorMessage": "Une erreur s'est produite. Veuillez r\u00e9essayer.",
+    "privacyNote": "Nous respectons votre vie priv\u00e9e. D\u00e9sinscription \u00e0 tout moment. Jamais de spam.",
+    "noThanks": "Non merci, peut-\u00eatre plus tard"
   },
   "metadata": {
     "homepage": {
-      "title": "Vert Capital - Investissement boutique et conseil d'entreprise",
-      "description": "Vert Capital est une société boutique d'investissement et de conseil d'entreprise basée à Perth, spécialisée dans le conseil d'entreprise, la levée de capitaux et les services de gestion d'actifs."
+      "title": "Vert Capital \u2014 Investissement boutique et conseil d'entreprise | Perth, WA",
+      "description": "Vert Capital est une soci\u00e9t\u00e9 boutique d'investissement et de conseil d'entreprise bas\u00e9e \u00e0 Perth, sp\u00e9cialis\u00e9e dans le conseil d'entreprise, la lev\u00e9e de capitaux et la gestion d'actifs."
     },
     "about": {
-      "title": "À propos de nous - Vert Capital",
-      "description": "Découvrez Vert Capital, une société boutique d'investissement et de conseil d'entreprise fournissant des services spécialisés aux investisseurs fortunés et aux sociétés cotées à l'ASX."
+      "title": "\u00c0 propos de nous \u2014 Vert Capital | Conseil d'entreprise Perth",
+      "description": "Rencontrez l'\u00e9quipe de Vert Capital. Plus de 15 ans d'exp\u00e9rience en conseil d'entreprise, lev\u00e9e de capitaux et gestion d'actifs \u00e0 Perth, WA."
     },
-    "services": {
-      "title": "Nos services - Vert Capital",
-      "description": "Découvrez notre gamme complète de services incluant le conseil d'entreprise, la levée de capitaux et la gestion d'actifs pour une clientèle exigeante."
-    },
-    "companies": {
-      "title": "Nos sociétés - Vert Capital",
-      "description": "Explorez les sociétés de portefeuille et les partenariats stratégiques avec lesquels Vert Capital travaille dans divers secteurs."
-    },
-    "sponsorships": {
-      "title": "Partenariats - Vert Capital",
-      "description": "Découvrez l'engagement de Vert Capital à soutenir notre communauté par des parrainages et partenariats stratégiques."
+    "portfolio": {
+      "title": "Portefeuille et communaut\u00e9 \u2014 Vert Capital",
+      "description": "Explorez le portefeuille de soci\u00e9t\u00e9s clientes cot\u00e9es \u00e0 l'ASX et les parrainages communautaires de Vert Capital en Australie-Occidentale."
     },
     "news": {
-      "title": "Actualités et perspectives - Vert Capital",
-      "description": "Restez informé des dernières nouvelles, perspectives du marché et mises à jour de Vert Capital."
+      "title": "Actualit\u00e9s et perspectives \u2014 Vert Capital",
+      "description": "Restez inform\u00e9 des derni\u00e8res nouvelles et perspectives du march\u00e9 de Vert Capital \u00e0 Perth, Australie-Occidentale."
     },
     "contact": {
-      "title": "Contactez-nous - Vert Capital",
-      "description": "Contactez notre équipe pour discuter de la façon dont Vert Capital peut vous aider à atteindre vos objectifs financiers."
+      "title": "Contactez-nous \u2014 Vert Capital | Perth, Australie-Occidentale",
+      "description": "Contactez l'\u00e9quipe de Vert Capital \u00e0 Perth pour discuter du conseil d'entreprise, de la lev\u00e9e de capitaux ou des services de gestion d'actifs."
     }
   }
 }
